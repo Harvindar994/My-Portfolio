@@ -71,6 +71,15 @@ a{
     margin-bottom: 5px;
 }
 
+.author-name span{
+    display: inline-block;
+    transition: all 0.1s ease-in-out;
+}
+
+.author-name span:hover{
+    transform: scale(1.2, 1.2);
+}
+
 .designation{
     font-size: 1.6rem;
     font-weight: 600;
@@ -120,4 +129,25 @@ a{
 
 #social a:hover{
     transform: scale(1.2, 1.2);
+}
+
+
+/* Services Style Start From Here */
+#services {
+    background-color: var(--primary-bg-2);
+    color: var(--common-color);
+}
+
+.services-heading{
+    padding-top: 71px;
+}
+
+.services-heading p{
+    font-size: 1.3rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.services-heading h1{
+    font-size: 3rem;
 }
