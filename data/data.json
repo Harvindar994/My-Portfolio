@@ -2,7 +2,7 @@
     "website-info" : {
         "author": "Harvindar Singh",
         "version": "0.0.1",
-        "active-theme": "default"
+        "active-theme": "lightRed"
     },
 
     "themes": {
@@ -12,6 +12,14 @@
             "primary-bg-1": "#21272f",
             "primary-bg-2": "#171c23",
             "common-color": "#ffffff"
+        },
+
+        "lightRed": {
+            "logo-font-color": "#292d3e",
+            "primary-font-color": "#EB455F",
+            "primary-bg-1": "#FCFFE7",
+            "primary-bg-2": "#BAD7E9",
+            "common-color": "#292d3e"
         }
     },
 
