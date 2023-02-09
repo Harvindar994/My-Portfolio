@@ -2,7 +2,7 @@
     "website-info" : {
         "author": "Harvindar Singh",
         "version": "0.0.1",
-        "active-theme": "lightRed"
+        "active-theme": "default"
     },
 
     "themes": {
