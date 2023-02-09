@@ -1,0 +1,123 @@
+:root {
+    --common-color: #ffffff;
+    --logo-font-color: #08c391;
+    --primary-font-color: #08c391;
+    --primary-bg-1: #21272f;
+    --primary-bg-2: #171c23;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Here some somman elements */
+
+.container{
+    padding: 0px 10% 1px 10%;
+}
+
+.primary{
+    color: var(--primary-font-color);
+}
+
+/* introduction style start from here */
+
+#introduction{
+    background-color: var(--primary-bg-1);
+    color: var(--common-color);
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 36px 0px;
+}
+
+.logo{
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--logo-font-color);
+}
+
+.menu .options{
+    display: flex;
+    gap: 60px;
+}
+
+.intro{
+    display: flex;
+    gap: 30px;
+    padding: 109px 0px;
+}
+
+.intro-start{
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.author-name{
+    font-size: 2.6rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.designation{
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin-bottom: 33px;
+}
+
+.description{
+    margin-bottom: 30px;
+}
+
+#author-image{
+    width: 411px;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(-4px 27px 24px var(--primary-font-color));
+
+}
+
+.lets-talk-button{
+    background-color: var(--primary-font-color);
+    padding: 16px 40px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-bottom: 70px;
+}
+
+.social-media{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-media p{
+    margin-left: 7px;
+    font-size: 1.1rem;
+}
+
+#social{
+    display: flex;
+    gap: 20px;
+}
+
+#social a{
+    font-size: 2.5rem;
+    color: var(--primary-font-color);
+    transition: all 0.2s ease-in-out;
+}
+
+#social a:hover{
+    transform: scale(1.2, 1.2);
+}

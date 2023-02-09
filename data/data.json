@@ -1,0 +1,60 @@
+{
+    "website-info" : {
+        "author": "Harvindar Singh",
+        "version": "0.0.1",
+        "active-theme": "default"
+    },
+
+    "themes": {
+        "default": {
+            "logo-font-color": "#ffffff",
+            "primary-font-color": "#08c391",
+            "primary-bg-1": "#21272f",
+            "primary-bg-2": "#171c23",
+            "common-color": "#ffffff"
+        }
+    },
+
+    "author-info": {
+        "name": "Harvinda Singh",
+        "mobile": "+919695806109",
+        "country": "india",
+        "email": "harvindar994@gmail.com",
+        "designation": "UI/UX Designer And Graphic Designer",
+        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore perferendis autem ea nihil quae. Assumenda, sint obcaecati. Eum provident ex quasi quod itaque magnam quam sequi consequatur, at laborum. Eum.",
+        "profile_image": "data/author/profile.png",
+        "social_media": [
+            {
+                "name": "GitHub",
+                "link": "#",
+                "icon": "fa-brands fa-github",
+                "target": "blank"
+            },
+            {
+                "name": "GitHub",
+                "link": "#",
+                "icon": "fa-brands fa-discord",
+                "target": "blank"
+            },
+            {
+                "name": "GitHub",
+                "link": "#",
+                "icon": "fa-brands fa-linkedin",
+                "target": "blank"
+            },
+            {
+                "name": "GitHub",
+                "link": "#",
+                "icon": "fa-brands fa-youtube",
+                "target": "blank"
+            },
+            {
+                "name": "GitHub",
+                "link": "#",
+                "icon": "fa-brands fa-whatsapp",
+                "target": "blank"
+            }
+        ]
+    }
+    
+}
