@@ -63,5 +63,38 @@
                 "target": "blank"
             }
         ]
-    }
+    },
+
+    "services": [
+        {
+            "icon": "fa-brands fa-uikit",
+            "name": "UI/UX Designer",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla."
+        },
+        {
+            "icon": "fa-brands fa-uikit",
+            "name": "UI/UX Designer",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla."
+        },
+        {
+            "icon": "fa-brands fa-uikit",
+            "name": "UI/UX Designer",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla."
+        },
+        {
+            "icon": "fa-brands fa-uikit",
+            "name": "UI/UX Designer",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla."
+        },
+        {
+            "icon": "fa-brands fa-uikit",
+            "name": "UI/UX Designer",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla."
+        },
+        {
+            "icon": "fa-brands fa-uikit",
+            "name": "UI/UX Designer",
+            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla."
+        }
+    ]
 }
