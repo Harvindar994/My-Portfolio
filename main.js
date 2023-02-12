@@ -42,77 +42,6 @@ var Profile = function(){
 
 }
 
-// Creating a Carousel Component.
-var Carousel = function(container, gap){
-    this.container = container;
-    this.gap = gap;
-    this.carousel_container = null;
-    this.slides = [];
-
-    this.__init__ = function(){
-        this.carousel_container = document.createElement("div");
-        
-        // // Here applying style on carousel container.
-        this.carousel_container.setAttribute("style",
-        `width: 100%;
-         position: realtive;
-         background-color: red;
-         min-height: 400px;
-        `);
-
-
-
-        this.container.append(this.carousel_container);
-    }
-
-    this.add_slide = function(card){
-        // Here applying some styles ro make elements scrollable in cintainer.
-        card.element.style.position = "absolute";
-        
-        if (this.slides.length === 0){
-            this.carousel_container.append(card.element);
-            card.width = window.getComputedStyle(card.element).width;
-            card.element.transform = `translate(${card.translateX}, ${card.translateY})`;
-            this.slides.push(card);
-        }
-        else{
-            this.carousel_container.append(card.element);
-            card.width = window.getComputedStyle(card.element).width;
-
-            console.log(window.getComputedStyle(card.element).height);
-
-            var last_slide = this.slides[this.slides.length-1];
-            card.translateX = last_slide.translateX+last_slide.width+this.gap;
-            card.element.transform = `translate(${card.translateX}, ${card.translateY})`;
-
-            this.slides.push(card);
-        }
-
-
-    }
-
-    this.__init__()
-}
-
-
-// Here Creating A Component of Service Card
-var Card = function(css_class, inner_html){
-    
-    this.__init__ = function(){
-        // here creating a container of card and setting up the inner html.
-        this.element = document.createElement("div");
-        this.element.setAttribute("class", css_class);
-        this.element.innerHTML = inner_html;
-
-        // Creating some variable to hold the state of card.
-        this.width = 0
-        this.translateX = 0
-        this.translateY = 0
-
-    }
-
-    this.__init__();
-}
 
 // Creating an carousel semulator.
 var CarosuleSimulator = function(container, gap, vertically_center=true, top_bottom_gap=0, previousButton=null, nextButton=null, front_space=0, back_space=0){
@@ -130,8 +59,91 @@ var CarosuleSimulator = function(container, gap, vertically_center=true, top_bot
     this.front_space = front_space;
     this.back_space = back_space;
 
+    this.isSliding = false;
+    this.screenX = 0;
+    this.screenY = 0;
+
+    this.onMouseMove = (event)=>{
+        this.screenX = event.screenX;
+        this.screenY = event.screenY;
+    }
+
     this.removePxFromNumbers = function(str){
         return str.slice(0, str.length-2);
+    }
+
+    this.onSlideScrollActive = (event)=>{
+        this.isSliding = true;
+        this.onSlide(event);
+
+    }
+
+    this.onSlideScrollDeactive = ()=>{
+        this.isSliding = false;
+    }
+
+    this.onSlide = (event)=>{
+        var coordinates = [];
+        var active_position_x = event.screenX;
+
+        // here adding a overlay layer to stop hover effact.
+        var overlay = document.createElement("div");
+        overlay.setAttribute("style", "width: 100%; height: 100%; background-color: ##ffffff00; position: absolute;");
+        this.container.append(overlay);
+
+
+        for (index in this.slides){
+            coordinates.push(this.slides[index].translateX);
+            this.slides[index].element.style.transition = "none";
+        }
+
+        var previous_slide_value = 0;
+
+        // Here getting container width to stop over slide element.
+        var container_width = this.getContainerWidth();
+        
+        const slide_interval = setInterval(()=>{
+
+            var slide_value = active_position_x - this.screenX;
+            
+            if (slide_value !== previous_slide_value){
+                
+                if (slide_value > 0){
+
+                    // Sliding Left Side.
+                    if (!((coordinates[coordinates.length-1] + this.slides[this.slides.length-1].width + this.back_space) - slide_value < container_width)){
+                        for (index in this.slides){
+                            this.slides[index].translateX = coordinates[index] - slide_value;
+                            this.slides[index].element.style.transform = `translate(${this.slides[index].translateX}px, ${this.translateY}%)`;
+                        }
+                    }
+                }
+                else if (slide_value < 0){
+                    
+                    // Sliding right side.
+                    slide_value = slide_value * -1;
+                    
+                    if (!(coordinates[0] + slide_value > 0 + this.front_space)){
+                        for (index in this.slides){
+                            this.slides[index].translateX = coordinates[index] + slide_value;
+                            this.slides[index].element.style.transform = `translate(${this.slides[index].translateX}px, ${this.translateY}%)`;
+                        }
+                    }
+
+                }
+            }
+
+            if (!this.isSliding){
+
+                for (index in this.slides){
+                    this.slides[index].element.style.transition = null;
+                }
+
+                this.container.removeChild(overlay);
+                clearInterval(slide_interval);
+            }
+
+        }, 1);
     }
 
     this.onNextPressed = ()=>{
@@ -149,7 +161,7 @@ var CarosuleSimulator = function(container, gap, vertically_center=true, top_bot
         if (first_slide !== null){
             
             var gap = (0 + this.front_space) - first_slide.translateX;
-            // var gap = (first_slide.translateX + first_slide.width + parseInt(this.gap / 2)) - container_width;
+            
             for (var index of Array(this.slides.length).keys()){
                 element = this.slides[index];
                 element.translateX += gap;
@@ -190,6 +202,12 @@ var CarosuleSimulator = function(container, gap, vertically_center=true, top_bot
         return container_width;
     }
 
+    this.getContainerHeight = ()=>{
+        var container_height = window.getComputedStyle(this.container).height;
+        container_height = parseInt(this.removePxFromNumbers(container_height));
+        return container_height;
+    }
+
     this.onContainerResize = ()=>{
         if (this.slides.length > 0){
 
@@ -219,6 +237,10 @@ var CarosuleSimulator = function(container, gap, vertically_center=true, top_bot
         }
 
         window.addEventListener("resize", this.onContainerResize);
+        this.container.addEventListener("mousedown", this.onSlideScrollActive);
+        this.container.addEventListener("mouseup", this.onSlideScrollDeactive);
+        this.container.addEventListener("mouseleave", this.onSlideScrollDeactive);
+        window.addEventListener("mousemove", this.onMouseMove);
 
         // here setting up relative postion on container.
         this.container.style.position = "relative";
@@ -235,14 +257,16 @@ var CarosuleSimulator = function(container, gap, vertically_center=true, top_bot
 
             var element = this.container.children[index];
 
-            var height = parseInt(this.removePxFromNumbers(window.getComputedStyle(element).height));
-            if (height > this.slide_max_height){
-                this.slide_max_height = height
-            }
             element.style.position = "absolute";
             if (this.vertically_center){
                 element.style.top = "50%";
             }
+
+            var height = parseInt(this.removePxFromNumbers(window.getComputedStyle(element).height));
+            if (height > this.slide_max_height){
+                this.slide_max_height = height
+            }
+            
 
             if (this.slides.length === 0){
 
@@ -287,7 +311,7 @@ var CarosuleSimulator = function(container, gap, vertically_center=true, top_bot
 var Services = function(){
     this.services_jason = null;
     this.services_container = document.querySelector(".services-carousel");
-    // this.carousel = new Carousel(this.services_container, 10);
+    
     this.carosuleSimulator = new CarosuleSimulator(this.services_container, 50, true, 80,
                                                     document.querySelector("#services-button-left"), document.querySelector("#services-button-right"),
                                                     36, 36);
@@ -308,8 +332,7 @@ var Services = function(){
             element.innerHTML = inner_html;
 
             this.services_container.append(element);
-            // var card = new Card("card", inner_html);
-            // this.carousel.add_slide(card);
+            
         })
 
         this.carosuleSimulator.__init__();
