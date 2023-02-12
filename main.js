@@ -64,8 +64,20 @@ var CarosuleSimulator = function(container, gap, vertically_center=true, top_bot
     this.screenY = 0;
 
     this.onMouseMove = (event)=>{
-        this.screenX = event.screenX;
-        this.screenY = event.screenY;
+        try {
+            if (event.sourceCapabilities.firesTouchEvents){
+                this.screenX = event.touches[0].screenX;
+                this.screenY = event.touches[0].screenY;
+            }
+            else{
+                this.screenX = event.screenX;
+                this.screenY = event.screenY;   
+            }
+        }catch (e) {
+            this.screenX = event.screenX;
+            this.screenY = event.screenY;
+            console.log(e.message)
+        }
     }
 
     this.removePxFromNumbers = function(str){
@@ -84,7 +96,17 @@ var CarosuleSimulator = function(container, gap, vertically_center=true, top_bot
 
     this.onSlide = (event)=>{
         var coordinates = [];
-        var active_position_x = event.screenX;
+
+        try{
+
+            if (event.sourceCapabilities.firesTouchEvents)
+                var active_position_x = event.touches[0].screenX;
+            else
+                var active_position_x = event.screenX;
+
+        }catch (e){
+            return;
+        }
 
         // here adding a overlay layer to stop hover effact.
         var overlay = document.createElement("div");
@@ -239,8 +261,14 @@ var CarosuleSimulator = function(container, gap, vertically_center=true, top_bot
         window.addEventListener("resize", this.onContainerResize);
         this.container.addEventListener("mousedown", this.onSlideScrollActive);
         this.container.addEventListener("mouseup", this.onSlideScrollDeactive);
+
+        this.container.addEventListener("touchstart", this.onSlideScrollActive);
+        this.container.addEventListener("touchend", this.onSlideScrollDeactive);
+
         this.container.addEventListener("mouseleave", this.onSlideScrollDeactive);
+
         window.addEventListener("mousemove", this.onMouseMove);
+        window.addEventListener("touchmove", this.onMouseMove);
 
         // here setting up relative postion on container.
         this.container.style.position = "relative";
