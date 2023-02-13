@@ -343,10 +343,30 @@ a{
 
 /* Here project card styles start's */
 
-.stack-widget{
+/* stack widget style and it's pages*/
+.stack-widget-container{
+    padding: 45px 0px 45px 0px;
+}
 
-    padding: 65px 0px;
+.stack-widget-content-page{
+    display: flex;
+    padding: 0px 0px 65px 0px;
+    gap: 38px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
+.stack-widget-content-navigators{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.stack-widget-content-navigator{
+    padding: 0px 23px;
+    height: 50px;
+    border-radius: 8px;
 }
 
 .project-card{

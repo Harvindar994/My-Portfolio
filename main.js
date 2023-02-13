@@ -369,6 +369,59 @@ var Services = function(){
 }
 
 
+// Here creating Page element it will be a Stack Widget Page that will represent each page of StackWidget.
+var StackWidgetPage = function(show_element_count=9){
+
+    // this variable will represnt that how many elements will be visible on the page. and for the remaining element next button will be prepared for navigate on.
+    this.show_element_count = show_element_count;
+    this.elements = [];
+    this.visibleElements = [];
+
+    this.__init__ = function(){
+
+        this.page = document.createAttribute("div");
+        this.page.setAttribute("class", "stack-widget-page");
+        this.page.innerHTML = `
+        <div id="contentHolder" class="stack-widget-content-page">
+            
+        </div>
+
+        <div id="contentNavigators" class="stack-widget-content-navigators">
+
+        </div>`;
+
+        this.contentHolder = this.page.querySelector("#contentHolder");
+        this.contentNavigators = this.page.querySelector("#contentNavigators");
+        
+
+        // only for temp use.
+        `<div class="button stack-widget-content-navigator">1</div>
+        <div class="button stack-widget-content-navigator">2</div>
+        <div class="button stack-widget-content-navigator">Next</div>
+        `
+    }
+
+    this.addNavigatorButton = function(buttonText, index){
+        
+    }
+
+    this.addElement = function(element){
+
+    }
+
+    this.hideElement = (elementObj)=>{
+
+    }
+
+    this.navigateContent = (event)=>{
+
+    }
+
+    this.__init__();
+
+}
+
+
 // Here Creating a Stack Widget that will help to switch between diffrent pages.
 var StackWidget = function(){
 
