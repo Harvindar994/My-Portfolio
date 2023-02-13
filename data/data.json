@@ -8,7 +8,7 @@
     "themes": {
         "default": {
             "logo-font-color": "#ffffff",
-            "primary-font-color": "#08c391",
+            "primary-font-color": "8, 195, 145",
             "primary-bg-1": "#21272f",
             "primary-bg-2": "#171c23",
             "common-color": "#ffffff"
@@ -16,21 +16,26 @@
 
         "lightRed": {
             "logo-font-color": "#292d3e",
-            "primary-font-color": "#EB455F",
-            "primary-bg-1": "#FCFFE7",
-            "primary-bg-2": "#BAD7E9",
+            "primary-font-color": "235, 69, 95",
+            "primary-bg-1": "#ffffff",
+            "primary-bg-2": "#e4e7e7",
             "common-color": "#292d3e"
         }
     },
 
     "author-info": {
-        "name": "Harvinda Singh",
+        "name": "Harvindar Singh",
         "mobile": "+919695806109",
         "country": "india",
         "email": "harvindar994@gmail.com",
         "designation": "UI/UX Designer And Graphic Designer",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore perferendis autem ea nihil quae. Assumenda, sint obcaecati. Eum provident ex quasi quod itaque magnam quam sequi consequatur, at laborum. Eum.",
-        "profile_image": "data/author/profile.png",
+        "profile_images": {
+            
+            "default": "data/author/profile.png",
+            "lightRed": "data/author/profile_red_bg.png"
+        },
+        
         "social_media": [
             {
                 "name": "GitHub",
@@ -72,12 +77,7 @@
             "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla."
         },
         {
-            "icon": "fa-brands fa-uikit",
-            "name": "UI/UX Designer",
-            "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla."
-        },
-        {
-            "icon": "fa-brands fa-uikit",
+            "icon": "fa-solid fa-wand-magic-sparkles",
             "name": "UI/UX Designer",
             "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla."
         },
@@ -96,5 +96,22 @@
             "name": "UI/UX Designer",
             "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla."
         }
+    ],
+
+    "protfolio": [
+
+        {
+            "name": "All Work",
+            "project": []
+        },
+        {
+            "name": "Personal Project",
+            "project": []
+        },
+        {
+            "name": "Professional Projects",
+            "project": []
+        }
+
     ]
 }

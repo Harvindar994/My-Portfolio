@@ -2,7 +2,7 @@
 var Profile = function(){
     this.profile = null;
 
-    this.load = function(profile){
+    this.load = function(profile, active_theme){
         // here profile jason data will get stored for further uses.
         this.profile = profile;
 
@@ -28,7 +28,7 @@ var Profile = function(){
 
         designation.innerText = profile.designation;
         description.innerText = profile.description;
-        author_image.setAttribute("src", profile.profile_image);
+        author_image.setAttribute("src", profile.profile_images[active_theme]);
         
         social_media = profile.social_media;
         social_media.forEach(element => {
@@ -356,7 +356,7 @@ var Services = function(){
             <p class="card-description">${element.description}</p>`
 
             var element = document.createElement("div");
-            element.setAttribute("class", "card");
+            element.setAttribute("class", "card button");
             element.innerHTML = inner_html;
 
             this.services_container.append(element);
@@ -368,23 +368,84 @@ var Services = function(){
     }
 }
 
+
+// Here Creating a Stack Widget that will help to switch between diffrent pages.
+var StackWidget = function(){
+
+    // exactly not a constructor function but it will act like a constructor function.
+    this.__init__ = function(){
+
+        // this list will store all the pages.
+        this.pages = [];
+
+        // this variable will the current active page.
+        this.active_page = null;
+
+    }
+
+    this.getPage = (index)=>{
+
+
+    }
+
+    this.switchToPage = (event)=>{
+
+    }
+
+    this.connectButtonToPage = (button)=>{
+
+    }
+
+    this.addPage = (page)=>{
+
+    }
+
+    this.__init__();
+}
+
+
+// Here creating A Component for Portfolio that will help to show all the projects.
+var Protfolio = function(){
+
+    // in this __init__ function will initlize the object.
+    this.__init__ = function(){
+        
+
+    }
+
+    this.load = function(){
+
+
+    }
+
+    this.__init__();
+}
+
 // Here's a Data Parser is being created that will help to parse all the data from jason file.
 
 var DataLoader = function(file){
     this.data_file = file
     this.profile = new Profile();
     this.services = new Services();
+    this.protfolio = new Protfolio();
 
     this.loadData = function(){
         fetch(this.data_file)
         .then(response => response.json())
         .then(data => {
 
+            // here fetching information about active theme.
+            var root = document.querySelector(':root');
+            var active_theme = root.style.getPropertyValue("--active-theme");
+
             // Here setting up profile data.
-            this.profile.load(data["author-info"]);
+            this.profile.load(data["author-info"], active_theme);
 
             // Here Setting up the services section.
             this.services.load(data["services"]);
+
+            // Here loading the portfolio.
+            // this.protfolio.load(data["protfolio"]);
 
         });
 
@@ -410,6 +471,8 @@ var ThemeManager = function(file){
             for (key in theme){
                 root.style.setProperty("--"+key, theme[key]);
             }
+
+            root.style.setProperty("--active-theme", name);
         });
     }
 
@@ -425,6 +488,8 @@ var ThemeManager = function(file){
             for (key in theme){
                 root.style.setProperty("--"+key, theme[key]);
             }
+
+            root.style.setProperty("--active-theme", active_theme);
         });
     }
 
