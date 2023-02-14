@@ -382,7 +382,7 @@ var StackWidgetPage = function(visible_element_count=9){
 
     this.__init__ = function(){
 
-        this.page = document.createAttribute("div");
+        this.page = document.createElement("div");
         this.page.setAttribute("class", "stack-widget-page");
         this.page.innerHTML = `
         <div id="contentHolder" class="stack-widget-content-page">
@@ -420,7 +420,7 @@ var StackWidgetPage = function(visible_element_count=9){
 
         button.addEventListener("click", this.navigateContent);
 
-        this.contentNavigators.append(button);
+        this.contentNavigators.insertBefore(button, this.nextButton);
         this.navigatorButtons.push(button);
         return button;
     }
@@ -492,8 +492,13 @@ var StackWidget = function(container){
     }
 
     this.switchToPage = (event)=>{
+        // here hiding the current active page.
         this.currentPage.page.style.display = "none";
-        //initial
+        
+        // here make the new active page visiable.
+        var newActivePageIndex = parseInt(event.currentTarget.getAttribute("index"));
+        this.currentPage = this.pages[newActivePageIndex];
+        this.currentPage.page.style.display = "initial";
     }
 
     this.addPage = (page, buttonToSwitch)=>{
@@ -516,12 +521,15 @@ var StackWidget = function(container){
 
 
 // Here Creating Card For Projects.
-var ProjectCard = function(jasonData, readMoreCallBack){
+var ProjectCard = function(jasonData, readMoreCallBack=null){
     this.jasonData = jasonData;
     this.readMoreCallBack = readMoreCallBack;
 
     this.readMore = ()=>{
-        this.readMoreCallBack(this.jasonData.readMore);
+        if(this.readMoreCallBack !== null){
+            this.readMoreCallBack(this.jasonData.readMore);
+        }
+        console.log("Read More Working");
     }
 
     // this function will help initlize the object.
@@ -530,7 +538,7 @@ var ProjectCard = function(jasonData, readMoreCallBack){
         this.card = document.createElement("div");
         this.card.setAttribute("class", "project-card button");
 
-        this.innerHTML = `
+        this.card.innerHTML = `
         <img src="${this.jasonData.image}" alt="">
 
         <p class="technology">${this.jasonData.technology}</p>
@@ -543,12 +551,19 @@ var ProjectCard = function(jasonData, readMoreCallBack){
             <h3 class="project-card-heading">${this.jasonData.name}</h3>
             <p class="project-card-description">${this.jasonData.description}</p>
 
-            <div class="view-button button">Read More</div>
+            <a id="read-more-link"><div class="view-button button">Read More</div></a>
 
         </div>`;
 
-        this.readMoreButton = this.card.querySelector(".view-button");
-        this.readMoreButton.addEventListener("click", this.readMore);
+        this.readMoreButton = this.card.querySelector("#read-more-link");
+
+        if (this.jasonData.isReadMoreLink){
+            this.readMoreButton.setAttribute("href", `${this.jasonData.readMore}`);
+            this.readMoreButton.setAttribute("target", "_blank");
+        }
+        else{
+            this.readMoreButton.addEventListener("click", this.readMore);
+        }
 
     }
 
@@ -562,6 +577,7 @@ var Protfolio = function(){
     this.jasonData = null;
     this.projectPageButtons = [];
     this.activePageButton = null;
+    this.projectCards = [];
 
     // in this __init__ function will initlize the object.
     this.__init__ = function(){
@@ -616,6 +632,17 @@ var Protfolio = function(){
             button.addEventListener("click", this.onPageChnage);
             this.projectPageButtonsContainer.append(button);
             this.projectPageButtons.push(button);
+
+            // Here Creating Page and this page will be added to stackWidget.
+            var stack_widget_page = new StackWidgetPage(6);
+
+            page.projects.forEach((projectJason)=>{
+                var projectCard = new ProjectCard(projectJason);
+                stack_widget_page.addElement(projectCard.card);
+                this.projectCards.push(projectCard);
+            });
+
+            this.stackWidget.addPage(stack_widget_page, button);
 
         });
 

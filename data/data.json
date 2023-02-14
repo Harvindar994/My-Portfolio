@@ -104,63 +104,123 @@
         "projects": [
             {
                 "name": "All Work",
-                "project": [
+                "projects": [
                     {
-                        "technology": "Python 3.8",
-                        "image": "",
-                        "icon": "",
-                        "name": "",
+                        "technology": "Python 3.8 | 2017",
+                        "image": "./data/projects/2.jpg",
+                        "icon": "fa-brands fa-python",
+                        "name": "Air Drop",
                         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "isReadMoreLink": false,
                         "readMore": {}
                     },
                     {
-                        "technology": "Python 3.9",
-                        "image": "",
-                        "icon": "",
-                        "name": "",
+                        "technology": "Python 3.8",
+                        "image": "./data/projects/2.jpg",
+                        "icon": "fa-brands fa-python",
+                        "name": "Air Drop",
                         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "technology": "Python 3.8",
+                        "image": "./data/projects/2.jpg",
+                        "icon": "fa-brands fa-python",
+                        "name": "Air Drop",
+                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "technology": "Python 3.8",
+                        "image": "./data/projects/2.jpg",
+                        "icon": "fa-brands fa-python",
+                        "name": "Air Drop",
+                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "technology": "Python 3.8",
+                        "image": "./data/projects/2.jpg",
+                        "icon": "fa-brands fa-python",
+                        "name": "Air Drop",
+                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "technology": "Python 3.8",
+                        "image": "./data/projects/2.jpg",
+                        "icon": "fa-brands fa-python",
+                        "name": "Air Drop",
+                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "technology": "Python 3.8",
+                        "image": "./data/projects/2.jpg",
+                        "icon": "fa-brands fa-python",
+                        "name": "Air Drop",
+                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "technology": "Python 3.8",
+                        "image": "./data/projects/2.jpg",
+                        "icon": "fa-brands fa-python",
+                        "name": "Air Drop",
+                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "isReadMoreLink": false,
                         "readMore": {}
                     }
                 ]
             },
             {
                 "name": "Personal Project",
-                "project": [
+                "projects": [
                     {
-                        "technology": "Java JDK-8",
-                        "image": "",
-                        "icon": "",
-                        "name": "",
+                        "technology": "C Sharp",
+                        "image": "./data/projects/2.jpg",
+                        "icon": "fa-brands fa-python",
+                        "name": "Air Drop",
                         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "isReadMoreLink": false,
                         "readMore": {}
                     },
                     {
-                        "technology": "Java JDK-8",
-                        "image": "",
-                        "icon": "",
-                        "name": "",
+                        "technology": "C Sharp",
+                        "image": "./data/projects/2.jpg",
+                        "icon": "fa-brands fa-python",
+                        "name": "Air Drop",
                         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
-                        "readMore": {}
+                        "isReadMoreLink": true,
+                        "readMore": "https://codepen.io/z-/pen/OBPJKK"
                     }
                 ]
             },
             {
                 "name": "Professional Projects",
-                "project": [
+                "projects": [
                     {
-                        "technology": "C Sharp",
-                        "image": "",
-                        "icon": "",
-                        "name": "",
+                        "technology": "Java JDK 8",
+                        "image": "./data/projects/2.jpg",
+                        "icon": "fa-brands fa-python",
+                        "name": "Air Drop",
                         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "isReadMoreLink": false,
                         "readMore": {}
                     },
                     {
-                        "technology": "C Sharp",
-                        "image": "",
-                        "icon": "",
-                        "name": "",
+                        "technology": "Java JDK 8",
+                        "image": "./data/projects/2.jpg",
+                        "icon": "fa-brands fa-python",
+                        "name": "Air Drop",
                         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "isReadMoreLink": false,
                         "readMore": {}
                     }
                 ]
