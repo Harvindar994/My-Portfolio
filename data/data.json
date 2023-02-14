@@ -102,7 +102,13 @@
 
         {
             "name": "All Work",
-            "project": []
+            "project": [
+                {
+                    "technology": "Python",
+                    "image": "",
+        
+                }
+            ]
         },
         {
             "name": "Personal Project",

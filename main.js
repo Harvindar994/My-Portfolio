@@ -370,12 +370,15 @@ var Services = function(){
 
 
 // Here creating Page element it will be a Stack Widget Page that will represent each page of StackWidget.
-var StackWidgetPage = function(show_element_count=9){
+var StackWidgetPage = function(visible_element_count=9){
 
     // this variable will represnt that how many elements will be visible on the page. and for the remaining element next button will be prepared for navigate on.
-    this.show_element_count = show_element_count;
+    this.visible_element_count = visible_element_count;
     this.elements = [];
-    this.visibleElements = [];
+    this.navigatorButtons = [];
+    this.nextButton = null;
+    this.isNavigatorButtonVisible = false;
+    this.currentPage = 0;
 
     this.__init__ = function(){
 
@@ -392,24 +395,69 @@ var StackWidgetPage = function(show_element_count=9){
 
         this.contentHolder = this.page.querySelector("#contentHolder");
         this.contentNavigators = this.page.querySelector("#contentNavigators");
-        
 
-        // only for temp use.
-        `<div class="button stack-widget-content-navigator">1</div>
-        <div class="button stack-widget-content-navigator">2</div>
-        <div class="button stack-widget-content-navigator">Next</div>
-        `
+        // here setting up content Navigator hidden initialy.
+        this.contentNavigators.style.visibility = "hidden";
+
+        // Here adding next button in navigators.
+        this.nextButton = document.createElement("div");
+        this.nextButton.innerText = "Next";
+        this.nextButton.setAttribute("class", "button stack-widget-content-navigator");
+        this.nextButton.setAttribute("index", "next");
+
+        this.nextButton.addEventListener("keypress", this.navigateContent);
+        this.contentNavigators.append(this.nextButton);
+
     }
 
     this.addNavigatorButton = function(buttonText, index){
-        
+        //<div class="button stack-widget-content-navigator">1</div>
+
+        var button = document.createElement("div");
+        button.innerText = buttonText;
+        button.setAttribute("class", "button stack-widget-content-navigator");
+        button.setAttribute("index", `${index}`);
+
+        button.addEventListener("keypress", this.navigateContent);
+
+        this.contentNavigators.append(button);
+        this.navigatorButtons.push(button);
+        return button;
+    }
+
+    this.getRangeOfCurrentPage = ()=>{
+        return {
+            start: this.visible_element_count * this.currentPage,
+            end: (this.visible_element_count * this.currentPage) + this.visible_element_count - 1
+        };
+    }
+
+    this.reManageNavigatorButton = ()=>{
+
     }
 
     this.addElement = function(element){
+        this.elements.push(element);
+        var index = this.elements.indexOf(element);
+        var currentRage = this.getRangeOfCurrentPage();
+        if (index >= currentRage.start && index <= currentRage.end){
+            this.contentHolder.append(element);
+        }
 
-    }
+        // here adding buttons.
+        var lastButton = 0;
+        if (this.elements.length % this.visible_element_count > 0)
+            lastButton += 1;
+        lastButton += parseInt(this.elements.length / this.visible_element_count);
 
-    this.hideElement = (elementObj)=>{
+        if(lastButton > this.navigatorButtons.length){
+            this.addNavigatorButton(`${lastButton}`, `${lastButton-1}`);
+            
+            if(this.navigatorButtons.length >= 2 && (!this.isNavigatorButtonVisible)){
+                this.contentNavigators.style.visibility = "visible";
+                this.isNavigatorButtonVisible = true;
+            }
+        }
 
     }
 
@@ -423,7 +471,8 @@ var StackWidgetPage = function(show_element_count=9){
 
 
 // Here Creating a Stack Widget that will help to switch between diffrent pages.
-var StackWidget = function(){
+var StackWidget = function(container){
+    this.container = container;
 
     // exactly not a constructor function but it will act like a constructor function.
     this.__init__ = function(){
@@ -432,24 +481,33 @@ var StackWidget = function(){
         this.pages = [];
 
         // this variable will the current active page.
-        this.active_page = null;
+        this.currentPage = null;
 
     }
 
     this.getPage = (index)=>{
-
-
+        if(index >= 0 && index < this.pages.length){
+            return this.page[index];
+        }
     }
 
     this.switchToPage = (event)=>{
-
+        this.currentPage.page.style.display = "none";
+        //initial
     }
 
-    this.connectButtonToPage = (button)=>{
+    this.addPage = (page, buttonToSwitch)=>{
+        this.pages.push(page);
+        this.container.append(page.page);
+        buttonToSwitch.setAttribute("index", `${this.pages.indexOf(page)}`);
+        buttonToSwitch.addEventListener("keypress", this.switchToPage);
 
-    }
-
-    this.addPage = (page)=>{
+        if(this.currentPage === null){
+            this.currentPage =  page;
+        }
+        else{
+            page.page.style.display = "none";
+        }
 
     }
 
