@@ -98,26 +98,73 @@
         }
     ],
 
-    "protfolio": [
-
-        {
-            "name": "All Work",
-            "project": [
-                {
-                    "technology": "Python",
-                    "image": "",
-        
-                }
-            ]
-        },
-        {
-            "name": "Personal Project",
-            "project": []
-        },
-        {
-            "name": "Professional Projects",
-            "project": []
-        }
-
-    ]
+    "protfolio": {
+        "heading": "My Work",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque perferendis maxime, voluptates magnam temporibus earum, ullam eveniet quod sequi, quo molestias harum atque accusamus eius.",
+        "projects": [
+            {
+                "name": "All Work",
+                "project": [
+                    {
+                        "technology": "Python 3.8",
+                        "image": "",
+                        "icon": "",
+                        "name": "",
+                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "readMore": {}
+                    },
+                    {
+                        "technology": "Python 3.9",
+                        "image": "",
+                        "icon": "",
+                        "name": "",
+                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "readMore": {}
+                    }
+                ]
+            },
+            {
+                "name": "Personal Project",
+                "project": [
+                    {
+                        "technology": "Java JDK-8",
+                        "image": "",
+                        "icon": "",
+                        "name": "",
+                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "readMore": {}
+                    },
+                    {
+                        "technology": "Java JDK-8",
+                        "image": "",
+                        "icon": "",
+                        "name": "",
+                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "readMore": {}
+                    }
+                ]
+            },
+            {
+                "name": "Professional Projects",
+                "project": [
+                    {
+                        "technology": "C Sharp",
+                        "image": "",
+                        "icon": "",
+                        "name": "",
+                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "readMore": {}
+                    },
+                    {
+                        "technology": "C Sharp",
+                        "image": "",
+                        "icon": "",
+                        "name": "",
+                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "readMore": {}
+                    }
+                ]
+            }
+        ]
+    }
 }

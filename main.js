@@ -405,7 +405,7 @@ var StackWidgetPage = function(visible_element_count=9){
         this.nextButton.setAttribute("class", "button stack-widget-content-navigator");
         this.nextButton.setAttribute("index", "next");
 
-        this.nextButton.addEventListener("keypress", this.navigateContent);
+        this.nextButton.addEventListener("click", this.navigateContent);
         this.contentNavigators.append(this.nextButton);
 
     }
@@ -418,7 +418,7 @@ var StackWidgetPage = function(visible_element_count=9){
         button.setAttribute("class", "button stack-widget-content-navigator");
         button.setAttribute("index", `${index}`);
 
-        button.addEventListener("keypress", this.navigateContent);
+        button.addEventListener("click", this.navigateContent);
 
         this.contentNavigators.append(button);
         this.navigatorButtons.push(button);
@@ -500,7 +500,7 @@ var StackWidget = function(container){
         this.pages.push(page);
         this.container.append(page.page);
         buttonToSwitch.setAttribute("index", `${this.pages.indexOf(page)}`);
-        buttonToSwitch.addEventListener("keypress", this.switchToPage);
+        buttonToSwitch.addEventListener("click", this.switchToPage);
 
         if(this.currentPage === null){
             this.currentPage =  page;
@@ -515,17 +515,109 @@ var StackWidget = function(container){
 }
 
 
-// Here creating A Component for Portfolio that will help to show all the projects.
-var Protfolio = function(){
+// Here Creating Card For Projects.
+var ProjectCard = function(jasonData, readMoreCallBack){
+    this.jasonData = jasonData;
+    this.readMoreCallBack = readMoreCallBack;
 
-    // in this __init__ function will initlize the object.
+    this.readMore = ()=>{
+        this.readMoreCallBack(this.jasonData.readMore);
+    }
+
+    // this function will help initlize the object.
     this.__init__ = function(){
-        
+
+        this.card = document.createElement("div");
+        this.card.setAttribute("class", "project-card button");
+
+        this.innerHTML = `
+        <img src="${this.jasonData.image}" alt="">
+
+        <p class="technology">${this.jasonData.technology}</p>
+
+        <div class="info">
+            
+            <div class="project-card-icon">
+                <i class="${this.jasonData.icon}"></i>
+            </div>
+            <h3 class="project-card-heading">${this.jasonData.name}</h3>
+            <p class="project-card-description">${this.jasonData.description}</p>
+
+            <div class="view-button button">Read More</div>
+
+        </div>`;
+
+        this.readMoreButton = this.card.querySelector(".view-button");
+        this.readMoreButton.addEventListener("click", this.readMore);
 
     }
 
-    this.load = function(){
+    this.__init__();
 
+} 
+
+
+// Here creating A Component for Portfolio that will help to show all the projects.
+var Protfolio = function(){
+    this.jasonData = null;
+    this.projectPageButtons = [];
+    this.activePageButton = null;
+
+    // in this __init__ function will initlize the object.
+    this.__init__ = function(){
+        this.heading = document.querySelector("#portfolioHeading");
+        this.description = document.querySelector("#portfolioDescription");
+
+        this.projectPageButtonsContainer = document.querySelector("#project-page-buttons");
+        this.stackWigetContainer = document.querySelector("#stackWidgetContainer");
+        
+        // here created the object stack widget that will all the pages and will only page at a time.
+        this.stackWidget = new StackWidget(this.stackWigetContainer);
+
+    }
+
+    this.onPageChnage = (event)=>{
+        if (this.activePageButton !== null){
+            this.activePageButton.classList.remove("project-active-btn");
+        }
+
+        this.activePageButton = event.currentTarget;
+        event.currentTarget.classList.add("project-active-btn");
+    }
+
+    this.load = function(jasonData){
+        this.jasonData = jasonData;
+
+        var heading_words = this.jasonData.heading.split(" ");
+        var headingText = ""
+        for (word of heading_words.slice(0, heading_words.length-1)){
+            headingText += `${word} `;
+        }
+        if(heading_words.length > 1){
+            headingText += `<span class="primary">${heading_words[heading_words.length-1]}</span>`;
+        }
+
+        this.heading.innerHTML = headingText;
+        this.description.innerText = this.jasonData.description;
+
+        this.jasonData.projects.forEach((page)=>{
+
+            // Here creating the page navigator button.
+            var button = document.createElement("div");
+            if (this.projectPageButtons.length === 0){
+                button.setAttribute("class", "button project-btn project-active-btn");
+                this.activePageButton = button;
+            }
+            else{
+                button.setAttribute("class", "button project-btn");
+            }
+
+            button.innerText = `${page.name}`;
+            button.addEventListener("click", this.onPageChnage);
+            this.projectPageButtonsContainer.append(button);
+            this.projectPageButtons.push(button);
+
+        });
 
     }
 
@@ -556,7 +648,7 @@ var DataLoader = function(file){
             this.services.load(data["services"]);
 
             // Here loading the portfolio.
-            // this.protfolio.load(data["protfolio"]);
+            this.protfolio.load(data["protfolio"]);
 
         });
 
