@@ -378,6 +378,10 @@ a{
     transform: translate(0%, 0%);
 }
 
+/* Style of Project Start's Here */
+
+/* Project Card Version 1 */
+
 .project-card{
     width: 367px;
     height: 408px;
@@ -391,9 +395,6 @@ a{
     cursor: auto;
 }
 
-/* .project-card::before{
-    background-color: #00000073;
-} */
 
 .project-card:hover{
     transition: 0.2s ease-in;
@@ -472,10 +473,181 @@ a{
     color: var(--common-color);
 }
 
+/* Project Card Version 2 */
+
+.projectCard{
+    width: 400px;
+    min-height: 395px;
+    background-color: var(--primary-bg-2);
+    border-radius: 25px;
+    display: inline-flex;
+    flex-direction: column;
+    padding: 25px 25px;
+    color: var(--common-color);
+    gap: 14px;
+    justify-content: space-around;
+    overflow: hidden;
+    z-index: 0;
+    position: relative;
+    transition: all 1s;
+}
+
+.projectCardSlideEffact::before {
+    content: "";
+    position: absolute;
+    background-color: var(--common-color);
+    width: 110%;
+    height: 450%;
+    transform: translate(-100%, 50%);
+    transition: all 0.5s;
+    border-radius: 100%;
+    z-index: -1;
+}
+
+.projectCardSlideEffact:hover::before {
+    transition: all 0.5s;
+    transform: translate(-10%, -5%);
+
+}
+
+.projectCardSlideEffact:hover {
+    color: var(--primary-bg-1);
+    transition: all 0.5s;
+    box-shadow: 10px 10px 32px rgba(var(--primary-font-color), 255);
+    transform: scale(1.03, 1.03);
+}
+
+.projectCardSlideEffact a{
+    color: var(--common-color);
+    transition: all 1s;
+}
+
+.projectCardSlideEffact:hover a{
+    color: var(--primary-bg-1);
+    transition: all 0.5s;
+}
+
+/* Project Card Container Sttyle End Here */
+
+.projectCardHead{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.projectCardHead .projectCardLogo{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    /* background-color: var(--common-color); */
+    /* padding: 7px; */
+    border-radius: 100%;
+}
+
+.projectCardHead .heading{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}   
+
+.projectCardHead .heading h3{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.projectCardHead .heading p{
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.proejctCardBody{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.proejctCardBody .shortDescription{
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.proejctCardBody .projectThumbnail{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.proejctCardBody .projectThumbnail .projectThumbnailImage{
+    width: 100%;
+    object-fit: cover;
+    height: 175px;
+    border-radius: 15px;
+}
+
+.proejctCardBody .projectThumbnail .projectThumbnailType{
+    position: absolute;
+    display: flex;
+    background: var(--common-color);
+    color: var(--primary-bg-2);
+    left: 10px;
+    bottom: 10px;
+    width: 28px;
+    height: 28px;
+    font-size: 0.8rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+}
+
+.proejctCardBody .projectThumbnail .videoPlayButton{
+    position: absolute;
+    font-size: 1.3rem;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(var(--primary-font-color), 70%);
+    border-radius: 100%;
+}
+
+.proejctCardBody .projectThumbnail .videoPlayButton i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.projectCardFooter{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    font-weight: 400;
+    padding: 0px 2px;
+}
+
+.projectCardFooter .projectTech{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.projectCardFooter .projectTech i{
+    font-size: 1.4rem;
+}
+
+.projectCardFooter .projectCardReadMoreButton{
+    background-color: rgba(var(--primary-font-color), 100%);
+    padding: 3px 13px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* Style of Project End Here */
+
 /* Here style sheet of ReadMore Viewer Start's that will to more content about you project. */
 
 .readMorePadding {
-    padding: 0px 50px;
+    padding: 0px 10% 1px 10%;
 }
 
 .readMoreViewer{
@@ -513,7 +685,7 @@ a{
     height: 40px;
     font-size: 1.1rem;
     border-radius: 100%;
-    background-color: rgba(var(--primary-font-color), 100%);
+    background-color: rgba(var(--primary-font-color), 70%);
 }
 
 .readMoreScrollContainer{
@@ -573,10 +745,6 @@ a{
     margin-bottom: 5px;
 }
 
-.readMoreViewerPage h1 span, h2 span, h3 span, h4 span{
-    color: rgba(var(--primary-font-color), 100%);
-}
-
 .readMoreViewerPage .dateTime div{
     background-color: var(--common-color);
     border-radius: 2px;
@@ -587,9 +755,28 @@ a{
     font-weight: 600;
 }
 
-.readMoreContent h2, h3, h4{
+/* ReadMore More Viewer Content Elements styles */
+
+.readMoreViewerPage .readMoreContent h2{
     margin-top: 30px;
     font-weight: 600;
+}
+
+.readMoreViewerPage .readMoreContent h3{
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+.readMoreViewerPage .readMoreContent h4{
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+.readMoreViewerPage h1 span,
+h2 span,
+h3 span,
+h4 span {
+    color: rgba(var(--primary-font-color), 100%);
 }
 
 .readMoreContent p span{
@@ -608,7 +795,7 @@ a{
 .readMorePadding .image img{
     width: 100%;
     object-fit: cover;
-    height: 379px;
+    /* height: 379px; */
     border-radius: 14px;
 }
 

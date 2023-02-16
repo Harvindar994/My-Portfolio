@@ -107,78 +107,7 @@
             {
                 "name": "All Work",
                 "projects": [
-                    {
-                        "technology": "Python 3.8 1",
-                        "image": "./data/projects/2.jpg",
-                        "icon": "fa-brands fa-python",
-                        "name": "Air Drop",
-                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
-                        "isReadMoreLink": false,
-                        "readMore": {}
-                    },
-                    {
-                        "technology": "Python 3.8 2",
-                        "image": "./data/projects/2.jpg",
-                        "icon": "fa-brands fa-python",
-                        "name": "Air Drop",
-                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
-                        "isReadMoreLink": false,
-                        "readMore": {}
-                    },
-                    {
-                        "technology": "Python 3.8 3",
-                        "image": "./data/projects/2.jpg",
-                        "icon": "fa-brands fa-python",
-                        "name": "Air Drop",
-                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
-                        "isReadMoreLink": false,
-                        "readMore": {}
-                    },
-                    {
-                        "technology": "Python 3.8 4",
-                        "image": "./data/projects/2.jpg",
-                        "icon": "fa-brands fa-python",
-                        "name": "Air Drop",
-                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
-                        "isReadMoreLink": false,
-                        "readMore": {}
-                    },
-                    {
-                        "technology": "Python 3.8 5",
-                        "image": "./data/projects/2.jpg",
-                        "icon": "fa-brands fa-python",
-                        "name": "Air Drop",
-                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
-                        "isReadMoreLink": false,
-                        "readMore": {}
-                    },
-                    {
-                        "technology": "Python 3.8 6",
-                        "image": "./data/projects/2.jpg",
-                        "icon": "fa-brands fa-python",
-                        "name": "Air Drop",
-                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
-                        "isReadMoreLink": false,
-                        "readMore": {}
-                    },
-                    {
-                        "technology": "Python 3.8 7",
-                        "image": "./data/projects/2.jpg",
-                        "icon": "fa-brands fa-python",
-                        "name": "Air Drop",
-                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
-                        "isReadMoreLink": false,
-                        "readMore": {}
-                    },
-                    {
-                        "technology": "Python 3.8 8",
-                        "image": "./data/projects/2.jpg",
-                        "icon": "fa-brands fa-python",
-                        "name": "Air Drop",
-                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
-                        "isReadMoreLink": false,
-                        "readMore": {}
-                    }
+                    
                 ]
             },
             {

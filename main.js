@@ -567,35 +567,75 @@ var ProjectCard = function (jasonData, readMoreCallBack = null) {
     // this function will help initlize the object.
     this.__init__ = function () {
 
+        // this.card = document.createElement("div");
+        // this.card.setAttribute("class", "project-card button");
+
+        // this.card.innerHTML = `
+        // <img src="${this.jasonData.image}" alt="">
+
+        // <p class="technology">${this.jasonData.technology}</p>
+
+        // <div class="info">
+
+        //     <div class="project-card-icon">
+        //         <i class="${this.jasonData.icon}"></i>
+        //     </div>
+        //     <h3 class="project-card-heading">${this.jasonData.name}</h3>
+        //     <p class="project-card-description">${this.jasonData.description}</p>
+
+        //     <a id="read-more-link"><div class="view-button button">Read More</div></a>
+
+        // </div>`;
+
+        // this.readMoreButton = this.card.querySelector("#read-more-link");
+
+        // if (this.jasonData.isReadMoreLink) {
+        //     this.readMoreButton.setAttribute("href", `${this.jasonData.readMore}`);
+        //     this.readMoreButton.setAttribute("target", "_blank");
+        // }
+        // else {
+        //     this.readMoreButton.addEventListener("click", this.readMore);
+        // }
+
+        // For Version 2.
         this.card = document.createElement("div");
-        this.card.setAttribute("class", "project-card button");
+        this.card.setAttribute("class", "projectCard");
 
         this.card.innerHTML = `
-        <img src="${this.jasonData.image}" alt="">
-
-        <p class="technology">${this.jasonData.technology}</p>
-
-        <div class="info">
+        <div class="projectCardHead">
+                
+            <img class="projectCardLogo" src="./data/projects/3.jpg" alt="">
             
-            <div class="project-card-icon">
-                <i class="${this.jasonData.icon}"></i>
+            <div class="heading">
+                <h3>Tommy Shelby</h3>
+                <p>January 2022 - 2030</p>
             </div>
-            <h3 class="project-card-heading">${this.jasonData.name}</h3>
-            <p class="project-card-description">${this.jasonData.description}</p>
 
-            <a id="read-more-link"><div class="view-button button">Read More</div></a>
+        </div>
 
-        </div>`;
+        <div class="proejctCardBody">
 
-        this.readMoreButton = this.card.querySelector("#read-more-link");
+            <p class="shortDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.</p>
 
-        if (this.jasonData.isReadMoreLink) {
-            this.readMoreButton.setAttribute("href", `${this.jasonData.readMore}`);
-            this.readMoreButton.setAttribute("target", "_blank");
-        }
-        else {
-            this.readMoreButton.addEventListener("click", this.readMore);
-        }
+            <div class="projectThumbnail">
+
+                <img class="projectThumbnailImage" src="./data/projects/4.jpg" alt="">
+
+                <div class="projectThumbnailType">
+                    <!-- <div class="video"><i class="fa-solid fa-circle-play"></i></div> -->
+                    <div class="image"><i class="fa-regular fa-image"></i></div>
+                </div>
+
+                <div class="videoPlayButton button"><i class="fa-sharp fa-solid fa-play"></i></div>
+
+            </div>
+
+        </div>
+
+        <div class="projectCardFooter">
+            <a herf="#" class="projectTech"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a class="projectCardReadMoreButton">Read More</a>
+        </div>`
 
     }
 
