@@ -2,9 +2,9 @@
     --common-color: #ffffff;
     --logo-font-color: #08c391;
     --primary-font-color: #08c391;
-    --primary-bg-1: #21272f;
+    --primary-bg-1: hsl(214, 18%, 16%);
     --primary-bg-2: #171c23;
-    
+    --read-more-viewer-bg: 33, 39, 47;
     --active-theme: "none";
 }
 
@@ -369,6 +369,15 @@ a{
     border-radius: 8px;
 }
 
+.stack-widget-navigator-active{
+    color: var(--primary-bg-1);
+}
+
+.stack-widget-navigator-active::before{
+    background-color: var(--common-color);
+    transform: translate(0%, 0%);
+}
+
 .project-card{
     width: 367px;
     height: 408px;
@@ -460,5 +469,174 @@ a{
 }
 
 .project-card .info .view-button:hover{
+    color: var(--common-color);
+}
+
+/* Here style sheet of ReadMore Viewer Start's that will to more content about you project. */
+
+.readMorePadding {
+    padding: 0px 50px;
+}
+
+.readMoreViewer{
+    display: none;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    width: 96%;
+    height: 96%;
+    z-index: 2;
+    background-color: rgba(var(--read-more-viewer-bg), 50%);
+    color: var(--common-color);
+    border-radius: 13px;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(5px);
+    /* border: 2px solid var(--common-color); */
+    overflow: hidden;
+    max-width: 1200px;
+    box-shadow: 0px 0px 28px rgba(var(--primary-font-color), 255);
+    transition: all 1s;
+    /* opacity: 0; */
+}
+
+.readMoreViewerCloseButtonContainer {
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    z-index: 2;
+}
+
+.readMoreViewerCloseButton {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    border-radius: 100%;
+    background-color: rgba(var(--primary-font-color), 100%);
+}
+
+.readMoreScrollContainer{
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+}
+
+.readMoreScrollContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.readMoreViewerPage{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.readMoreViewerCloseButton:hover::before{
+    transition: all 0.5s;
+    transform: translate(0%, 0%);
+}
+
+.featureImage {
+    width: 100%;
+    position: relative;
+}
+
+#readMoreFeatureImage{
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    /* -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); */
+    -webkit-mask-image: linear-gradient(black 70%, transparent);
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+.readMoreFeatureImageText{
+    position: absolute;
+    bottom: 26px;
+}
+
+.readMoreViewerPage .dateTime{
+    display: inline-flex;
+    background-color: rgba(var(--primary-font-color), 95%);
+    padding: 7px 18px;
+    border-radius: 4px;
+    width: initial;
+    font-size: 0.8rem;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.readMoreViewerPage h1 span, h2 span, h3 span, h4 span{
+    color: rgba(var(--primary-font-color), 100%);
+}
+
+.readMoreViewerPage .dateTime div{
+    background-color: var(--common-color);
+    border-radius: 2px;
+    margin-right: 17px;
+    color: var(--primary-bg-1);
+    padding: 4px 23px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.readMoreContent h2, h3, h4{
+    margin-top: 30px;
+    font-weight: 600;
+}
+
+.readMoreContent p span{
+    background-color: rgba(var(--primary-font-color), 100%);
+    color: var(--common-color);
+    padding: 0px 7px;
+    border-radius: 2px;
+}
+
+.readMorePadding .image{
+    background-color: rgba(var(--primary-font-color), 100%);
+    margin-top: 30px;
+    border-radius: 14px;
+}
+
+.readMorePadding .image img{
+    width: 100%;
+    object-fit: cover;
+    height: 379px;
+    border-radius: 14px;
+}
+
+.readMorePadding .image p{
+    padding: 9px 18px 17px 18px;
+    font-size: 0.9rem;
+}
+
+.codeSnippet{
+    border-radius: 13px;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+.codeSnippet .text{
+    background-color: rgba(var(--primary-font-color), 100%);
+    padding: 13px 30px;
+}
+
+.codeSnippet pre{
+    background-color: var(--primary-bg-2);
+    padding: 30px 30px;
+}
+
+.readMoreFooter{
+    background-color: rgba(var(--primary-font-color), 100%);
+    padding: 15px 48px;
+    margin-top: 30px;
+    text-align: center;
     color: var(--common-color);
 }
