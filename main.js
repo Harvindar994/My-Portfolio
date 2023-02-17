@@ -553,15 +553,25 @@ var StackWidget = function (container) {
 
 
 // Here Creating Card For Projects.
-var ProjectCard = function (jasonData, readMoreCallBack = null) {
+var ProjectCard = function (jasonData, readMoreCallBack = null, options = null) {
     this.jasonData = jasonData;
+    this.options = options;
     this.readMoreCallBack = readMoreCallBack;
+    this.callBackFunctionData = null;
 
     this.readMore = () => {
         if (this.readMoreCallBack !== null) {
             this.readMoreCallBack(this.jasonData.readMore);
         }
         console.log("Read More Working");
+    }
+
+    this.viewImages = () => {
+        console.log("View Image Function is Working");
+    }
+
+    this.playVideo = () => {
+        console.log("Video Play Working");
     }
 
     // this function will help initlize the object.
@@ -599,31 +609,37 @@ var ProjectCard = function (jasonData, readMoreCallBack = null) {
 
         // For Version 2.
         this.card = document.createElement("div");
-        this.card.setAttribute("class", "projectCard");
+
+        if (this.options !== null && this.options.activeCardHoverEffect) {
+            this.card.setAttribute("class", "projectCard projectCardSlideEffact");
+        }
+        else {
+            this.card.setAttribute("class", "projectCard");
+        }
 
         this.card.innerHTML = `
         <div class="projectCardHead">
                 
-            <img class="projectCardLogo" src="./data/projects/3.jpg" alt="">
+            <img class="projectCardLogo" src="${this.jasonData.icon}" alt="">
             
             <div class="heading">
-                <h3>Tommy Shelby</h3>
-                <p>January 2022 - 2030</p>
+                <h3>${this.jasonData.name}</h3>
+                <p>${this.jasonData.dateTime}</p>
             </div>
 
         </div>
 
         <div class="proejctCardBody">
 
-            <p class="shortDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.</p>
+            <p class="shortDescription">${this.jasonData.description}</p>
 
             <div class="projectThumbnail">
 
-                <img class="projectThumbnailImage" src="./data/projects/4.jpg" alt="">
+                <img class="projectThumbnailImage" src="${this.jasonData.thumbnailImage}" alt="">
 
                 <div class="projectThumbnailType">
-                    <!-- <div class="video"><i class="fa-solid fa-circle-play"></i></div> -->
-                    <div class="image"><i class="fa-regular fa-image"></i></div>
+                    
+                
                 </div>
 
                 <div class="videoPlayButton button"><i class="fa-sharp fa-solid fa-play"></i></div>
@@ -633,9 +649,39 @@ var ProjectCard = function (jasonData, readMoreCallBack = null) {
         </div>
 
         <div class="projectCardFooter">
-            <a herf="#" class="projectTech"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a herf="${this.jasonData.github}" class="projectTech"><i class="fa-brands fa-github"></i> GitHub</a>
             <a class="projectCardReadMoreButton">Read More</a>
         </div>`
+
+        // Here Connecting Read More Button.
+        this.readMoreButton = this.card.querySelector(".projectCardReadMoreButton");
+
+        if (this.jasonData.isReadMoreLink) {
+            this.readMoreButton.setAttribute("href", `${this.jasonData.readMore}`);
+            this.readMoreButton.setAttribute("target", "_blank");
+        }
+        else {
+            this.readMoreButton.addEventListener("click", this.readMore);
+        }
+
+        // Here fecting the video button from web element.
+        this.videoPlayButton = this.card.querySelector(".videoPlayButton");
+        this.videoPlayButton.addEventListener("click", this.playVideo)
+
+        // Here changing the the d=media type icon based on source.
+        var projectThumbnailType = this.card.querySelector(".projectThumbnailType");
+
+        if (this.jasonData.showUpType === "image" || this.jasonData.showUpType === "images") {
+            projectThumbnailType.innerHTML = `<div class="image"><i class="fa-regular fa-image"></i></div>`;
+            this.videoPlayButton.style.display = "none";
+
+            var projectThumbnailContainer = this.card.querySelector(".projectThumbnail");
+            projectThumbnailContainer.addEventListener("click", this.viewImages);
+            projectThumbnailContainer.style.cursor = "zoom-in";
+        }
+        else if (this.jasonData.showUpType === "video") {
+            projectThumbnailType.innerHTML = `<div class="video"><i class="fa-solid fa-circle-play"></i></div>`;
+        }
 
     }
 
@@ -744,7 +790,7 @@ var Protfolio = function () {
             var stack_widget_page = new StackWidgetPage(6);
 
             page.projects.forEach((projectJason) => {
-                var projectCard = new ProjectCard(projectJason, this.readMoreViewer.show);
+                var projectCard = new ProjectCard(projectJason, this.readMoreViewer.show, this.jasonData.options);
                 stack_widget_page.addElement(projectCard.card);
                 this.projectCards.push(projectCard);
             });

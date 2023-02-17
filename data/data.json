@@ -103,33 +103,152 @@
     "protfolio": {
         "heading": "My Work",
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque perferendis maxime, voluptates magnam temporibus earum, ullam eveniet quod sequi, quo molestias harum atque accusamus eius.",
+        "options": {
+            "activeCardHoverEffect": false
+        },
         "projects": [
             {
                 "name": "All Work",
                 "projects": [
-                    
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "image",
+                        "//showUpType can be": "image, images, video",
+                        "showUp": "",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "image",
+                        "//showUpType can be": "image, images, video",
+                        "showUp": "",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "image",
+                        "//showUpType can be": "image, images, video",
+                        "showUp": "",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "image",
+                        "//showUpType can be": "image, images, video",
+                        "showUp": "",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "image",
+                        "//showUpType can be": "image, images, video",
+                        "showUp": "",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "image",
+                        "//showUpType can be": "image, images, video",
+                        "showUp": "",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "image",
+                        "//showUpType can be": "image, images, video",
+                        "showUp": "",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    }
                 ]
             },
             {
                 "name": "Personal Project",
                 "projects": [
                     {
-                        "technology": "C Sharp",
-                        "image": "./data/projects/2.jpg",
-                        "icon": "fa-brands fa-python",
+                        "icon": "./data/projects/python.png",
                         "name": "Air Drop",
-                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "image, images, video",
+                        "showUp": "",
+
+                        "github": "#",
                         "isReadMoreLink": false,
                         "readMore": {}
                     },
                     {
-                        "technology": "C Sharp",
-                        "image": "./data/projects/2.jpg",
-                        "icon": "fa-brands fa-python",
+                        "icon": "./data/projects/python.png",
                         "name": "Air Drop",
-                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
-                        "isReadMoreLink": true,
-                        "readMore": "https://codepen.io/z-/pen/OBPJKK"
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "image",
+                        "//showUpType can be": "image, images, video",
+                        "showUp": "",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
                     }
                 ]
             },
@@ -137,20 +256,32 @@
                 "name": "Professional Projects",
                 "projects": [
                     {
-                        "technology": "Java JDK 8",
-                        "image": "./data/projects/2.jpg",
-                        "icon": "fa-brands fa-python",
+                        "icon": "./data/projects/python.png",
                         "name": "Air Drop",
-                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "image",
+                        "//showUpType can be": "image, images, video",
+                        "showUp": "",
+
+                        "github": "#",
                         "isReadMoreLink": false,
                         "readMore": {}
                     },
                     {
-                        "technology": "Java JDK 8",
-                        "image": "./data/projects/2.jpg",
-                        "icon": "fa-brands fa-python",
+                        "icon": "./data/projects/python.png",
                         "name": "Air Drop",
-                        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla.",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "image",
+                        "//showUpType can be": "image, images, video",
+                        "showUp": "",
+
+                        "github": "#",
                         "isReadMoreLink": false,
                         "readMore": {}
                     }
