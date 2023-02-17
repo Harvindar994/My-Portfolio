@@ -569,47 +569,27 @@ var ProjectCard = function (jasonData, readMoreCallBack = null, options = null, 
     }
 
     this.viewImages = () => {
+        if (this.imageViewCallBack === null){
+            console.log("Didn't recived any call function to show image.");
+            return;
+        }
         console.log("View Image Function is Working");
     }
 
     this.playVideo = () => {
-        console.log("Video Play Working");
+        if (this.playVideoCallBack === null){
+            console.log("Didn't recived any call function to play video.");
+            return;
+        }
+        this.playVideoCallBack(this.jasonData.showUp);
+    }
+
+    this.rebuildYoutubeUrl = (urk)=>{
+
     }
 
     // this function will help initlize the object.
     this.__init__ = function () {
-
-        // this.card = document.createElement("div");
-        // this.card.setAttribute("class", "project-card button");
-
-        // this.card.innerHTML = `
-        // <img src="${this.jasonData.image}" alt="">
-
-        // <p class="technology">${this.jasonData.technology}</p>
-
-        // <div class="info">
-
-        //     <div class="project-card-icon">
-        //         <i class="${this.jasonData.icon}"></i>
-        //     </div>
-        //     <h3 class="project-card-heading">${this.jasonData.name}</h3>
-        //     <p class="project-card-description">${this.jasonData.description}</p>
-
-        //     <a id="read-more-link"><div class="view-button button">Read More</div></a>
-
-        // </div>`;
-
-        // this.readMoreButton = this.card.querySelector("#read-more-link");
-
-        // if (this.jasonData.isReadMoreLink) {
-        //     this.readMoreButton.setAttribute("href", `${this.jasonData.readMore}`);
-        //     this.readMoreButton.setAttribute("target", "_blank");
-        // }
-        // else {
-        //     this.readMoreButton.addEventListener("click", this.readMore);
-        // }
-
-        // For Version 2.
         this.card = document.createElement("div");
 
         if (this.options !== null && this.options.activeCardHoverEffect) {
@@ -673,7 +653,7 @@ var ProjectCard = function (jasonData, readMoreCallBack = null, options = null, 
         // Here changing the the d=media type icon based on source.
         var projectThumbnailType = this.card.querySelector(".projectThumbnailType");
 
-        if (this.jasonData.showUpType === "image" || this.jasonData.showUpType === "images") {
+        if (this.jasonData.showUpType === "images" || this.jasonData.showUpType === "image") {
             projectThumbnailType.innerHTML = `<div class="image"><i class="fa-regular fa-image"></i></div>`;
             this.videoPlayButton.style.display = "none";
 
@@ -681,7 +661,7 @@ var ProjectCard = function (jasonData, readMoreCallBack = null, options = null, 
             projectThumbnailContainer.addEventListener("click", this.viewImages);
             projectThumbnailContainer.style.cursor = "zoom-in";
         }
-        else if (this.jasonData.showUpType === "video") {
+        else if (this.jasonData.showUpType === "video" || this.jasonData.showUpType === "youtube-url") {
             projectThumbnailType.innerHTML = `<div class="video"><i class="fa-solid fa-circle-play"></i></div>`;
         }
 
@@ -764,7 +744,7 @@ var OverlayVideoPlayer = function(maxPlayerWidth=1280, maxPlayerHeight=720, marg
     }
 
     this.playVideo = (url)=>{
-        console.log(url);
+        this.onWindowResize({currentTarget: window});
         this.videoPlayer.setAttribute("src", url);
         this.videoViewerOverlay.style.display = "flex";
     }
@@ -781,7 +761,7 @@ var OverlayVideoPlayer = function(maxPlayerWidth=1280, maxPlayerHeight=720, marg
         this.videoPlayer =  document.querySelector("#videoViewerPlayer");
 
         window.addEventListener("resize", this.onWindowResize);
-        this.closeButton.addEventListener("click", this.closeButton);
+        this.closeButton.addEventListener("click", this.close);
     }
 
     this.__init__();
@@ -855,7 +835,7 @@ var Protfolio = function () {
             var stack_widget_page = new StackWidgetPage(6);
 
             page.projects.forEach((projectJason) => {
-                var projectCard = new ProjectCard(projectJason, this.readMoreViewer.show, this.jasonData.options);
+                var projectCard = new ProjectCard(projectJason, this.readMoreViewer.show, this.jasonData.options, this.overlayVideoPlayer.playVideo);
                 stack_widget_page.addElement(projectCard.card);
                 this.projectCards.push(projectCard);
             });
