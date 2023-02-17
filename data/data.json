@@ -132,9 +132,9 @@
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
                         "thumbnailImage": "./data/projects/4.jpg",
                         
-                        "showUpType": "image",
-                        "//showUpType can be": "image, images, video",
-                        "showUp": "",
+                        "showUpType": "images",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
 
                         "github": "#",
                         "isReadMoreLink": false,
@@ -147,9 +147,9 @@
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
                         "thumbnailImage": "./data/projects/4.jpg",
                         
-                        "showUpType": "image",
-                        "//showUpType can be": "image, images, video",
-                        "showUp": "",
+                        "showUpType": "images",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
 
                         "github": "#",
                         "isReadMoreLink": false,
@@ -162,9 +162,9 @@
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
                         "thumbnailImage": "./data/projects/4.jpg",
                         
-                        "showUpType": "image",
-                        "//showUpType can be": "image, images, video",
-                        "showUp": "",
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
 
                         "github": "#",
                         "isReadMoreLink": false,
@@ -177,9 +177,9 @@
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
                         "thumbnailImage": "./data/projects/4.jpg",
                         
-                        "showUpType": "image",
-                        "//showUpType can be": "image, images, video",
-                        "showUp": "",
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
 
                         "github": "#",
                         "isReadMoreLink": false,
@@ -192,9 +192,9 @@
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
                         "thumbnailImage": "./data/projects/4.jpg",
                         
-                        "showUpType": "image",
-                        "//showUpType can be": "image, images, video",
-                        "showUp": "",
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
 
                         "github": "#",
                         "isReadMoreLink": false,
@@ -207,9 +207,24 @@
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
                         "thumbnailImage": "./data/projects/4.jpg",
                         
-                        "showUpType": "image",
-                        "//showUpType can be": "image, images, video",
-                        "showUp": "",
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
 
                         "github": "#",
                         "isReadMoreLink": false,
@@ -228,8 +243,8 @@
                         "thumbnailImage": "./data/projects/4.jpg",
                         
                         "showUpType": "video",
-                        "//showUpType can be": "image, images, video",
-                        "showUp": "",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
 
                         "github": "#",
                         "isReadMoreLink": false,
@@ -242,9 +257,99 @@
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
                         "thumbnailImage": "./data/projects/4.jpg",
                         
-                        "showUpType": "image",
-                        "//showUpType can be": "image, images, video",
-                        "showUp": "",
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
 
                         "github": "#",
                         "isReadMoreLink": false,
@@ -262,9 +367,9 @@
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
                         "thumbnailImage": "./data/projects/4.jpg",
                         
-                        "showUpType": "image",
-                        "//showUpType can be": "image, images, video",
-                        "showUp": "",
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
 
                         "github": "#",
                         "isReadMoreLink": false,
@@ -277,9 +382,99 @@
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
                         "thumbnailImage": "./data/projects/4.jpg",
                         
-                        "showUpType": "image",
-                        "//showUpType can be": "image, images, video",
-                        "showUp": "",
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {}
+                    },
+                    {
+                        "icon": "./data/projects/python.png",
+                        "name": "Air Drop",
+                        "dateTime": "15 Months Ago",
+                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
+                        "thumbnailImage": "./data/projects/4.jpg",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
 
                         "github": "#",
                         "isReadMoreLink": false,
