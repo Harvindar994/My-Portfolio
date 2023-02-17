@@ -553,10 +553,12 @@ var StackWidget = function (container) {
 
 
 // Here Creating Card For Projects.
-var ProjectCard = function (jasonData, readMoreCallBack = null, options = null) {
+var ProjectCard = function (jasonData, readMoreCallBack = null, options = null, playVideoCallBack=null, imageViewCallBack=null) {
     this.jasonData = jasonData;
     this.options = options;
     this.readMoreCallBack = readMoreCallBack;
+    this.playVideoCallBack = playVideoCallBack;
+    this.imageViewCallBack = imageViewCallBack;
     this.callBackFunctionData = null;
 
     this.readMore = () => {
@@ -723,6 +725,68 @@ var ReadMoreViewer = function () {
     this.__init__();
 }
 
+// Here creating an component for playing video that will be overlayed on top of the page.
+var OverlayVideoPlayer = function(maxPlayerWidth=1280, maxPlayerHeight=720, margin=10){
+    this.maxPlayerWidth = maxPlayerWidth;
+    this.maxPlayerHeight = maxPlayerHeight;
+    this.aspectRationHeight = this.maxPlayerHeight / this.maxPlayerWidth;
+    this.aspectRationWidth = this.maxPlayerWidth / this.maxPlayerHeight;
+    this.margin = margin;
+
+    this.removePxFromNumbers = function (str) {
+        return parseInt(str.slice(0, str.length - 2));
+    }
+
+    this.onWindowResize = (event)=>{
+        var windowWidth = event.currentTarget.innerWidth;
+        var windowHeight = event.currentTarget.innerHeight;
+
+        var videoConatinerWidth = this.removePxFromNumbers(this.videoPlayerConatiner.style.width);
+
+        if (windowWidth < this.maxPlayerWidth + (this.margin * 2) || windowHeight < this.maxPlayerHeight + (this.margin * 2)){
+
+            var newPlayerWidth = windowWidth - (this.margin * 4);
+            var newPlayerHeight = newPlayerWidth * this.aspectRationHeight;
+
+            if((newPlayerHeight + (this.margin * 2)) > windowHeight){
+                newPlayerHeight = windowHeight - (this.margin * 2);
+                newPlayerWidth = newPlayerHeight * this.aspectRationWidth; 
+            }
+
+            this.videoPlayerConatiner.style.width = `${newPlayerWidth}px`;
+            this.videoPlayerConatiner.style.height = `${newPlayerHeight}px`;
+
+        }
+        else if(videoConatinerWidth !== this.maxPlayerWidth){
+            this.videoPlayerConatiner.style.width = `${this.maxPlayerWidth}px`;
+            this.videoPlayerConatiner.style.height = `${this.maxPlayerHeight}px`;
+        }
+    }
+
+    this.playVideo = (url)=>{
+        console.log(url);
+        this.videoPlayer.setAttribute("src", url);
+        this.videoViewerOverlay.style.display = "flex";
+    }
+
+    this.close = ()=>{
+        this.videoPlayer.setAttribute("src", "");
+        this.videoViewerOverlay.style.display = "none";
+    }
+
+    this.__init__ = function(){
+        this.videoViewerOverlay = document.querySelector(".videoViewer");
+        this.closeButton = document.querySelector("#videoViewerCloseButton");
+        this.videoPlayerConatiner = document.querySelector("#videoViewerPlayerContainer");
+        this.videoPlayer =  document.querySelector("#videoViewerPlayer");
+
+        window.addEventListener("resize", this.onWindowResize);
+        this.closeButton.addEventListener("click", this.closeButton);
+    }
+
+    this.__init__();
+}
+
 
 // Here creating A Component for Portfolio that will help to show all the projects.
 var Protfolio = function () {
@@ -731,6 +795,7 @@ var Protfolio = function () {
     this.activePageButton = null;
     this.projectCards = [];
     this.readMoreViewer = new ReadMoreViewer();
+    this.overlayVideoPlayer = new OverlayVideoPlayer();
 
     // in this __init__ function will initlize the object.
     this.__init__ = function () {
