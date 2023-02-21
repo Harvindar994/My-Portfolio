@@ -10,6 +10,8 @@
         transition: all 0.5s;
         padding: 0px 5% 1px 5%;
     }
+
+    /* Here making 1 section resposive that is intro section */
     
     .logo img{
         display: initial;
@@ -60,4 +62,31 @@
         font-size: 1.7rem;
     }
 
+    /* intro section style ends */
+
+    /* Here style of project section start's */
+
+    .portfolio-heading{
+        padding: 90px 0px 0px 0px;
+    }
+
+    .portfolio-heading h1{
+        font-size: 2.1rem;
+    }
+
+    .portfolio-heading p{
+
+    }
+
+    #projects .project-buttons{
+        padding: 39px 0px;
+        font-size: 0.9rem;
+    }
+
+    .project-btn{
+        padding: 17px 20px;
+        text-align: center;
+    }
+
+    /* here style of project section end's */
 }
