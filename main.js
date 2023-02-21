@@ -553,7 +553,7 @@ var StackWidget = function (container) {
 
 
 // Here Creating Card For Projects.
-var ProjectCard = function (jasonData, readMoreCallBack = null, options = null, playVideoCallBack=null, imageViewCallBack=null) {
+var ProjectCard = function (jasonData, readMoreCallBack = null, options = null, playVideoCallBack = null, imageViewCallBack = null) {
     this.jasonData = jasonData;
     this.options = options;
     this.readMoreCallBack = readMoreCallBack;
@@ -565,26 +565,25 @@ var ProjectCard = function (jasonData, readMoreCallBack = null, options = null, 
         if (this.readMoreCallBack !== null) {
             this.readMoreCallBack(this.jasonData.readMore);
         }
-        console.log("Read More Working");
     }
 
     this.viewImages = () => {
-        if (this.imageViewCallBack === null){
+        if (this.imageViewCallBack === null) {
             console.log("Didn't recived any call function to show image.");
             return;
         }
-        console.log("View Image Function is Working");
+        this.imageViewCallBack(this.jasonData.showUp);
     }
 
     this.playVideo = () => {
-        if (this.playVideoCallBack === null){
+        if (this.playVideoCallBack === null) {
             console.log("Didn't recived any call function to play video.");
             return;
         }
         this.playVideoCallBack(this.jasonData.showUp);
     }
 
-    this.rebuildYoutubeUrl = (urk)=>{
+    this.rebuildYoutubeUrl = (urk) => {
 
     }
 
@@ -706,7 +705,7 @@ var ReadMoreViewer = function () {
 }
 
 // Here creating an component for playing video that will be overlayed on top of the page.
-var OverlayVideoPlayer = function(maxPlayerWidth=1280, maxPlayerHeight=720, margin=10){
+var OverlayVideoPlayer = function (maxPlayerWidth = 1280, maxPlayerHeight = 720, margin = 10) {
     this.maxPlayerWidth = maxPlayerWidth;
     this.maxPlayerHeight = maxPlayerHeight;
     this.aspectRationHeight = this.maxPlayerHeight / this.maxPlayerWidth;
@@ -717,50 +716,148 @@ var OverlayVideoPlayer = function(maxPlayerWidth=1280, maxPlayerHeight=720, marg
         return parseInt(str.slice(0, str.length - 2));
     }
 
-    this.onWindowResize = (event)=>{
+    this.onWindowResize = (event) => {
         var windowWidth = event.currentTarget.innerWidth;
         var windowHeight = event.currentTarget.innerHeight;
 
         var videoConatinerWidth = this.removePxFromNumbers(this.videoPlayerConatiner.style.width);
 
-        if (windowWidth < this.maxPlayerWidth + (this.margin * 2) || windowHeight < this.maxPlayerHeight + (this.margin * 2)){
+        if (windowWidth < this.maxPlayerWidth + (this.margin * 2) || windowHeight < this.maxPlayerHeight + (this.margin * 2)) {
 
             var newPlayerWidth = windowWidth - (this.margin * 4);
             var newPlayerHeight = newPlayerWidth * this.aspectRationHeight;
 
-            if((newPlayerHeight + (this.margin * 2)) > windowHeight){
+            if ((newPlayerHeight + (this.margin * 2)) > windowHeight) {
                 newPlayerHeight = windowHeight - (this.margin * 2);
-                newPlayerWidth = newPlayerHeight * this.aspectRationWidth; 
+                newPlayerWidth = newPlayerHeight * this.aspectRationWidth;
             }
 
             this.videoPlayerConatiner.style.width = `${newPlayerWidth}px`;
             this.videoPlayerConatiner.style.height = `${newPlayerHeight}px`;
 
         }
-        else if(videoConatinerWidth !== this.maxPlayerWidth){
+        else if (videoConatinerWidth !== this.maxPlayerWidth) {
             this.videoPlayerConatiner.style.width = `${this.maxPlayerWidth}px`;
             this.videoPlayerConatiner.style.height = `${this.maxPlayerHeight}px`;
         }
     }
 
-    this.playVideo = (url)=>{
-        this.onWindowResize({currentTarget: window});
+    this.playVideo = (url) => {
+        this.onWindowResize({ currentTarget: window });
         this.videoPlayer.setAttribute("src", url);
         this.videoViewerOverlay.style.display = "flex";
     }
 
-    this.close = ()=>{
+    this.close = () => {
         this.videoPlayer.setAttribute("src", "");
         this.videoViewerOverlay.style.display = "none";
     }
 
-    this.__init__ = function(){
+    this.__init__ = function () {
         this.videoViewerOverlay = document.querySelector(".videoViewer");
         this.closeButton = document.querySelector("#videoViewerCloseButton");
         this.videoPlayerConatiner = document.querySelector("#videoViewerPlayerContainer");
-        this.videoPlayer =  document.querySelector("#videoViewerPlayer");
+        this.videoPlayer = document.querySelector("#videoViewerPlayer");
 
         window.addEventListener("resize", this.onWindowResize);
+        this.closeButton.addEventListener("click", this.close);
+    }
+
+    this.__init__();
+}
+
+
+// here Creating and Component of Overlay Image Viewer.
+var OverlayImageViewer = function () {
+    this.slides = [];
+    this.carosuleSimulator = null;
+
+    this.createSlide = (image, text = null) => {
+        var slide = document.createElement("div");
+        slide.classList.add("slide");
+
+        if (text !== null) {
+            slide.innerHTML = `
+            <img src="${image}" alt="">
+            <div class="text">${text}</div>
+            `;
+        }
+        else {
+            slide.innerHTML = `
+            <img src="${image}" alt="">
+            `;
+        }
+
+        return slide;
+    }
+
+    this.removeAllSlides = () => {
+        this.imageViewerConatiner.innerHTML = "";
+        this.slides = [];
+    }
+
+    this.showNavigationButtons = () => {
+        this.navigationButtons.style.display = null;
+    }
+
+    this.hideNavigationButtons = () => {
+        this.navigationButtons.style.display = "none";
+    }
+
+    this.show = () => {
+        this.imageViewerOverlay.style.display = "initial";
+    }
+
+    this.close = () => {
+        this.imageViewerOverlay.style.display = "none";
+    }
+
+    this.viewImages = (images) => {
+        // Here removing all the content added before.
+        this.removeAllSlides();
+
+        if (typeof (images) === 'string') {
+
+            this.hideNavigationButtons();
+            this.carosuleSimulator = null;
+
+            var slide = this.createSlide(images);
+            this.slides.push(slide);
+            this.imageViewerConatiner.append(slide);
+
+        }
+        else {
+
+            for (var jasonSlide of images) {
+                var slide = this.createSlide(jasonSlide.image, jasonSlide.text);
+                this.slides.push(slide);
+                this.imageViewerConatiner.append(slide);
+            }
+
+            if (images.length === 1) {
+
+                this.hideNavigationButtons();
+            }
+            else if (images.length > 1) {
+                this.carosuleSimulator = new CarosuleSimulator(this.imageViewerConatiner, 0, true, 0, this.navigationLeft, this.navigationRight, 0, 0);
+
+                this.carosuleSimulator.__init__();
+            }
+        }
+
+        this.show();
+    }
+
+    this.__init__ = function () {
+        this.imageViewerOverlay = document.querySelector(".imageViewer");
+        this.closeButton = document.querySelector("#imageViewerCloseButton");
+        this.imageViewerConatiner = document.querySelector("#imageViewerSlidesContainer");
+
+        this.navigationButtons = document.querySelector(".imageViewerLeftRightButtons");
+        this.navigationLeft = document.querySelector("#imageViewerLeftButton");
+        this.navigationRight = document.querySelector("#imageViewerRightButton");
+
+        // here connecting buttons.
         this.closeButton.addEventListener("click", this.close);
     }
 
@@ -776,6 +873,7 @@ var Protfolio = function () {
     this.projectCards = [];
     this.readMoreViewer = new ReadMoreViewer();
     this.overlayVideoPlayer = new OverlayVideoPlayer();
+    this.overlayImageViewer = new OverlayImageViewer();
 
     // in this __init__ function will initlize the object.
     this.__init__ = function () {
@@ -835,7 +933,7 @@ var Protfolio = function () {
             var stack_widget_page = new StackWidgetPage(6);
 
             page.projects.forEach((projectJason) => {
-                var projectCard = new ProjectCard(projectJason, this.readMoreViewer.show, this.jasonData.options, this.overlayVideoPlayer.playVideo);
+                var projectCard = new ProjectCard(projectJason, this.readMoreViewer.show, this.jasonData.options, this.overlayVideoPlayer.playVideo, this.overlayImageViewer.viewImages);
                 stack_widget_page.addElement(projectCard.card);
                 this.projectCards.push(projectCard);
             });
