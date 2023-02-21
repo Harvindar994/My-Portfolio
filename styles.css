@@ -1,8 +1,31 @@
+/* 
+
 :root {
     --common-color: #ffffff;
     --logo-font-color: #08c391;
     --primary-font-color: #08c391;
-    --primary-bg-1: hsl(214, 18%, 16%);
+    --primary-bg-1: #212830;
+    --primary-bg-2: #171c23;
+    --read-more-viewer-bg: 33, 39, 47;
+    --active-theme: "none";
+}
+
+*/
+/* 
+:root{
+    logo-font-color: #292d3e;
+    primary-font-color: rgb(235, 69, 95);
+    primary-bg-1:  #ffffff;
+    primary-bg-2:  #e4e7e7;
+    common-color: #292d3e;
+    read-more-viewer-bg : rgb(255, 255, 255);
+} */
+
+:root {
+    --common-color: #ffffff;
+    --logo-font-color: #08c391;
+    --primary-font-color: #08c391;
+    --primary-bg-1: #212830;
     --primary-bg-2: #171c23;
     --read-more-viewer-bg: 33, 39, 47;
     --active-theme: "none";
@@ -22,12 +45,13 @@
 
 a{
     text-decoration: none;
-    color: var(--common-color);
+    color: rgba(var(--common-color), 100%);
 }
 
 /* Here some somman elements */
 
 .container{
+    transition: all 0.5s;
     padding: 0px 10% 1px 10%;
 }
 
@@ -39,7 +63,7 @@ a{
     font-weight: 500;
     position: relative;
     background-color: rgba(var(--primary-font-color), 255);
-    color: var(--common-color);
+    color: rgba(var(--common-color), 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +76,7 @@ a{
 .button::before {
     content: "";
     position: absolute;
-    background-color: var(--common-color);
+    background-color: rgba(var(--common-color), 100%);
     width: 110%;
     height: 450%;
     border-radius: 0%;
@@ -69,7 +93,7 @@ a{
 }
 
 .button:hover {
-    color: var(--primary-bg-1);
+    color: rgba(var(--primary-bg-1), 100%);
     transition: all 0.5s;
     box-shadow: 10px 10px 32px rgba(var(--primary-font-color), 255);
 }
@@ -77,8 +101,8 @@ a{
 /* introduction style start from here */
 
 #introduction{
-    background-color: var(--primary-bg-1);
-    color: var(--common-color);
+    background-color: rgba(var(--primary-bg-1), 100%);
+    color: rgba(var(--common-color), 100%);
 }
 
 .menu{
@@ -91,7 +115,10 @@ a{
 .logo{
     font-size: 1.6rem;
     font-weight: bold;
-    color: var(--logo-font-color);
+    color: rgba(var(--logo-font-color), 100%);
+    display: flex;
+    gap: 8px;
+    align-items: center;
 }
 
 .menu .options{
@@ -99,6 +126,91 @@ a{
     gap: 60px;
     font-weight: 500;
 }
+
+/* this menu style will be used mobile phones or tabs or anything small size 😊 */
+
+.logo img{
+    display: none;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.mobile-menu {
+    display: none;
+    position: relative;
+}
+
+.mobile-menu-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    /* background-color: rgba(var(--primary-bg-2), 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.mobile-menu-optins{
+    position: fixed;
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    right: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+
+.mobile-menu-optins-close-btn{
+    width: 45px;
+    height: 45px;
+    background-color: rgba(var(--primary-font-color), 40%);
+    border-radius: 100%;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 45px;
+    right: 45px;
+}
+
+.mobile-menu-optins-head{
+    margin-bottom: 27px;
+}
+
+.mobile-menu-optins-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+    gap: 15px;
+}
+
+.mobile-menu-optins-footer{
+    color: rgba(var(--common-color), 100%);
+    background-color: rgba(var(--primary-font-color), 50%);
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+}
+
+.mobile-menu-button:hover{
+
+}
+
+/* mobile menu style ends here */
 
 .intro{
     display: flex;
@@ -183,8 +295,8 @@ a{
 
 /* Services Style Start From Here */
 #services {
-    background-color: var(--primary-bg-2);
-    color: var(--common-color);
+    background-color: rgba(var(--primary-bg-2), 100%);
+    color: rgba(var(--common-color), 100%);
 }
 
 .services-heading{
@@ -242,7 +354,7 @@ a{
 
 .card{
     width: 315px;
-    background-color: var(--primary-bg-1);
+    background-color: rgba(var(--primary-bg-1), 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -272,12 +384,12 @@ a{
 /* My Portfolio Styles Start From Here This Section will show all my project and work */
 
 #projects{
-    background-color: var(--primary-bg-1);
+    background-color: rgba(var(--primary-bg-1), 100%);
     padding-bottom: 80px;
 }
 
 .portfolio-heading{
-    color: var(--common-color);
+    color: rgba(var(--common-color), 100%);
     padding: 105px 0px 0px 0px;
     text-align: center;
 }
@@ -309,7 +421,7 @@ a{
 
 .project-btn{
     padding: 19px 58px;
-    background-color: var(--primary-bg-2);
+    background-color: rgba(var(--primary-bg-2), 100%);
 }
 
 .project-active-btn{
@@ -320,7 +432,7 @@ a{
     content: "";
     width: 30px;
     height: 30px;
-    background-color: var(--primary-bg-1);
+    background-color: rgba(var(--primary-bg-1), 100%);
     position: absolute;
     rotate: 135deg;
     top: 100%;
@@ -370,11 +482,11 @@ a{
 }
 
 .stack-widget-navigator-active{
-    color: var(--primary-bg-1);
+    color: rgba(var(--primary-bg-1), 100%);
 }
 
 .stack-widget-navigator-active::before{
-    background-color: var(--common-color);
+    background-color: rgba(var(--common-color), 100%);
     transform: translate(0%, 0%);
 }
 
@@ -387,12 +499,12 @@ a{
 .projectCard{
     width: 400px;
     min-height: 395px;
-    background-color: var(--primary-bg-2);
+    background-color: rgba(var(--primary-bg-2), 100%);
     border-radius: 25px;
     display: inline-flex;
     flex-direction: column;
     padding: 25px 25px;
-    color: var(--common-color);
+    color: rgba(var(--common-color), 100%);
     gap: 14px;
     justify-content: space-around;
     overflow: hidden;
@@ -404,7 +516,7 @@ a{
 .projectCardSlideEffact::before {
     content: "";
     position: absolute;
-    background-color: var(--common-color);
+    background-color: rgba(var(--common-color), 100%);
     width: 110%;
     height: 450%;
     transform: translate(-100%, 50%);
@@ -420,19 +532,19 @@ a{
 }
 
 .projectCardSlideEffact:hover {
-    color: var(--primary-bg-1);
+    color: rgba(var(--primary-bg-1), 100%);
     transition: all 0.5s;
     box-shadow: 10px 10px 32px rgba(var(--primary-font-color), 255);
     transform: scale(1.03, 1.03);
 }
 
 .projectCardSlideEffact a{
-    color: var(--common-color);
+    color: rgba(var(--common-color), 100%);
     transition: all 1s;
 }
 
 .projectCardSlideEffact:hover a{
-    color: var(--primary-bg-1);
+    color: rgba(var(--primary-bg-1), 100%);
     transition: all 0.5s;
 }
 
@@ -448,7 +560,7 @@ a{
     width: 40px;
     height: 40px;
     object-fit: cover;
-    /* background-color: var(--common-color); */
+    /* background-color: rgba(var(--common-color), 100%); */
     /* padding: 7px; */
     border-radius: 100%;
 }
@@ -496,8 +608,8 @@ a{
 .proejctCardBody .projectThumbnail .projectThumbnailType{
     position: absolute;
     display: flex;
-    background: var(--common-color);
-    color: var(--primary-bg-2);
+    background: rgba(var(--common-color), 100%);
+    color: rgba(var(--primary-bg-2), 100%);
     left: 10px;
     bottom: 10px;
     width: 28px;
@@ -569,11 +681,11 @@ a{
     height: 96%;
     z-index: 2;
     background-color: rgba(var(--read-more-viewer-bg), 50%);
-    color: var(--common-color);
+    color: rgba(var(--common-color), 100%);
     border-radius: 13px;
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(5px);
-    /* border: 2px solid var(--common-color); */
+    /* border: 2px solid rgba(var(--common-color), 100%); */
     overflow: hidden;
     max-width: 1200px;
     box-shadow: 0px 0px 28px rgba(var(--primary-font-color), 255);
@@ -655,10 +767,10 @@ a{
 }
 
 .readMoreViewerPage .dateTime div{
-    background-color: var(--common-color);
+    background-color: rgba(var(--common-color), 100%);
     border-radius: 2px;
     margin-right: 17px;
-    color: var(--primary-bg-1);
+    color: rgba(var(--primary-bg-1), 100%);
     padding: 4px 23px;
     font-size: 0.7rem;
     font-weight: 600;
@@ -690,7 +802,7 @@ h4 span {
 
 .readMoreContent p span{
     background-color: rgba(var(--primary-font-color), 100%);
-    color: var(--common-color);
+    color: rgba(var(--common-color), 100%);
     padding: 0px 7px;
     border-radius: 2px;
 }
@@ -725,7 +837,7 @@ h4 span {
 }
 
 .codeSnippet pre{
-    background-color: var(--primary-bg-2);
+    background-color: rgba(var(--primary-bg-2), 100%);
     padding: 30px 30px;
 }
 
@@ -734,7 +846,7 @@ h4 span {
     padding: 15px 48px;
     margin-top: 30px;
     text-align: center;
-    color: var(--common-color);
+    color: rgba(var(--common-color), 100%);
 }
 
 /* Style  of image Viwer Start From here */
@@ -748,7 +860,7 @@ h4 span {
     height: 100%;
     z-index: 2;
     background-color: rgba(var(--read-more-viewer-bg), 50%);
-    color: var(--common-color);
+    color: rgba(var(--common-color), 100%);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     overflow: hidden;
@@ -798,7 +910,7 @@ h4 span {
     padding: 10px 37px;
     border-radius: 5px;
     backdrop-filter: blur(25px);
-    border: 1px solid var(--common-color);
+    border: 1px solid rgba(var(--common-color), 100%);
     text-align: center;
 }
 
@@ -867,7 +979,7 @@ h4 span {
     height: 100%;
     z-index: 2;
     background-color: rgba(var(--read-more-viewer-bg), 50%);
-    color: var(--common-color);
+    color: rgba(var(--common-color), 100%);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     overflow: hidden;
@@ -882,6 +994,6 @@ h4 span {
     height: 720px;
     border-radius: 8px;
     overflow: hidden;
-    /* border: 2px solid var(--common-color);
-    background-color: var(--common-color); */
+    /* border: 2px solid rgba(var(--common-color), 100%);
+    background-color: rgba(var(--common-color), 100%); */
 }

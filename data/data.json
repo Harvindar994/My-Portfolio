@@ -7,20 +7,20 @@
 
     "themes": {
         "default": {
-            "logo-font-color": "#ffffff",
+            "common-color": "255, 255, 255",
+            "logo-font-color": "8, 195, 145",
             "primary-font-color": "8, 195, 145",
-            "primary-bg-1": "#21272f",
-            "primary-bg-2": "#171c23",
-            "common-color": "#ffffff",
+            "primary-bg-1": "33, 40, 48",
+            "primary-bg-2": "23, 28, 35",
             "read-more-viewer-bg": "33, 39, 47"
         },
 
         "lightRed": {
-            "logo-font-color": "#292d3e",
+            "logo-font-color": "41, 45, 62",
             "primary-font-color": "235, 69, 95",
-            "primary-bg-1": "#ffffff",
-            "primary-bg-2": "#e4e7e7",
-            "common-color": "#292d3e",
+            "primary-bg-1": "255, 255, 255",
+            "primary-bg-2": "228, 231, 231",
+            "common-color": "41, 45, 62",
             "read-more-viewer-bg": "255, 255, 255"
         }
     },

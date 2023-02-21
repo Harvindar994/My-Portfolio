@@ -1,0 +1,62 @@
+@media screen and (max-width: 1110px) {
+    .container{
+        transition: all 0.5s;
+        padding: 0px 5% 1px 5%;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .container{
+        transition: all 0.5s;
+        padding: 0px 5% 1px 5%;
+    }
+    
+    .logo img{
+        display: initial;
+    }
+
+    .menu .options{
+        display: none;
+    }
+
+    .mobile-menu{
+        display: initial;
+    }
+
+    .intro{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .intro-image {
+        display: none;
+    }
+
+    .intro-start {
+        font-size: 1.3rem;
+    }
+
+    .author-name {
+        font-size: 2.1rem;
+    }
+
+    .designation {
+        font-size: 1.2rem;
+    }
+
+    .intro .social-media{
+        flex-direction: column;
+    }
+
+    .lets-talk-button{
+        display: inline-flex;
+        width: 128px;
+        height: 54px;
+    }
+
+    .intro .social-media #social a{
+        font-size: 1.7rem;
+    }
+
+}
