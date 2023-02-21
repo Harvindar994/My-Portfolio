@@ -773,7 +773,11 @@ var OverlayImageViewer = function () {
     this.carosuleSimulator = null;
 
     this.createSlide = (image, text = null) => {
+
         var slide = document.createElement("div");
+        slide.style.width = `${window.innerWidth}px`;
+        slide.style.height = `${window.innerHeight}px`;
+
         slide.classList.add("slide");
 
         if (text !== null) {

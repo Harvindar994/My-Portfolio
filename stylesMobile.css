@@ -80,12 +80,16 @@
 
     #projects .project-buttons{
         padding: 39px 0px;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .project-btn{
         padding: 17px 20px;
         text-align: center;
+    }
+
+    .portfolio-heading p {
+        max-width: 95%;
     }
 
     /* here style of project section end's */
