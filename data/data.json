@@ -22,6 +22,15 @@
             "primary-bg-2": "228, 231, 231",
             "common-color": "41, 45, 62",
             "read-more-viewer-bg": "255, 255, 255"
+        },
+
+        "lightBlue": {
+            "logo-font-color": "251, 188, 4",
+            "primary-font-color": "66, 133, 244",
+            "primary-bg-1": "255, 255, 255",
+            "primary-bg-2": "248, 249, 251",
+            "common-color": "32, 33, 37",
+            "read-more-viewer-bg": "0, 0, 0"
         }
     },
 
