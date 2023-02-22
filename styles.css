@@ -172,14 +172,14 @@ a{
 }
 
 .mobile-menu-optins-close-btn{
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     background-color: rgba(var(--primary-font-color), 40%);
     border-radius: 100%;
     font-size: 1.2rem;
     position: absolute;
-    top: 45px;
-    right: 45px;
+    top: 3%;
+    right: 4%;
 }
 
 .mobile-menu-optins-head{
