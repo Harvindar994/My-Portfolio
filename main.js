@@ -901,6 +901,38 @@ var OverlayImageViewer = function () {
     this.__init__();
 }
 
+// Here creating component for main menu.
+var MainMenu = function () {
+    this.jasonData = null;
+
+    this.showMobileMenu = () => {
+        this.mobileMenuOptions.style.top = "0%";
+    }
+
+    this.hideMobileMenu = () => {
+        this.mobileMenuOptions.style.top = null;
+    }
+
+    this.load = (jasonData) => {
+        this.jasonData = jasonData;
+
+    }
+
+    this.__init__ = function () {
+        this.mobileMenuShowButton = document.querySelector(".mobile-menu-button");
+        this.mobileMenuHideButton = document.querySelector(".mobile-menu-optins-close-btn");
+        this.mobileMenuOptions = document.querySelector(".mobile-menu-optins");
+
+        // Here connecting button with function.
+        this.mobileMenuShowButton.addEventListener("click", this.showMobileMenu);
+        this.mobileMenuHideButton.addEventListener("click", this.hideMobileMenu);
+
+    }
+
+    this.__init__();
+
+}
+
 
 // Here creating A Component for Portfolio that will help to show all the projects.
 var Protfolio = function () {
@@ -991,6 +1023,7 @@ var DataLoader = function (file) {
     this.profile = new Profile();
     this.services = new Services();
     this.protfolio = new Protfolio();
+    this.mainMenu = new MainMenu();
 
     this.loadData = function () {
         fetch(this.data_file)
@@ -1000,6 +1033,10 @@ var DataLoader = function (file) {
                 // here fetching information about active theme.
                 var root = document.querySelector(':root');
                 var active_theme = root.style.getPropertyValue("--active-theme");
+
+
+                // here setting up the main menu options.
+                this.mainMenu.load(data["mainMenu"]);
 
                 // Here setting up profile data.
                 this.profile.load(data["author-info"], active_theme);

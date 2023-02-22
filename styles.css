@@ -155,21 +155,20 @@ a{
 
 .mobile-menu-optins{
     position: fixed;
-    /* display: flex; */
-    display: none;
+    display: flex;
+    /* display: none; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
     right: 0%;
-    top: 0%;
+    top: -100%;
     width: 100%;
     height: 100%;
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(5px);
     z-index: 2;
     overflow: hidden;
-    border-radius: 5px;
-    transition: all 0.5s;
+    transition: all 1s cubic-bezier(0.54, 0.27, 0.74, 1.08) 0s;
 }
 
 .mobile-menu-optins-close-btn{
@@ -185,6 +184,7 @@ a{
 
 .mobile-menu-optins-head{
     margin-bottom: 27px;
+    color: rgba(var(--primary-font-color), 100%);
 }
 
 .mobile-menu-optins-body{

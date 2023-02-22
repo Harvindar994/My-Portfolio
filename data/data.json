@@ -1,6 +1,6 @@
 {
     "website-info" : {
-        "author": "Harjindar Singh",
+        "author": "Harvindar Singh",
         "version": "0.0.1",
         "active-theme": "default"
     },
@@ -23,6 +23,25 @@
             "common-color": "41, 45, 62",
             "read-more-viewer-bg": "255, 255, 255"
         }
+    },
+
+    "mainMenu": {
+        "logoText" : "Harry",
+        "logo": "data/author/profile.png",
+        "menuOptions": [
+            {
+                "name": "Home",
+                "link": "#"
+            },
+            {
+                "name": "Resume",
+                "link": "#"
+            },
+            {
+                "name": "About",
+                "link": "#"
+            }
+        ]
     },
 
     "author-info": {
