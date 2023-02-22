@@ -64,6 +64,37 @@
 
     /* intro section style ends */
 
+    /* Services Section Style Start From Here */
+
+    .services-heading{
+        padding-top: 65px;
+    }
+
+    .services-heading h1 {
+        font-size: 1.7rem;
+    }
+
+    .services-heading p {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+
+    .services-carousel-button {
+        font-size: 1rem;
+        width: 40px;
+        height: 40px;
+    }
+
+    .services-carousel {
+        margin: 30px 0px 52px 0px;
+    }
+
+    .services-carousel .card:hover {
+        box-shadow: none;
+    }
+
+    /* Services Section Style End Here */
+
     /* Here style of project section start's */
 
     .portfolio-heading{

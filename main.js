@@ -60,8 +60,8 @@ var CarosuleSimulator = function (container, gap, vertically_center = true, top_
     this.back_space = back_space;
 
     this.isSliding = false;
-    this.screenX = 0;
-    this.screenY = 0;
+    this.screenX = null;
+    this.screenY = null;
 
     this.onMouseMove = (event) => {
         try {
@@ -92,6 +92,9 @@ var CarosuleSimulator = function (container, gap, vertically_center = true, top_
 
     this.onSlideScrollDeactive = () => {
         this.isSliding = false;
+        this.screenX = null;
+        this.screenY = null;
+        console.log("Touch Deactivate");
     }
 
     this.onSlide = (event) => {
@@ -120,39 +123,49 @@ var CarosuleSimulator = function (container, gap, vertically_center = true, top_
         }
 
         var previous_slide_value = 0;
+        var slidingDirection = null;
 
         // Here getting container width to stop over slide element.
         var container_width = this.getContainerWidth();
 
         const slide_interval = setInterval(() => {
 
-            var slide_value = active_position_x - this.screenX;
+            if (this.screenX != null && this.screenY != null) {
 
-            if (slide_value !== previous_slide_value) {
+                var slide_value = active_position_x - this.screenX;
 
-                if (slide_value > 0) {
+                if (slide_value !== previous_slide_value) {
 
-                    // Sliding Left Side.
-                    if (!((coordinates[coordinates.length - 1] + this.slides[this.slides.length - 1].width + this.back_space) - slide_value < container_width)) {
-                        for (index in this.slides) {
-                            this.slides[index].translateX = coordinates[index] - slide_value;
-                            this.slides[index].element.style.transform = `translate(${this.slides[index].translateX}px, ${this.translateY}%)`;
+                    if (slide_value > 0) {
+
+                        // Sliding Left Side.
+                        if (!((coordinates[coordinates.length - 1] + this.slides[this.slides.length - 1].width + this.back_space) - slide_value < container_width)) {
+                            for (index in this.slides) {
+                                this.slides[index].translateX = coordinates[index] - slide_value;
+                                this.slides[index].element.style.transform = `translate(${this.slides[index].translateX}px, ${this.translateY}%)`;
+                            }
+
+                            slidingDirection = "left";
                         }
                     }
-                }
-                else if (slide_value < 0) {
+                    else if (slide_value < 0) {
 
-                    // Sliding right side.
-                    slide_value = slide_value * -1;
+                        // Sliding right side.
+                        slide_value = slide_value * -1;
 
-                    if (!(coordinates[0] + slide_value > 0 + this.front_space)) {
-                        for (index in this.slides) {
-                            this.slides[index].translateX = coordinates[index] + slide_value;
-                            this.slides[index].element.style.transform = `translate(${this.slides[index].translateX}px, ${this.translateY}%)`;
+                        if (!(coordinates[0] + slide_value > 0 + this.front_space)) {
+                            for (index in this.slides) {
+                                this.slides[index].translateX = coordinates[index] + slide_value;
+                                this.slides[index].element.style.transform = `translate(${this.slides[index].translateX}px, ${this.translateY}%)`;
+                            }
+
+                            slidingDirection = "right";
                         }
-                    }
 
+                    }
                 }
+
+
             }
 
             if (!this.isSliding) {
@@ -163,6 +176,15 @@ var CarosuleSimulator = function (container, gap, vertically_center = true, top_
 
                 this.container.removeChild(overlay);
                 clearInterval(slide_interval);
+
+                if (slidingDirection !== null) {
+                    if (slidingDirection === "left") {
+                        this.onPreviousPressed();
+                    }
+                    else {
+                        this.onNextPressed();
+                    }
+                }
             }
 
         }, 1);
@@ -182,7 +204,12 @@ var CarosuleSimulator = function (container, gap, vertically_center = true, top_
 
         if (first_slide !== null) {
 
-            var gap = (0 + this.front_space) - first_slide.translateX;
+            if (parseInt(first_slide.width + (first_slide.width / 2)) > container_width) {
+                var gap = (0 + parseInt((container_width - first_slide.width) / 2)) - element.translateX;
+            }
+            else {
+                var gap = (0 + this.front_space) - first_slide.translateX;
+            }
 
             for (var index of Array(this.slides.length).keys()) {
                 element = this.slides[index];
@@ -201,7 +228,7 @@ var CarosuleSimulator = function (container, gap, vertically_center = true, top_
 
         for (var index of Array(this.slides.length).keys()) {
             element = this.slides[index];
-            if (element.translateX + element.width >= container_width) {
+            if (element.translateX + element.width + this.back_space > container_width) {
                 last_slide = element;
                 break;
             }
@@ -209,7 +236,13 @@ var CarosuleSimulator = function (container, gap, vertically_center = true, top_
 
         if (last_slide !== null) {
 
-            var gap = (last_slide.translateX + last_slide.width + this.back_space) - container_width;
+            if (parseInt(last_slide.width + (last_slide.width / 2)) > container_width) {
+                var gap = element.translateX - parseInt((container_width - last_slide.width) / 2);
+            }
+            else {
+                var gap = (last_slide.translateX + last_slide.width + this.back_space) - container_width;
+            }
+
             for (var index of Array(this.slides.length).keys()) {
                 element = this.slides[index];
                 element.translateX -= gap;
@@ -344,7 +377,7 @@ var Services = function () {
 
     this.carosuleSimulator = new CarosuleSimulator(this.services_container, 50, true, 80,
         document.querySelector("#services-button-left"), document.querySelector("#services-button-right"),
-        36, 36);
+        0, 0);
 
     this.load = function (services_jason) {
         this.services_jason = services_jason;
@@ -775,8 +808,8 @@ var OverlayImageViewer = function () {
     this.createSlide = (image, text = null) => {
 
         var slide = document.createElement("div");
-        slide.style.width = `${window.innerWidth}px`;
-        slide.style.height = `${window.innerHeight}px`;
+        // slide.style.width = `${window.innerWidth}px`;
+        // slide.style.height = `${window.innerHeight}px`;
 
         slide.classList.add("slide");
 

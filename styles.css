@@ -147,10 +147,10 @@ a{
     border-radius: 5px;
     font-size: 1.5rem;
     cursor: pointer;
-    /* background-color: rgba(var(--primary-bg-2), 50%);
+    /* background-color: rgba(var(--primary-bg-2), 50%); */
     display: flex;
     justify-content: center;
-    align-items: center; */
+    align-items: center;
 }
 
 .mobile-menu-optins{
