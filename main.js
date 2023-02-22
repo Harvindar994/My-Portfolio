@@ -74,9 +74,7 @@ var CarosuleSimulator = function (container, gap, vertically_center = true, top_
                 this.screenY = event.screenY;
             }
         } catch (e) {
-            this.screenX = event.screenX;
-            this.screenY = event.screenY;
-            console.log(e.message)
+            this.onSlideScrollDeactive();
         }
     }
 
@@ -94,7 +92,6 @@ var CarosuleSimulator = function (container, gap, vertically_center = true, top_
         this.isSliding = false;
         this.screenX = null;
         this.screenY = null;
-        console.log("Touch Deactivate");
     }
 
     this.onSlide = (event) => {
@@ -377,7 +374,7 @@ var Services = function () {
 
     this.carosuleSimulator = new CarosuleSimulator(this.services_container, 50, true, 80,
         document.querySelector("#services-button-left"), document.querySelector("#services-button-right"),
-        0, 0);
+        35, 35);
 
     this.load = function (services_jason) {
         this.services_jason = services_jason;
