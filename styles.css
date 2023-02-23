@@ -51,17 +51,19 @@ a{
 /* Here some somman elements */
 
 .sectionFader{
-    /* top: 14%; */
-    /* left: 40%; */
     transform: translateY(-50%);
     position: absolute;
     width: 100%;
-    height: 80px;
-    /* background-color: #08c3915c; */
-    /* border-radius: 100%; */
-    mix-blend-mode: color-burn;
-    z-index: 3;
-    backdrop-filter: blur(18px);
+    height: 8px;
+    backdrop-filter: blur(2px);
+}
+
+.fireEffect{
+    top: 14%;
+    transform: translateY(-50%);
+    height: 6px;
+    mix-blend-mode: difference;
+    z-index: -1;
 }
 
 .container{
@@ -115,6 +117,7 @@ a{
 /* introduction style start from here */
 
 #introduction{
+    overflow: hidden;
     background-color: rgba(var(--primary-bg-1), 100%);
     color: rgba(var(--common-color), 100%);
 }
@@ -218,9 +221,6 @@ a{
     width: 100%;
     text-align: center;
     /* padding: 16px; */
-    
-    z-index: 1;
-    --footer-background: rgba(var(--primary-font-color), 100%);
 }
 
 .mobile-menu-button:hover{

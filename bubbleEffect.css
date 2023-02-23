@@ -1,16 +1,20 @@
-.mobile-menu-optins-footer .bubbles {
+.bubbleEffect{
+    --footer-background: rgba(var(--primary-font-color), 100%);
+}
+
+.bubbleEffect .bubbles {
     position: absolute;
     top: -4px;
-    /* left: 0; */
-    /* right: 0; */
-    width: 100%;
+    left: 0;
+    right: 0;
+    /* width: 100%; */
     height: 1rem;
     background: var(--footer-background);
     filter: url(#blob);
     z-index: -1;
 }
 
-.mobile-menu-optins-footer .bubbles .bubble {
+.bubbleEffect .bubbles .bubble {
     position: absolute;
     left: var(--position, 50%);
     background: var(--footer-background);
@@ -20,7 +24,7 @@
     transform: translate(-50%, 100%);
 }
 
-.mobile-menu-optins-footer .content {
+.bubbleEffect .content {
     z-index: 2;
     background: var(--footer-background);
     color: white;
