@@ -1,0 +1,76 @@
+.mobile-menu-optins-footer .bubbles {
+    position: absolute;
+    top: -4px;
+    /* left: 0; */
+    /* right: 0; */
+    width: 100%;
+    height: 1rem;
+    background: var(--footer-background);
+    filter: url(#blob);
+    z-index: -1;
+}
+
+.mobile-menu-optins-footer .bubbles .bubble {
+    position: absolute;
+    left: var(--position, 50%);
+    background: var(--footer-background);
+    border-radius: 100%;
+    -webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    transform: translate(-50%, 100%);
+}
+
+.mobile-menu-optins-footer .content {
+    z-index: 2;
+    background: var(--footer-background);
+    color: white;
+    padding: 16px;
+}
+
+@-webkit-keyframes bubble-size {
+
+    0%,
+    75% {
+        width: var(--size, 4rem);
+        height: var(--size, 4rem);
+    }
+
+    100% {
+        width: 0rem;
+        height: 0rem;
+    }
+}
+
+@keyframes bubble-size {
+
+    0%,
+    75% {
+        width: var(--size, 4rem);
+        height: var(--size, 4rem);
+    }
+
+    100% {
+        width: 0rem;
+        height: 0rem;
+    }
+}
+
+@-webkit-keyframes bubble-move {
+    0% {
+        bottom: -4rem;
+    }
+
+    100% {
+        bottom: var(--distance, 10rem);
+    }
+}
+
+@keyframes bubble-move {
+    0% {
+        bottom: -4rem;
+    }
+
+    100% {
+        bottom: var(--distance, 10rem);
+    }
+}
