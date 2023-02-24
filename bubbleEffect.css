@@ -1,5 +1,5 @@
 .bubbleEffect{
-    --footer-background: rgba(var(--primary-font-color), 100%);
+    /* --footer-background: rgba(var(--primary-font-color), 100%); */
 }
 
 .bubbleEffect .bubbles {
@@ -27,7 +27,6 @@
 .bubbleEffect .content {
     z-index: 2;
     background: var(--footer-background);
-    color: white;
     padding: 16px;
 }
 
