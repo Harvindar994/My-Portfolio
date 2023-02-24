@@ -59,11 +59,13 @@ a{
 }
 
 .fireEffect{
-    top: 14%;
-    transform: translateY(-50%);
-    height: 6px;
-    mix-blend-mode: difference;
-    z-index: -1;
+    color: rgba(var(--common-color), 100%);
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    --footer-background: rgba(var(--common-color), 100%);
 }
 
 .container{
@@ -112,6 +114,10 @@ a{
     color: rgba(var(--primary-bg-1), 100%);
     transition: all 0.5s;
     box-shadow: 10px 10px 32px rgba(var(--primary-font-color), 255);
+}
+
+main{
+    overflow: hidden;
 }
 
 /* introduction style start from here */
