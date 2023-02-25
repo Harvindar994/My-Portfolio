@@ -50,16 +50,6 @@ a{
 
 /* Here some somman elements */
 
-.fireEffect{
-    color: rgba(var(--primary-font-color), 100%);
-    position: relative;
-    bottom: 0px;
-    width: 100%;
-    text-align: center;
-    z-index: 1;
-    --footer-background: rgba(var(--common-color), 100%);
-}
-
 .container{
     transition: all 0.5s;
     padding: 0px 10% 1px 10%;
@@ -1019,7 +1009,7 @@ h4 span {
 
 .experiences{
     background-color: rgba(var(--primary-bg-2), 100%);
-    padding-bottom: 0px;
+    padding-bottom: 80px;
 }
 
 .experiences-heading {
@@ -1159,3 +1149,115 @@ h4 span {
 }
 
 /* Here experiences style End's */
+
+/* footer style start from here */
+
+.fireEffect {
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    --footer-background: rgba(var(--primary-font-color), 100%);
+}
+
+.footer{
+    background-color: rgba(var(--primary-font-color), 100%);
+}
+
+.footer-content{
+    color: rgba(var(--common-color), 100%);
+}
+
+.footer-content hr{
+    border: none;
+    height: 1px;
+    background-color: rgba(var(--common-color), 100%);
+}
+
+.footer-content .portfoliolinks{
+    display: flex;
+    font-size: 0.9rem;
+    text-align: left;
+    font-weight: 400;
+    color: rgba(var(--common-color), 100%);
+    padding: 74px 0px 48px 0px;
+    gap: 43px;
+}
+
+.footer-content .portfoliolinks .logo, .contact, .quick-links, .other-links{
+    max-width: 352px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.footer-content .portfoliolinks .quick-links{
+    gap: 15px;
+}
+
+.footer-content .portfoliolinks .other-links{
+    display: flex;
+    align-items: end;
+}
+
+.footer-content .portfoliolinks .goToTop{
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    background-color: rgba(var(--primary-bg-1), 100%);
+}
+
+.footer-content .portfoliolinks .contact p{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.footer-content .portfoliolinks .contact p i{
+    font-size: 1.1rem;
+}
+
+.footer-content .portfoliolinks .logo{
+    color: rgba(var(--common-color), 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 15px;
+}
+
+.footer-content .portfoliolinks .logo .img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    filter: drop-shadow(0px 0px 9px rgba(var(--primary-font-color), 255));
+}
+
+.footer-content .portfoliolinks .logo img{
+    display: initial;
+}
+
+.footer-content .portfoliolinks .logo p{
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: rgba(var(--common-color), 100%);
+}
+
+.footer-content .social-links{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0px 25px 0px;
+    align-items: center;
+    font-size: 0.8rem;
+}
+
+.footer-content .social-links .links{
+    display: flex;
+    gap: 19px;
+    font-size: 1.3rem;  
+}
+
+
+/* footer style end's here */
