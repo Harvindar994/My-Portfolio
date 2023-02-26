@@ -31,6 +31,10 @@
     --active-theme: "none";
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -343,6 +347,7 @@ main{
     border: 1px solid #ffffff5e;
     background-color: rgb(23, 28, 35);
     transition: all 1s;
+    z-index: 0;
 }
 
 .skillCard:hover {
@@ -1337,6 +1342,7 @@ h4 span {
     color: rgba(var(--common-color), 100%);
     padding: 74px 0px 48px 0px;
     gap: 43px;
+    justify-content: space-between;
 }
 
 .footer-content .portfoliolinks .logo, .contact, .quick-links, .other-links{
