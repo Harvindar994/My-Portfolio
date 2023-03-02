@@ -922,16 +922,18 @@ var OverlayImageViewer = function () {
         return slide;
     }
 
-    this.onNextPressed = () => {
+    this.onNextPressed = (event) => {
         if (this.carosuleSimulator !== null) {
             this.carosuleSimulator.onNextPressed();
         }
+        event.stopPropagation();
     }
 
-    this.onPreviousPressed = () => {
+    this.onPreviousPressed = (event) => {
         if (this.carosuleSimulator !== null) {
             this.carosuleSimulator.onPreviousPressed();
         }
+        event.stopPropagation();
     }
 
     this.removeAllSlides = () => {
@@ -1000,12 +1002,13 @@ var OverlayImageViewer = function () {
         this.navigationLeft = document.querySelector("#imageViewerLeftButton");
         this.navigationRight = document.querySelector("#imageViewerRightButton");
         this.leftButtonContainer = document.querySelector(".leftButtonContainer");
-        this.rightButtonConatiner = document.querySelector(".leftButtonContainer");
+        this.rightButtonConatiner = document.querySelector(".rightButtonConatiner");
 
         // here connecting buttons.
         this.closeButton.addEventListener("click", this.close);
         this.navigationRight.addEventListener("click", this.onNextPressed);
         this.navigationLeft.addEventListener("click", this.onPreviousPressed);
+
         this.rightButtonConatiner.addEventListener("click", this.onNextPressed);
         this.leftButtonContainer.addEventListener("click", this.onPreviousPressed);
     }
