@@ -43,11 +43,11 @@ var Profile = function () {
 }
 
 // Creating an percentage based carousel semulator.
-var PercentageCarosuleSimulator = function(container, containerHeight, previousButton = null, nextButton = null){
+var PercentageCarosuleSimulator = function(container, containerHeight){
     this.container = container;
     this.containerHeight = containerHeight;
-    this.previousButton = previousButton;
-    this.nextButton = nextButton;
+    // this.previousButton = previousButton;
+    // this.nextButton = nextButton;
 
     // slide position.
     this.sliderPosition = 0;
@@ -108,13 +108,13 @@ var PercentageCarosuleSimulator = function(container, containerHeight, previousB
 
     this.__init__ = function(){
         // here adding elevent listner on buttons.
-        if (this.nextButton !== null) {
-            this.nextButton.addEventListener("click", this.onNextPressed);
-        }
+        // if (this.nextButton !== null) {
+        //     this.nextButton.addEventListener("click", this.onNextPressed);
+        // }
 
-        if (this.previousButton !== null) {
-            this.previousButton.addEventListener("click", this.onPreviousPressed);
-        }
+        // if (this.previousButton !== null) {
+        //     this.previousButton.addEventListener("click", this.onPreviousPressed);
+        // }
 
         // here setting up relative postion on container.
         this.container.style.position = "relative";
@@ -922,6 +922,18 @@ var OverlayImageViewer = function () {
         return slide;
     }
 
+    this.onNextPressed = ()=>{
+        if (this.carosuleSimulator !== null){
+            this.carosuleSimulator.onNextPressed();
+        }
+    }
+
+    this.onPreviousPressed = ()=>{
+        if (this.carosuleSimulator !== null){
+            this.carosuleSimulator.onPreviousPressed();
+        }
+    }
+
     this.removeAllSlides = () => {
         this.imageViewerConatiner.innerHTML = "";
         this.slides = [];
@@ -990,6 +1002,8 @@ var OverlayImageViewer = function () {
 
         // here connecting buttons.
         this.closeButton.addEventListener("click", this.close);
+        this.navigationRight.addEventListener("click", this.onNextPressed);
+        this.navigationLeft.addEventListener("click", this.onPreviousPressed);
     }
 
     this.__init__();
