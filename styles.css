@@ -1173,7 +1173,7 @@ h4 span {
 
 .experiences-heading {
     color: rgba(var(--common-color), 100%);
-    padding: 105px 0px 0px 0px;
+    padding: 123px 0px 0px 0px;
     text-align: center;
 }
 
@@ -1345,6 +1345,13 @@ h4 span {
     font-size: 1.2rem;
     font-weight: 200;
 }
+
+.message .message-discription .playaudio{
+    color: orange;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0px 10px;
+}   
 
 .message .message-discription div{
     display: inline-block;
