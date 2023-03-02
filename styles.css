@@ -329,7 +329,7 @@ main{
 }
 
 .skillsContainer{
-    padding: 50px 0px 50px 0px;
+    padding: 75px 0px 50px 0px;
     display: flex;
     justify-content: center;
     gap: 45px;
@@ -1168,7 +1168,7 @@ h4 span {
 
 .experiences{
     background-color: rgba(var(--primary-bg-1), 100%);
-    padding-bottom: 80px;
+    padding-bottom: 20px;
 }
 
 .experiences-heading {
@@ -1308,6 +1308,58 @@ h4 span {
 }
 
 /* Here experiences style End's */
+
+/* A message to user style start's from here */
+
+.message{
+    background-color: rgba(var(--primary-bg-2), 100%);
+}
+
+.message .message-container{
+    padding-top: 166px;
+    padding-bottom: 216px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.message .message-content{
+    color: rgba(var(--primary-font-color), 100%);
+    font-size: 3.2rem;
+    line-height: 176%;
+    background: -webkit-linear-gradient(105deg, rgba(var(--primary-font-color), 100%) 32%, rgba(var(--common-color), 100%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.message .message-content img{
+    width: 132px;
+    object-fit: contain;
+}
+
+.message .message-discription{
+    color: rgba(var(--common-color), 100%);
+    margin-top: 14px;
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+.message .message-discription div{
+    display: inline-block;
+}
+
+.message .message-button{
+    height: 50px;
+    width: 200px;
+    border-radius: 60px;
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-top: 25px;
+}
+
+/* A message to user style end's from here */
 
 /* footer style start from here */
 
