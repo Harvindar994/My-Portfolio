@@ -42,6 +42,103 @@ var Profile = function () {
 
 }
 
+// Creating an percentage based carousel semulator.
+var PercentageCarosuleSimulator = function(container, containerHeight, previousButton = null, nextButton = null){
+    this.container = container;
+    this.containerHeight = containerHeight;
+    this.previousButton = previousButton;
+    this.nextButton = nextButton;
+
+    // slide position.
+    this.sliderPosition = 0;
+
+    this.removePerFromNumbers = function (str) {
+        return str.slice(0, str.length - 1);
+    }
+
+    this.onNextPressed = ()=>{
+        let firstSlidePosition = parseInt(this.removePerFromNumbers(this.container.children[0].style.transform.split(",")[0].slice(10, 15)));
+
+        if (firstSlidePosition > -(100 * (this.container.children.length-1))){
+            
+            this.sliderPosition -= 1;
+            tempIndex = this.sliderPosition;
+    
+            for (var index of Array(this.container.children.length).keys()) {
+    
+                var element = this.container.children[index];
+    
+                element.style.position = "absolute";
+                element.style.top = "50%";
+    
+                element.style.transform = `translate(${tempIndex*100}%, -50%)`;
+    
+                tempIndex += 1;
+    
+            }
+
+        }
+        console.log("Next Press Working");
+    }
+
+    this.onPreviousPressed = ()=>{
+        let firstSlidePosition = parseInt(this.removePerFromNumbers(this.container.children[0].style.transform.split(",")[0].slice(10, 15)));
+
+        if (firstSlidePosition < 0){
+
+            this.sliderPosition += 1;
+            tempIndex = this.sliderPosition;
+    
+            for (var index of Array(this.container.children.length).keys()) {
+    
+                var element = this.container.children[index];
+    
+                element.style.position = "absolute";
+                element.style.top = "50%";
+    
+                element.style.transform = `translate(${tempIndex*100}%, -50%)`;
+    
+                tempIndex += 1;
+    
+            }
+
+        }
+        console.log("Previous Press Working");
+    }
+
+    this.__init__ = function(){
+        // here adding elevent listner on buttons.
+        if (this.nextButton !== null) {
+            this.nextButton.addEventListener("click", this.onNextPressed);
+        }
+
+        if (this.previousButton !== null) {
+            this.previousButton.addEventListener("click", this.onPreviousPressed);
+        }
+
+        // here setting up relative postion on container.
+        this.container.style.position = "relative";
+
+        // here setting up absolute position on all children so that i can move.
+        this.sliderPosition = 0;
+        tempIndex = this.sliderPosition;
+
+        for (var index of Array(this.container.children.length).keys()) {
+
+            var element = this.container.children[index];
+
+            element.style.position = "absolute";
+            element.style.top = "50%";
+
+            element.style.transform = `translate(${tempIndex*100}%, -50%)`;
+
+            tempIndex += 1;
+
+        }
+    }
+
+    this.__init__();
+}
 
 // Creating an carousel semulator.
 var CarosuleSimulator = function (container, gap, vertically_center = true, top_bottom_gap = 0, previousButton = null, nextButton = null, front_space = 0, back_space = 0) {
@@ -873,7 +970,7 @@ var OverlayImageViewer = function () {
                 this.hideNavigationButtons();
             }
             else if (images.length > 1) {
-                this.carosuleSimulator = new CarosuleSimulator(this.imageViewerConatiner, 0, true, 0, this.navigationLeft, this.navigationRight, 0, 0);
+                this.carosuleSimulator = new PercentageCarosuleSimulator(this.imageViewerConatiner, 265, this.navigationLeft, this.navigationRight);
 
                 this.carosuleSimulator.__init__();
             }
