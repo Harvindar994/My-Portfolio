@@ -43,7 +43,7 @@ var Profile = function () {
 }
 
 // Creating an percentage based carousel semulator.
-var PercentageCarosuleSimulator = function(container, containerHeight){
+var PercentageCarosuleSimulator = function (container, containerHeight) {
     this.container = container;
     this.containerHeight = containerHeight;
     // this.previousButton = previousButton;
@@ -56,57 +56,57 @@ var PercentageCarosuleSimulator = function(container, containerHeight){
         return str.slice(0, str.length - 1);
     }
 
-    this.onNextPressed = ()=>{
+    this.onNextPressed = () => {
         let firstSlidePosition = parseInt(this.removePerFromNumbers(this.container.children[0].style.transform.split(",")[0].slice(10, 15)));
 
-        if (firstSlidePosition > -(100 * (this.container.children.length-1))){
-            
+        if (firstSlidePosition > -(100 * (this.container.children.length - 1))) {
+
             this.sliderPosition -= 1;
             tempIndex = this.sliderPosition;
-    
+
             for (var index of Array(this.container.children.length).keys()) {
-    
+
                 var element = this.container.children[index];
-    
+
                 element.style.position = "absolute";
                 element.style.top = "50%";
-    
-                element.style.transform = `translate(${tempIndex*100}%, -50%)`;
-    
+
+                element.style.transform = `translate(${tempIndex * 100}%, -50%)`;
+
                 tempIndex += 1;
-    
+
             }
 
         }
         console.log("Next Press Working");
     }
 
-    this.onPreviousPressed = ()=>{
+    this.onPreviousPressed = () => {
         let firstSlidePosition = parseInt(this.removePerFromNumbers(this.container.children[0].style.transform.split(",")[0].slice(10, 15)));
 
-        if (firstSlidePosition < 0){
+        if (firstSlidePosition < 0) {
 
             this.sliderPosition += 1;
             tempIndex = this.sliderPosition;
-    
+
             for (var index of Array(this.container.children.length).keys()) {
-    
+
                 var element = this.container.children[index];
-    
+
                 element.style.position = "absolute";
                 element.style.top = "50%";
-    
-                element.style.transform = `translate(${tempIndex*100}%, -50%)`;
-    
+
+                element.style.transform = `translate(${tempIndex * 100}%, -50%)`;
+
                 tempIndex += 1;
-    
+
             }
 
         }
         console.log("Previous Press Working");
     }
 
-    this.__init__ = function(){
+    this.__init__ = function () {
         // here adding elevent listner on buttons.
         // if (this.nextButton !== null) {
         //     this.nextButton.addEventListener("click", this.onNextPressed);
@@ -130,7 +130,7 @@ var PercentageCarosuleSimulator = function(container, containerHeight){
             element.style.position = "absolute";
             element.style.top = "50%";
 
-            element.style.transform = `translate(${tempIndex*100}%, -50%)`;
+            element.style.transform = `translate(${tempIndex * 100}%, -50%)`;
 
             tempIndex += 1;
 
@@ -922,14 +922,14 @@ var OverlayImageViewer = function () {
         return slide;
     }
 
-    this.onNextPressed = ()=>{
-        if (this.carosuleSimulator !== null){
+    this.onNextPressed = () => {
+        if (this.carosuleSimulator !== null) {
             this.carosuleSimulator.onNextPressed();
         }
     }
 
-    this.onPreviousPressed = ()=>{
-        if (this.carosuleSimulator !== null){
+    this.onPreviousPressed = () => {
+        if (this.carosuleSimulator !== null) {
             this.carosuleSimulator.onPreviousPressed();
         }
     }
@@ -999,11 +999,15 @@ var OverlayImageViewer = function () {
         this.navigationButtons = document.querySelector(".imageViewerLeftRightButtons");
         this.navigationLeft = document.querySelector("#imageViewerLeftButton");
         this.navigationRight = document.querySelector("#imageViewerRightButton");
+        this.leftButtonContainer = document.querySelector(".leftButtonContainer");
+        this.rightButtonConatiner = document.querySelector(".leftButtonContainer");
 
         // here connecting buttons.
         this.closeButton.addEventListener("click", this.close);
         this.navigationRight.addEventListener("click", this.onNextPressed);
         this.navigationLeft.addEventListener("click", this.onPreviousPressed);
+        this.rightButtonConatiner.addEventListener("click", this.onNextPressed);
+        this.leftButtonContainer.addEventListener("click", this.onPreviousPressed);
     }
 
     this.__init__();
