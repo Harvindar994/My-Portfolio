@@ -1,3 +1,21 @@
+// Some Common use functions.
+function copyText() {
+    console.log("Copied Text");
+    // // Get the text field
+    // var copyText = document.getElementById("myInput");
+
+    // // Select the text field
+    // copyText.select();
+    // copyText.setSelectionRange(0, 99999); // For mobile devices
+
+    // // Copy the text inside the text field
+    // navigator.clipboard.writeText(copyText.value);
+
+    // // Alert the copied text
+    // alert("Copied the text: " + copyText.value);
+}
+
+
 //Creating a Profile Component.
 var Profile = function () {
     this.profile = null;
@@ -1222,3 +1240,13 @@ theme_manager.loadDeafultTheme()
 const data_loader = new DataLoader("./data/data.json");
 data_loader.loadData();
 
+// Here setting up a call back on wbpage loaded.
+window.onload = function () {
+
+    // Here fetching all the element using copy-link class in html and setting up call back function to copy the inner text.
+    var anchors = document.querySelectorAll('.copy-link');
+    for (var i = 0; i < anchors.length; i++) {
+        var anchor = anchors[i];
+        anchor.addEventListener("click", copyText);
+    }
+}
