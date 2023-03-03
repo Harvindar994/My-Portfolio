@@ -106,6 +106,60 @@ main{
     overflow: hidden;
 }
 
+/* common style for image carsoule percent is based */
+
+.imageCarouselLeftRightButtons {
+    position: absolute;
+    width: -webkit-fill-available;
+    height: 100%;
+    display: flex;
+    /* gap: 30%; */
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.imageCarouselLeftButtonContainer {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: start;
+}
+
+.imageCarouselLeftButtonContainer:hover .imageCarouselLeftButton {
+    transition: all 0.5s;
+    opacity: 1;
+}
+
+.imageCarouselRightButtonConatiner {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: end;
+}
+
+.imageCarouselRightButtonConatiner:hover .imageCarouselRightButton {
+    transition: all 0.5s;
+    opacity: 1;
+}
+
+.imageCarouselLeftButton,
+.imageCarouselRightButton {
+    opacity: 0;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    background-color: rgba(var(--primary-font-color), 30%);
+}
+
+.imageCarouselLeftButton {
+    margin-left: 5%;
+}
+
+.imageCarouselRightButton {
+    margin-right: 5%;
+}
+
 /* introduction style start from here */
 
 #introduction{
@@ -272,7 +326,7 @@ main{
 .lets-talk-button{
     /* background-color: rgba(var(--primary-font-color), 255); */
     width: 154px;
-    height: 65px;
+    height: 58px;
     border-radius: 12px;
     margin-bottom: 70px;
 }
@@ -834,35 +888,127 @@ main{
 /* Here style sheet of ReadMore Viewer Start's that will to more content about you project. */
 
 .readMorePadding {
-    padding: 0px 10% 1px 10%;
+    padding: 0px 2rem 0px 2rem;
 }
 
 .readMoreViewer{
-    display: none;
-    top: 2%;
-    left: 50%;
-    transform: translateX(-50%);
+    display: initial;
+    top: 0%;
+    left: 0%;
     position: fixed;
-    width: 96%;
-    height: 96%;
+    width: 100%;
+    height: 100%;
     z-index: 2;
-    background-color: rgba(var(--read-more-viewer-bg), 50%);
+    background-color: rgba(0, 0, 0, .7);
     color: rgba(var(--common-color), 100%);
-    border-radius: 13px;
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(5px);
-    /* border: 2px solid rgba(var(--common-color), 100%); */
     overflow: hidden;
-    max-width: 1200px;
-    box-shadow: 0px 0px 28px rgba(var(--primary-font-color), 255);
     transition: all 1s;
-    /* opacity: 0; */
 }
+
+/*header style start's from here */
+
+.readMoreHeader{
+    background-color: rgb(44, 48, 58);
+    display: flex;
+    justify-content: space-between;
+    min-height: 86px;
+    align-items: center;
+    padding: 0px 22px 0px 18px;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 50%);
+    position: relative;
+    z-index: 1;
+}
+
+.readMoreHeaderText{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.readMoreHeaderText .projectIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.readMoreHeaderText .projectIcon img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.readMoreHeaderText .projectHeading{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.readMoreHeaderText .projectHeading h2{
+    font-size: 1.062rem;
+    line-height: 99%;
+}
+
+.readMoreHeaderText .projectHeading p{
+    font-size: 0.938rem;
+    font-weight: 400;
+}
+
+.readMoreHeaderButtons{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.readMoreHeaderButtons .readMoreHeard-btn{
+    padding: 21px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: rgb(68, 72, 87);
+    font-size: 0.8rem;
+}
+
+.readMoreHeaderButtons .readMoreHeard-btn:hover{
+    box-shadow: none;
+}
+
+/*header style end's here */
+
+/* use technology style sheet start here  */
+
+.usedTechnology{
+    background-color: rgb(30, 31, 38);
+    padding: 0px 10px;
+    position: relative;
+}
+
+.usedTechnologyContainer{
+    display: flex;
+    height: 50px;
+    gap: 5px;
+    align-items: center;   
+}
+
+.usedTechnology .usedTechnologyContainer div{
+    background-color: rgb(68, 72, 87);
+    text-align: center;
+    padding: 7px 16px;
+    font-size: 0.813rem;
+    border-radius: 3px;
+}
+
+.usedTechnology .usedTechnologyContainer div:hover{
+    background-color: rgb(64, 68, 82);
+}
+
+/* use technology style sheet end here  */
 
 .readMoreViewerCloseButtonContainer {
     position: fixed;
-    right: 30px;
-    top: 30px;
+    right: 2%;
+    top: 2.5%;
     z-index: 2;
 }
 
@@ -887,8 +1033,14 @@ main{
 
 .readMoreViewerPage{
     width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
     position: relative;
     z-index: 1;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgb(44, 48, 58);
+    box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
 }
 
 .readMoreViewerCloseButton:hover::before{
@@ -901,17 +1053,27 @@ main{
     position: relative;
 }
 
+.featureImageContainer{
+    position: relative;
+    height: 450px;
+    border-bottom: 8px solid rgb(90, 95, 115);
+}
+
 #readMoreFeatureImage{
     width: 100%;
-    height: 450px;
+    height: 100%;
     object-fit: cover;
     /* -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); */
-    -webkit-mask-image: linear-gradient(black 70%, transparent);
+    /* -webkit-mask-image: linear-gradient(black 70%, transparent);
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
     -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
+    mask-repeat: no-repeat; */
+}
+
+.readMoreContent{
+    padding-top: 1.5rem;
 }
 
 .readMoreFeatureImageText{
@@ -942,7 +1104,23 @@ main{
     font-weight: 600;
 }
 
+.readMoreViewerPage .dateTime p{
+    margin: 0;
+}
+
 /* ReadMore More Viewer Content Elements styles */
+
+.readMoreViewerPage .margin-top{
+    margin-top: 13px;
+}
+
+.readMoreViewerPage p{
+    font-size: 0.938rem;
+}
+
+.readMoreTopic{
+    margin-top: 30px;
+}
 
 .readMoreViewerPage .readMoreContent h2{
     margin-top: 30px;
@@ -989,6 +1167,7 @@ h4 span {
 .readMorePadding .image p{
     padding: 9px 18px 17px 18px;
     font-size: 0.9rem;
+    margin: 0;
 }
 
 .codeSnippet{
@@ -1000,6 +1179,7 @@ h4 span {
 .codeSnippet .text{
     background-color: rgba(var(--primary-font-color), 100%);
     padding: 13px 30px;
+    margin: 0;
 }
 
 .codeSnippet pre{
