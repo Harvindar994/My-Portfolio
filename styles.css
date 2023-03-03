@@ -922,7 +922,7 @@ main{
 }
 
 .readMoreViewer{
-    display: initial;
+    display: none;
     top: 0%;
     left: 0%;
     position: fixed;
