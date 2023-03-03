@@ -543,8 +543,85 @@ main{
 /* Skill Section Style End'sHere */
 
 
+/* (about-me) about section style start' here */
+
+.about-me{
+    /* display: none; */
+    background-color: rgba(var(--primary-bg-2), 100%);
+}
+
+.about-me-heading {
+    color: rgba(var(--common-color), 100%);
+    padding: 121px 0px 0px 0px;
+    text-align: center;
+}
+
+.about-me-text h1 {
+    font-size: 3rem;
+    padding-bottom: 8px;
+}
+
+.about-me-text p {
+    max-width: 60%;
+    padding-bottom: 8px;
+    margin: auto;
+}
+
+.about-me-tags{
+    display: flex;
+    gap: 21px 10px;
+    justify-content: center;
+    padding: 40px 0px 64px 0px;
+    flex-wrap: wrap;
+}
+
+.about-me-tags p{
+    /* background-color: rgba(var(--primary-font-color), 100%); */
+    background: linear-gradient(33deg, rgba(var(--primary-bg-1), 100%), rgba(var(--primary-font-color), 70%));
+    padding: 4px 22px;
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about-me-tags p i{
+    color: gold;
+    margin: 0px 8px;
+}
+
+.about-me-services-heading{
+    color: rgba(var(--common-color), 100%);
+    text-align: center;
+    margin-top: 16px;
+}
+
+.about-me-services-heading i{
+    margin-right: 11px;
+}
+
+.about-me-cards{
+    display: flex;
+    gap: 43px;
+    justify-content: center;
+    padding: 49px 0px 136px 0px;
+    flex-wrap: wrap;
+}
+
+.about-me-cards .card{
+    transform: scale(1);
+    background: linear-gradient(33deg, rgba(var(--primary-bg-1), 100%), rgba(var(--primary-font-color), 70%));
+}
+
+.about-me-cards .card:hover{
+    transform: scale(1.02);
+}
+
+/* about section style ends' here */
+
+
 /* Services Style Start From Here */
 #services {
+    display: none;
     background-color: rgba(var(--primary-bg-2), 100%);
     color: rgba(var(--common-color), 100%);
 }
