@@ -73,6 +73,35 @@
 
     /* intro section style ends */
 
+    /* about me section style start's here */
+
+    .about-me-text h1{
+        font-size: 2.1rem;
+    }
+
+    .about-me-text p{
+        max-width: none;
+    }
+
+    .about-me-heading {
+        padding: 78px 0px 0px 0px;
+    }
+
+    .about-me-tags {
+        padding: 40px 0px 54px 0px;
+    }
+
+    .about-me-tags p{
+        padding: 4px 14px;
+        font-size: 0.9rem;
+    }
+
+    .about-me-cards {
+        padding: 49px 0px 85px 0px;
+    }
+
+    /* about me section style end's here */
+
     /* Services Section Style Start From Here */
 
     .services-heading{
@@ -106,16 +135,17 @@
 
     /* Here style of project section start's */
 
+    #projects {
+        background-color: rgba(var(--primary-bg-1), 100%);
+        padding-bottom: 40px;
+    }
+
     .portfolio-heading{
         padding: 90px 0px 0px 0px;
     }
 
     .portfolio-heading h1{
         font-size: 2.1rem;
-    }
-
-    .portfolio-heading p{
-
     }
 
     #projects .project-buttons{
@@ -132,7 +162,92 @@
         max-width: 95%;
     }
 
+    .stack-widget-content-navigator {
+        padding: 0px 19px;
+        height: 42px;
+        font-size: 0.9rem;
+    }
+
     /* here style of project section end's */
+
+    /* my skills style start's here */
+
+    .skills-heading {
+        padding: 90px 0px 0px 0px;
+    }
+
+    .skills-heading h1 {
+        font-size: 2.1rem;
+    }
+
+    .skills-heading p {
+        max-width: 95%;
+    }
+
+    .skillsContainer {
+        padding: 49px 0px 60px 0px;
+    }
+
+    /* my skills style end's here */
+
+    /* My experience start from here */
+
+    .experiences-heading {
+        padding: 90px 0px 0px 0px;
+    }
+
+    .experiences-heading h1 {
+        font-size: 2.1rem;
+    }
+
+    .experiences-heading p {
+        max-width: 95%;
+    }
+
+    .timeline {
+        display: flex;
+        justify-content: center;
+        padding-bottom: 18px;
+    }
+
+    .timeline .timelineCards {
+        min-height: 447px;
+        transform: scale(0.8);
+    }
+
+    /* My experience end's here */
+
+    /* a message to user styles start's from here */
+
+    .message .message-content {
+        font-size: 2.1rem;
+    }
+
+    /* a message to user styles end's here */
+
+    /* footer style start's from here */
+
+    /* footer style end's here */
+}
+
+@media screen and (max-width: 550px) {
+    /* a message to user styles start's from here */
+    
+    .message .message-content {
+        font-size: 1.5rem;
+    }
+
+    .message .message-discription {
+        font-size: 1rem;
+    }
+    
+    .message .message-container {
+        padding-top: 75px;
+        padding-bottom: 192px;
+    }
+
+    /* a message to user styles end's here */
+
 }
 
 @media screen and (min-width: 990px) {

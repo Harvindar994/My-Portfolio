@@ -211,6 +211,7 @@ main{
     flex-direction: column;
     align-items: center;
     
+    --float-menu-active-height: 419px;
     --float-menu-right-space: 36px;
     animation-name: menu-inactive;
     animation-duration: 1s;
@@ -224,7 +225,7 @@ main{
     0% {
         right: var(--float-menu-right-space);
         width: 61px;
-        height: 419px;
+        height: var(--float-menu-active-height);
     }
     75% {
         right: var(--float-menu-right-space);
@@ -269,7 +270,7 @@ main{
     100%{
         right: var(--float-menu-right-space);
         width: 61px;
-        height: 419px;
+        height: var(--float-menu-active-height);
     }
 }
 
@@ -1915,6 +1916,7 @@ h4 span {
     padding: 74px 0px 48px 0px;
     gap: 43px;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .footer-content .portfoliolinks .logo, .contact, .quick-links, .other-links{
