@@ -192,6 +192,183 @@ main{
 
 /* here style for loader end's */
 
+/* (floating-menu) here style of floating menu start's */
+
+.floating-menu{
+    top: 117px;
+    right: -7px;
+    width: 41px;
+    height: 39px;
+    border-radius: 8px;
+    backdrop-filter: blur(11px);
+    border: 1px solid #ffffff3b;
+    position: absolute;
+    background-color: rgb(40 42 55 / 49%);
+    box-shadow: 14px 9px 53px 3px rgb(0 0 0 / 29%);
+    z-index: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    --float-menu-right-space: 36px;
+    animation-name: menu-inactive;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-direction: alternate;
+}
+
+@keyframes  menu-inactive {
+    0% {
+        right: var(--float-menu-right-space);
+        width: 61px;
+        height: 419px;
+    }
+    25% {
+        right: var(--float-menu-right-space);
+        width: 61px;
+        height: 39px;
+    }
+    100% {
+        right: -7px;
+        width: 41px;
+        height: 39px;
+    }
+}
+
+.floating-menu .floating-menu-close-button i:nth-child(2) {
+    display: initial;
+}
+
+.floating-menu .floating-menu-close-button i:nth-child(1) {
+    display: none;
+}
+
+.floating-menu-active{
+    animation-name: menu-active;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-direction: alternate;
+}
+
+@keyframes menu-active {
+    0%{
+        right: -7px;
+        width: 41px;
+        height: 39px;
+    }
+    25%{
+        right: var(--float-menu-right-space);
+        width: 61px;
+        height: 39px;
+    }
+    100%{
+        right: var(--float-menu-right-space);
+        width: 61px;
+        height: 419px;
+    }
+}
+
+.floating-menu-active .floating-menu-close-button i:nth-child(2){
+    display: none;
+}
+
+.floating-menu-active .floating-menu-close-button i:nth-child(1){
+    display: initial;
+}
+
+.floating-menu-header{
+    font-size: 1.2rem;
+    color: #727272;
+    background-color: #0000004d;
+    cursor: pointer;
+    width: 100%;
+    
+}
+
+.floating-menu-close-button{
+    text-align: center;
+    height: 39px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.floating-menu-body {
+    width: 100%;
+    margin-top: 12px;
+}
+
+.floating-menu .gap{
+    height: 1px;
+    background-color: #ffffff63;
+    margin: 19px 9px;
+    width: -webkit-fill-available;
+}
+
+.floating-menu-button{
+    color: white;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.fmb-active{
+    color: #08c391;
+}
+
+.fmb-active::before{
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 63%;
+    width: 3px;
+    background-color: #08c391;
+    border-radius: 4px;
+    box-shadow: 1px 0px 15px 2px #08c391;
+}
+
+.floating-menu-link{
+    color: white;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.floating-menu-footer{
+    padding-bottom: 18px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.floating-menu-footer img{
+    width: 30px;
+    object-fit: contain;
+    height: 30px;
+    border-radius: 100%;
+    border: 1px solid #ffffff66;
+}
+/* here style of floating menu end's */
+
 #introduction{
     overflow: hidden;
     background-color: rgba(var(--primary-bg-1), 100%);

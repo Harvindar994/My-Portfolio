@@ -11,6 +11,15 @@
         padding: 0px 5% 1px 5%;
     }
 
+    /* here resposive of float menu */
+
+    .floating-menu{
+        --float-menu-right-space: 5%;
+        top: 117px;
+    }
+
+    /* here resposive of float menu */
+
     /* Here making 1 section resposive that is intro section */
     
     .logo img{
