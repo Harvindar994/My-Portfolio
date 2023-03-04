@@ -252,7 +252,7 @@ main{
     animation-duration: 1s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
-    animation-delay: 0s;
+    animation-delay: 15s;
     animation-direction: alternate;
 }
 
