@@ -1985,6 +1985,7 @@ h4 span {
     padding: 25px 0px 25px 0px;
     align-items: center;
     font-size: 0.8rem;
+    flex-wrap: wrap;
 }
 
 .footer-content .social-links .links{

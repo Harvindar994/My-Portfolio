@@ -246,6 +246,18 @@
         padding-bottom: 192px;
     }
 
+    .footer-content .social-links {
+        justify-content: center;
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    .footer-content .portfoliolinks .goToTop {
+        position: absolute;
+        right: 19px;
+        top: 84px;
+    }
+
     /* a message to user styles end's here */
 
 }
