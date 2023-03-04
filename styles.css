@@ -213,7 +213,7 @@ main{
     
     --float-menu-right-space: 36px;
     animation-name: menu-inactive;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 0s;
@@ -226,7 +226,7 @@ main{
         width: 61px;
         height: 419px;
     }
-    25% {
+    75% {
         right: var(--float-menu-right-space);
         width: 61px;
         height: 39px;
@@ -248,7 +248,7 @@ main{
 
 .floating-menu-active{
     animation-name: menu-active;
-    animation-duration: 1.5s;
+    animation-duration: 1s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 0s;
