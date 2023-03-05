@@ -34,6 +34,36 @@
         }
     },
 
+    "themeMenu": {
+        "themeButton": [
+            {
+                "theme": "lightRed",
+                "icon": "fa-solid fa-sun"
+            },
+            {
+                "theme": "default",
+                "icon": "fa-solid fa-moon"
+            }
+        ],
+
+        "quickLinks": [
+            {
+                "link": "#",
+                "icon": "fa-brands fa-linkedin"
+            },
+            {
+                "link": "#",
+                "icon": "fa-brands fa-youtube"
+            },
+            {
+                "link": "#",
+                "icon": "fa-brands fa-instagram"
+            }
+        ],
+
+        "authorIcon": "data/author.png"
+    },
+
     "mainMenu": {
         "logoText" : "Harry",
         "logo": "data/author/profile.png",

@@ -1149,12 +1149,122 @@ var Protfolio = function () {
     this.__init__();
 }
 
-// Here Creating the element to manage the floating menu that will will to chnage the theme and cisit some link.
-var FloatingMenu = function () {
+// Here created theme manager that will help to setup theme.
+
+var ThemeManager = function () {
+    this.data_file = null;
     this.jasonData = null;
 
     this.load = function (jasonData) {
         this.jasonData = jasonData;
+
+        // Here loading the default theme.
+        active_theme = this.jasonData["website-info"]["active-theme"]
+        theme = this.jasonData.themes[active_theme]
+
+        var root = document.querySelector(':root');
+
+        for (key in theme) {
+            root.style.setProperty("--" + key, theme[key]);
+        }
+
+        root.style.setProperty("--active-theme", active_theme);
+    }
+
+    this.setTheme = (name) => {
+        theme = this.jasonData.themes[name]
+
+        var root = document.querySelector(':root');
+
+        for (key in theme) {
+            root.style.setProperty("--" + key, theme[key]);
+        }
+
+        root.style.setProperty("--active-theme", name);
+    }
+
+    this.getActiveTheme = () => {
+        var root = document.querySelector(':root');
+        return root.style.getPropertyValue("--active-theme");
+    }
+
+}
+
+// Here Creating the element to manage the floating menu that will will to chnage the theme and cisit some link.
+var FloatingMenu = function (themeManager) {
+    this.jasonData = null;
+    this.themeManager = themeManager;
+    this.activeThemeButton = null;
+
+    this.onThemeChnage = (event) => {
+        let theme = event.currentTarget.getAttribute("index");
+        this.themeManager.setTheme(theme);
+
+        // here changing the state of the button.
+        this.activeThemeButton.classList.remove("fmb-active");
+
+        this.activeThemeButton = event.currentTarget;
+        this.activeThemeButton.classList.add("fmb-active");
+
+    }
+
+    this.load = function (jasonData) {
+        this.jasonData = jasonData;
+
+        let activeTheme = this.themeManager.getActiveTheme();
+
+        // here adding theme buttons.
+        for (var jasonButton of this.jasonData.themeButton) {
+            let button = document.createElement("div");
+            button.setAttribute("index", jasonButton.theme);
+            if (jasonButton.theme == activeTheme) {
+                button.classList.add("floating-menu-button");
+                button.classList.add("fmb-active");
+                this.activeThemeButton = button;
+            }
+            else {
+                button.classList.add("floating-menu-button");
+            }
+
+            button.innerHTML = `<i class="${jasonButton.icon}"></i>`;
+
+            // Here connecting the button with a function to chnage theme.
+            button.addEventListener("click", this.onThemeChnage);
+
+            this.body.append(button);
+        }
+
+        // here adding the gap element.
+        var gap = document.createElement("div");
+        gap.classList.add("gap");
+        this.body.append(gap);
+
+        // here adding quick links.
+        for (var jasonlink of this.jasonData.quickLinks) {
+            let link = document.createElement("a");
+            link.setAttribute("target", "_blank");
+            link.setAttribute("href", jasonlink.link);
+
+            link.innerHTML = `
+            <div class="floating-menu-link">
+                <i class="${jasonlink.icon}"></i>
+            </div>
+            `;
+
+            this.body.append(link);
+        }
+
+
+        // here again adding the gap element in the footer.
+        var gap = document.createElement("div");
+        gap.classList.add("gap");
+        this.footer.append(gap);
+
+        // here adding the author icon.
+        let authorIcon = document.createElement("img");
+        authorIcon.setAttribute("src", this.jasonData.authorIcon);
+        this.footer.append(authorIcon);
+
     }
 
     this.openCloseMenu = () => {
@@ -1170,6 +1280,8 @@ var FloatingMenu = function () {
     this.__init__ = function () {
         this.menu = document.querySelector(".floating-menu");
         this.closeButton = document.querySelector(".floating-menu-close-button");
+        this.body = document.querySelector(".floating-menu-body");
+        this.footer = document.querySelector(".floating-menu-footer");
 
         // here connecting buttons.
         this.closeButton.addEventListener("click", this.openCloseMenu);
@@ -1186,7 +1298,8 @@ var DataLoader = function (file) {
     this.services = new Services();
     this.protfolio = new Protfolio();
     this.mainMenu = new MainMenu();
-    this.floatingMenu = new FloatingMenu();
+    this.themeManager = new ThemeManager();
+    this.floatingMenu = new FloatingMenu(this.themeManager);
 
     this.loadData = function () {
         fetch(this.data_file)
@@ -1210,8 +1323,11 @@ var DataLoader = function (file) {
                 // Here loading the portfolio.
                 this.protfolio.load(data["protfolio"]);
 
+                // here loading the theme.
+                this.themeManager.load(data);
+
                 // Here loading the floating menu.
-                this.floatingMenu.load(null);
+                this.floatingMenu.load(data["themeMenu"]);
 
             });
 
@@ -1219,55 +1335,9 @@ var DataLoader = function (file) {
 
 }
 
-
-// Here created theme manager that will help to setup theme.
-
-var ThemeManager = function (file) {
-    this.data_file = file
-
-    this.loadTheme = function (name) {
-
-        fetch(this.data_file)
-            .then(response => response.json())
-            .then(data => {
-                theme = data.themes[name]
-
-                var root = document.querySelector(':root');
-
-                for (key in theme) {
-                    root.style.setProperty("--" + key, theme[key]);
-                }
-
-                root.style.setProperty("--active-theme", name);
-            });
-    }
-
-    this.loadDeafultTheme = function () {
-        fetch(this.data_file)
-            .then(response => response.json())
-            .then(data => {
-                active_theme = data["website-info"]["active-theme"]
-                theme = data.themes[active_theme]
-
-                var root = document.querySelector(':root');
-
-                for (key in theme) {
-                    root.style.setProperty("--" + key, theme[key]);
-                }
-
-                root.style.setProperty("--active-theme", active_theme);
-            });
-    }
-
-    this.setTheme = function (name) {
-        this.loadTheme(name)
-    }
-
-}
-
-// setting up theme.
-const theme_manager = new ThemeManager("./data/data.json");
-theme_manager.loadDeafultTheme()
+// // setting up theme.
+// const theme_manager = new ThemeManager("./data/data.json");
+// theme_manager.loadDeafultTheme()
 
 // Here Loading data.
 const data_loader = new DataLoader("./data/data.json");
