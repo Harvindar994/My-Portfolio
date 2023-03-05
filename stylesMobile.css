@@ -185,7 +185,7 @@
     }
 
     .skillsContainer {
-        margin: 26px 0px 60px 0px;
+        margin: 26px 0px 55px 0px;
     }
 
     /* my skills style end's here */
@@ -205,14 +205,12 @@
     }
 
     .timeline {
-        display: flex;
-        justify-content: center;
-        padding-bottom: 18px;
+        padding-bottom: 43px;
     }
 
     .timeline .timelineCards {
-        min-height: 447px;
-        transform: scale(0.8);
+        min-height: 555px;
+        /* transform: scale(0.8); */
     }
 
     /* My experience end's here */

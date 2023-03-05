@@ -609,6 +609,31 @@
                 "icon": "./data/projects/python.png",
                 "name": "Python",
                 "percentage": 70
+            },
+            {
+                "icon": "./data/projects/python.png",
+                "name": "Python",
+                "percentage": 70
+            },
+            {
+                "icon": "./data/projects/python.png",
+                "name": "Python",
+                "percentage": 70
+            },
+            {
+                "icon": "./data/projects/python.png",
+                "name": "Python",
+                "percentage": 70
+            },
+            {
+                "icon": "./data/projects/python.png",
+                "name": "Python",
+                "percentage": 70
+            },
+            {
+                "icon": "./data/projects/python.png",
+                "name": "Python",
+                "percentage": 70
             }
         ]
     }
