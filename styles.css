@@ -625,7 +625,7 @@ main{
 
 .skills{
     background-color: rgba(var(--primary-bg-2), 100%);
-    padding-bottom: 136px;
+    padding-bottom: 76px;
 }
 
 .skills-heading {
@@ -646,10 +646,10 @@ main{
 }
 
 .skillsContainer{
-    padding: 75px 0px 50px 0px;
-    display: flex;
+    margin: 54px 0px 50px 0px;
+    /* display: flex;
     justify-content: center;
-    gap: 45px;
+    gap: 45px; */
 }
 
 .skillCard {

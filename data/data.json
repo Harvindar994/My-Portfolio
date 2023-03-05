@@ -580,5 +580,36 @@
                 ]
             }
         ]
+    },
+
+    "skills": {
+        "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque perferendis maxime, voluptates magnam temporibus earum, ullam eveniet quod sequi, quo molestias harum atque accusamus eius.",
+        "cards": [
+            {
+                "icon": "./data/projects/python.png",
+                "name": "Python",
+                "percentage": 70
+            },
+            {
+                "icon": "./data/projects/python.png",
+                "name": "Python",
+                "percentage": 70
+            },
+            {
+                "icon": "./data/projects/python.png",
+                "name": "Python",
+                "percentage": 70
+            },
+            {
+                "icon": "./data/projects/python.png",
+                "name": "Python",
+                "percentage": 70
+            },
+            {
+                "icon": "./data/projects/python.png",
+                "name": "Python",
+                "percentage": 70
+            }
+        ]
     }
 }

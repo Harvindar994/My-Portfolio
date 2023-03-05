@@ -399,13 +399,16 @@ var CarosuleSimulator = function (container, gap, vertically_center = true, top_
             var starting_slide = this.slides[0];
             var last_slide = this.slides[this.slides.length - 1];
 
-            if (last_slide.translateX + last_slide.width <= container_width && starting_slide.translateX >= 0) {
-                this.nextButton.style.display = "none";
-                this.previousButton.style.display = "none";
-            }
-            else {
-                this.nextButton.style.display = "flex";
-                this.previousButton.style.display = "flex";
+            if (this.nextButton !== null && this.previousButton !== null) {
+
+                if (last_slide.translateX + last_slide.width <= container_width && starting_slide.translateX >= 0) {
+                    this.nextButton.style.display = "none";
+                    this.previousButton.style.display = "none";
+                }
+                else {
+                    this.nextButton.style.display = "flex";
+                    this.previousButton.style.display = "flex";
+                }
             }
         }
     }
@@ -492,10 +495,12 @@ var CarosuleSimulator = function (container, gap, vertically_center = true, top_
         container_width = parseInt(this.removePxFromNumbers(container_width));
 
         if (container_width > this.sliders_width) {
-            this.nextButton.style.display = "none";
-            this.previousButton.style.display = "none";
-        }
+            if (this.nextButton !== null && this.previousButton !== null) {
 
+                this.nextButton.style.display = "none";
+                this.previousButton.style.display = "none";
+            }
+        }
     }
 }
 
@@ -1215,10 +1220,58 @@ var Protfolio = function () {
     this.__init__();
 }
 
+// here creating component to manage skills.
+var Skills = function () {
+    this.jasonData = null;
+
+    this.load = function (jasonData) {
+        this.jasonData = jasonData;
+
+        this.description.innerText = this.jasonData.description;
+
+        // Here adding card to decription.
+        for (var jasoncard of this.jasonData.cards) {
+            card = document.createElement("div");
+            card.classList.add("skillCard");
+
+            card.innerHTML = `
+            <div class="content">
+                <img src="${jasoncard.icon}" alt="">
+                <p class="percentage">${jasoncard.percentage}%</p>
+                <!-- <i class="fa-brands fa-square-js"></i> -->
+                <p>${jasoncard.name}</p>
+            </div>
+            <div id="water" class="water" style="transform: translate(0, ${100 - jasoncard.percentage}%);">
+                <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+                    <use xlink:href="#wave"></use>
+                </svg>
+                <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
+                    <use xlink:href="#wave"></use>
+                </svg>
+            </div>
+            `;
+
+            this.cards.append(card);
+        }
+
+        // Here applying carousel Simulation.
+        this.carosuleSimulator.__init__();
+
+    }
+
+    this.__init__ = function () {
+        this.description = document.querySelector("#skillsDescription");
+        this.cards = document.querySelector(".skillsContainer");
+
+        this.carosuleSimulator = new CarosuleSimulator(this.cards, 20, true, 100);
+    }
+
+    this.__init__();
+}
+
 // Here created theme manager that will help to setup theme.
 
 var ThemeManager = function () {
-    this.data_file = null;
     this.jasonData = null;
 
     this.load = function (jasonData) {
@@ -1375,6 +1428,7 @@ var DataLoader = function (file) {
     this.themeManager = new ThemeManager();
     this.floatingMenu = new FloatingMenu(this.themeManager);
     this.aboutMe = new AboutMe();
+    this.skills = new Skills();
 
     this.loadData = function () {
         fetch(this.data_file)
@@ -1402,6 +1456,9 @@ var DataLoader = function (file) {
                 // Here loading the floating menu.
                 this.floatingMenu.load(data["themeMenu"]);
                 this.floatingMenu.reloadOnThemeChnage(this.profile);
+
+                // Here loading all the skills.
+                this.skills.load(data["skills"]);
 
             });
 
