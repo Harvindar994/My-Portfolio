@@ -202,10 +202,10 @@ main{
     border-radius: 8px;
     backdrop-filter: blur(11px);
     border: 1px solid #ffffff3b;
-    position: absolute;
+    position: fixed;
     background-color: rgb(40 42 55 / 49%);
     box-shadow: 14px 9px 53px 3px rgb(0 0 0 / 29%);
-    z-index: 1;
+    z-index: 3;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -239,20 +239,12 @@ main{
     }
 }
 
-.floating-menu .floating-menu-close-button i:nth-child(2) {
-    display: initial;
-}
-
-.floating-menu .floating-menu-close-button i:nth-child(1) {
-    display: none;
-}
-
 .floating-menu-active{
     animation-name: menu-active;
     animation-duration: 1s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
-    animation-delay: 15s;
+    animation-delay: 0s;
     animation-direction: alternate;
 }
 
@@ -274,12 +266,68 @@ main{
     }
 }
 
-.floating-menu-active .floating-menu-close-button i:nth-child(2){
-    display: none;
+.floating-menu .floating-menu-close-button i:nth-child(2) {
+    animation-name: icon-show;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-direction: alternate;
+}
+
+.floating-menu-active .floating-menu-close-button i:nth-child(2) {
+    animation-name: icon-hide;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-direction: alternate;
+}
+
+.floating-menu .floating-menu-close-button i:nth-child(1) {
+    animation-name: icon-hide;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-direction: alternate;
 }
 
 .floating-menu-active .floating-menu-close-button i:nth-child(1){
-    display: initial;
+    animation-name: icon-show;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-direction: alternate;
+}
+
+@keyframes icon-show {
+    0% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes icon-hide {
+    0% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 .floating-menu-header{
@@ -298,6 +346,11 @@ main{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    position: relative;
+}
+
+.floating-menu-close-button i{
+    position: absolute;
 }
 
 .floating-menu-body {

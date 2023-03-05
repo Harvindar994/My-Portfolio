@@ -1149,6 +1149,35 @@ var Protfolio = function () {
     this.__init__();
 }
 
+// Here Creating the element to manage the floating menu that will will to chnage the theme and cisit some link.
+var FloatingMenu = function () {
+    this.jasonData = null;
+
+    this.load = function (jasonData) {
+        this.jasonData = jasonData;
+    }
+
+    this.openCloseMenu = () => {
+
+        if (this.menu.classList.contains("floating-menu-active")) {
+            this.menu.classList.remove("floating-menu-active");
+        }
+        else {
+            this.menu.classList.add("floating-menu-active");
+        }
+    }
+
+    this.__init__ = function () {
+        this.menu = document.querySelector(".floating-menu");
+        this.closeButton = document.querySelector(".floating-menu-close-button");
+
+        // here connecting buttons.
+        this.closeButton.addEventListener("click", this.openCloseMenu);
+    }
+
+    this.__init__();
+}
+
 // Here's a Data Parser is being created that will help to parse all the data from jason file.
 
 var DataLoader = function (file) {
@@ -1157,6 +1186,7 @@ var DataLoader = function (file) {
     this.services = new Services();
     this.protfolio = new Protfolio();
     this.mainMenu = new MainMenu();
+    this.floatingMenu = new FloatingMenu();
 
     this.loadData = function () {
         fetch(this.data_file)
@@ -1179,6 +1209,9 @@ var DataLoader = function (file) {
 
                 // Here loading the portfolio.
                 this.protfolio.load(data["protfolio"]);
+
+                // Here loading the floating menu.
+                this.floatingMenu.load(null);
 
             });
 
