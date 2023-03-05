@@ -179,6 +179,7 @@ main{
     background-color: rgba(var(--primary-font-color), 100%);
     /* background-color: linear-gradient(90deg, #08c391 94%, #08c39100 100%); */
     position: relative;
+    transition: all 1s;
 }
 
 .loader .progressBar .progressBarDot{
@@ -213,8 +214,9 @@ main{
     
     --float-menu-active-height: 419px;
     --float-menu-right-space: 36px;
+    --animation-duration: 0.5s;
     animation-name: menu-inactive;
-    animation-duration: 1s;
+    animation-duration: var(--animation-duration);
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 0s;
@@ -241,7 +243,7 @@ main{
 
 .floating-menu-active{
     animation-name: menu-active;
-    animation-duration: 1s;
+    animation-duration: var(--animation-duration);
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 0s;
@@ -268,7 +270,7 @@ main{
 
 .floating-menu .floating-menu-close-button i:nth-child(2) {
     animation-name: icon-show;
-    animation-duration: 1s;
+    animation-duration: var(--animation-duration);
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 0s;
@@ -277,7 +279,7 @@ main{
 
 .floating-menu-active .floating-menu-close-button i:nth-child(2) {
     animation-name: icon-hide;
-    animation-duration: 1s;
+    animation-duration: var(--animation-duration);
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 0s;
@@ -286,7 +288,7 @@ main{
 
 .floating-menu .floating-menu-close-button i:nth-child(1) {
     animation-name: icon-hide;
-    animation-duration: 1s;
+    animation-duration: var(--animation-duration);
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 0s;
@@ -295,7 +297,7 @@ main{
 
 .floating-menu-active .floating-menu-close-button i:nth-child(1){
     animation-name: icon-show;
-    animation-duration: 1s;
+    animation-duration: var(--animation-duration);
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-delay: 0s;
@@ -493,7 +495,7 @@ main{
     -webkit-backdrop-filter: blur(5px);
     z-index: 2;
     overflow: hidden;
-    transition: all 1s cubic-bezier(0.54, 0.27, 0.74, 1.08) 0s;
+    transition: all 0.5s cubic-bezier(0.54, 0.27, 0.74, 1.08) 0s;
 }
 
 .mobile-menu-optins-close-btn{

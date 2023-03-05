@@ -34,6 +34,16 @@
         }
     },
 
+    "activatedSections":{
+        "introduction": true,
+        "aboutMe": true,
+        "services": false,
+        "projects": true,
+        "skills": true,
+        "messageToUser": true,
+        "footer": true
+    },
+
     "themeMenu": {
         "themeButton": [
             {
@@ -56,8 +66,8 @@
                 "icon": "fa-brands fa-youtube"
             },
             {
-                "link": "#",
-                "icon": "fa-brands fa-instagram"
+                "link": "https://wa.me/+919695806109",
+                "icon": "fa-brands fa-whatsapp"
             }
         ],
 
@@ -126,6 +136,35 @@
                 "link": "https://wa.me/+919695806109",
                 "icon": "fa-brands fa-whatsapp",
                 "target": "blank"
+            }
+        ]
+    },
+
+    "aboutMe":{
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque perferendis maxime, voluptates magnam temporibus earum, ullam eveniet quod sequi, quo molestias harum atque accusamus eius.",
+        
+        "//Warning": "while you are defining tag you can use <i> tag but inorder to give value to the tag use single-quots not double-quotes ",
+        "tags" : [
+            "3 <i class='fa-solid fa-star'></i> CodeChef",
+            "Built Large Desktop <i class='fa-solid fa-desktop'></i> App For Clients for real world use",
+            "Lorem ipsum dolor sit amet.",
+            "Lorem, ipsum dolor."
+        ],
+        "cards": [
+            {
+                "icon": "fa-brands fa-uikit",
+                "name": "UI/UX Designer",
+                "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla."
+            },
+            {
+                "icon": "fa-solid fa-wand-magic-sparkles",
+                "name": "UI/UX Designer",
+                "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla."
+            },
+            {
+                "icon": "fa-brands fa-uikit",
+                "name": "UI/UX Designer",
+                "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla."
             }
         ]
     },

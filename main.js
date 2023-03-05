@@ -532,6 +532,55 @@ var Services = function () {
     }
 }
 
+// Here creating aboutMe section component.
+let AboutMe = function () {
+    this.jasonData = null;
+
+    this.load = function (jasonData) {
+        this.jasonData = jasonData;
+
+        // here setting up description.
+        this.description.innerText = jasonData.description;
+
+        // here adding all the tags.
+        for (var jasonTag of jasonData.tags) {
+            var tag = document.createElement("p");
+            tag.classList.add("button");
+            tag.innerHTML = jasonTag;
+            this.tags.append(tag);
+        }
+
+        // here adding all the cards.
+        for (var jasonCard of jasonData.cards) {
+            var card = document.createElement("div");
+            card.classList.add("card");
+            card.classList.add("button");
+
+            card.innerHTML = `
+            <div class="card-icon">
+                <i class="${jasonCard.icon}"></i>
+            </div>
+            <h3 class="card-heading">${jasonCard.name}</h3>
+            <p class="card-description">${jasonCard.description}</p>
+            `;
+
+            this.cards.append(card);
+        }
+    }
+
+    this.getElement = function (query) {
+        return document.querySelector(query);
+    }
+
+    this.__init__ = function () {
+        this.description = this.getElement(".about-me-description");
+        this.tags = this.getElement(".about-me-tags");
+        this.cards = this.getElement(".about-me-cards");
+    }
+
+    this.__init__();
+}
+
 
 // Here creating Page element it will be a Stack Widget Page that will represent each page of StackWidget.
 var StackWidgetPage = function (visible_element_count = 9) {
@@ -1325,6 +1374,7 @@ var DataLoader = function (file) {
     this.mainMenu = new MainMenu();
     this.themeManager = new ThemeManager();
     this.floatingMenu = new FloatingMenu(this.themeManager);
+    this.aboutMe = new AboutMe();
 
     this.loadData = function () {
         fetch(this.data_file)
@@ -1339,6 +1389,9 @@ var DataLoader = function (file) {
 
                 // Here setting up profile data.
                 this.profile.load(data["author-info"]);
+
+                // Here loading info of about me.
+                this.aboutMe.load(data["aboutMe"]);
 
                 // Here Setting up the services section.
                 this.services.load(data["services"]);
