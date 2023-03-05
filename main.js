@@ -20,7 +20,24 @@ function copyText() {
 var Profile = function () {
     this.profile = null;
 
-    this.load = function (profile, active_theme) {
+    this.getActiveTheme = function () {
+        // here fetching information about active theme.
+        var root = document.querySelector(':root');
+        var active_theme = root.style.getPropertyValue("--active-theme");
+        return active_theme;
+    }
+
+    this.reload = () => {
+        // here reloading the author image based on theme actived.
+        author_image = document.querySelector("#author-image");
+        active_theme = this.getActiveTheme();
+        author_image.setAttribute("src", this.profile.profile_images[active_theme]);
+    }
+
+    this.load = function (profile) {
+        // here fetching the active theme.
+        active_theme = this.getActiveTheme();
+
         // here profile jason data will get stored for further uses.
         this.profile = profile;
 
@@ -1195,6 +1212,7 @@ var FloatingMenu = function (themeManager) {
     this.jasonData = null;
     this.themeManager = themeManager;
     this.activeThemeButton = null;
+    this.reloadComponentOnThemeChnage = [];
 
     this.onThemeChnage = (event) => {
         let theme = event.currentTarget.getAttribute("index");
@@ -1206,6 +1224,13 @@ var FloatingMenu = function (themeManager) {
         this.activeThemeButton = event.currentTarget;
         this.activeThemeButton.classList.add("fmb-active");
 
+        for (var component of this.reloadComponentOnThemeChnage) {
+            component.reload();
+        }
+    }
+
+    this.reloadOnThemeChnage = function (component) {
+        this.reloadComponentOnThemeChnage.push(component);
     }
 
     this.load = function (jasonData) {
@@ -1306,16 +1331,14 @@ var DataLoader = function (file) {
             .then(response => response.json())
             .then(data => {
 
-                // here fetching information about active theme.
-                var root = document.querySelector(':root');
-                var active_theme = root.style.getPropertyValue("--active-theme");
-
+                // here loading the theme.
+                this.themeManager.load(data);
 
                 // here setting up the main menu options.
                 this.mainMenu.load(data["mainMenu"]);
 
                 // Here setting up profile data.
-                this.profile.load(data["author-info"], active_theme);
+                this.profile.load(data["author-info"]);
 
                 // Here Setting up the services section.
                 this.services.load(data["services"]);
@@ -1323,11 +1346,9 @@ var DataLoader = function (file) {
                 // Here loading the portfolio.
                 this.protfolio.load(data["protfolio"]);
 
-                // here loading the theme.
-                this.themeManager.load(data);
-
                 // Here loading the floating menu.
                 this.floatingMenu.load(data["themeMenu"]);
+                this.floatingMenu.reloadOnThemeChnage(this.profile);
 
             });
 
