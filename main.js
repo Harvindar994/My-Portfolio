@@ -1284,7 +1284,10 @@ var Experiences = function () {
     this.__init__ = function () {
         this.description = document.querySelector("#experiencesDescription");
         this.cards = document.querySelector(".timelineCards");
-        this.carosuleSimulator = new CarosuleSimulator(this.cards, 0, true, 331);
+        this.leftButton = document.querySelector(".timelineLeftButton");
+        this.rightButton = document.querySelector(".timelineRightButton");
+
+        this.carosuleSimulator = new CarosuleSimulator(this.cards, 0, true, 331, this.rightButton, this.leftButton);
     }
 
     this.__init__();

@@ -1772,16 +1772,11 @@ h4 span {
 }
 
 .timeline{
-    display: flex;
-    justify-content: center;
+    padding: 107px 0px 120px 0px;
 }
 
 .timeline .timelineCards{
-    height: 530px;
-    display: flex;
-    align-items: center;
     height: 100%;
-    min-height: 662px;
 }
 
 /* time card style start here */
@@ -1795,6 +1790,7 @@ h4 span {
 }
 
 .timelineNow{
+    transition: all 0.5s;
     width: 130px;
     background-color: rgba(var(--primary-font-color), 100%);
     height: 38px;
@@ -1804,11 +1800,9 @@ h4 span {
     align-items: center;
     color: rgba(var(--common-color), 100%);
     clip-path: polygon(0% 0%, 67% 0%, 79% 47%, 100% 47%, 100% 53%, 79% 53%, 67% 100%, 0% 100%);
-    transform: scaleX(-1);
 }
 
 .timelineNow p{
-    transform: scaleX(-1);
     padding: 1px 1px 1px 30px;
 }
 
@@ -1888,6 +1882,22 @@ h4 span {
 
 .timelineCard .timelineContent .workDescription{
     font-size: 0.9rem;
+}
+
+.timelineContainerButtons {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 107px;
+}
+
+.timelineRightButton, .timelineLeftButton {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    border-radius: 100%;
 }
 
 /* Here experiences style End's */
