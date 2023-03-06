@@ -1261,9 +1261,30 @@ var Skills = function () {
 
     this.__init__ = function () {
         this.description = document.querySelector("#skillsDescription");
-        this.cards = document.querySelector(".skillsContainer");
+        this.cards = document.querySelector(".skillCardsContainer");
+        this.leftButton = document.querySelector(".skillsLeftButton");
+        this.rightButton = document.querySelector(".skillsRightButton");
 
-        this.carosuleSimulator = new CarosuleSimulator(this.cards, 20, true, 100);
+        this.carosuleSimulator = new CarosuleSimulator(this.cards, 20, true, 100, this.rightButton, this.leftButton);
+    }
+
+    this.__init__();
+}
+
+// here creating component to manage experiences.
+var Experiences = function () {
+
+    this.load = function (jasonData) {
+        this.jasonData = jasonData;
+        // this.description.innerText = jasonData.description;
+
+        this.carosuleSimulator.__init__();
+    }
+
+    this.__init__ = function () {
+        this.description = document.querySelector("#experiencesDescription");
+        this.cards = document.querySelector(".timelineCards");
+        this.carosuleSimulator = new CarosuleSimulator(this.cards, 0, true, 331);
     }
 
     this.__init__();
@@ -1429,6 +1450,7 @@ var DataLoader = function (file) {
     this.floatingMenu = new FloatingMenu(this.themeManager);
     this.aboutMe = new AboutMe();
     this.skills = new Skills();
+    this.experiences = new Experiences();
 
     this.loadData = function () {
         fetch(this.data_file)
@@ -1459,6 +1481,9 @@ var DataLoader = function (file) {
 
                 // Here loading all the skills.
                 this.skills.load(data["skills"]);
+
+                //here loading skill slides.
+                this.experiences.load(null);
 
             });
 

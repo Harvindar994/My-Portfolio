@@ -646,10 +646,30 @@ main{
 }
 
 .skillsContainer{
+    position: relative;
     margin: 44px 0px 63px 0px;
     /* display: flex;
     justify-content: center;
     gap: 45px; */
+}
+
+.skillContainerButtons{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.skillsRightButton, .skillsLeftButton{
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+    border-radius: 100%;
+}
+
+.skillCardsContainer{
+    overflow: hidden;
 }
 
 .skillCard {
@@ -665,12 +685,6 @@ main{
     background-color: rgb(23, 28, 35);
     transition: all 1s;
     z-index: 0;
-}
-
-.skillCard:hover {
-    transition: all 0.5s;
-    border: 1px solid rgb(8, 195, 145);
-    transform: scale(1.05);
 }
 
 .skillCard .content {

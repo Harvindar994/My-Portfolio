@@ -36,7 +36,7 @@
 
         <!-- (floating-menu) floacting me start's here-->
 
-        <div class="floating-menu floating-menu-active">
+        <div class="floating-menu">
             <div class="floating-menu-header">
                 <div class="floating-menu-close-button">
                     <i class="fa-solid fa-xmark"></i>
@@ -908,25 +908,37 @@ def function():
             </div>
         
             <div class="skillsContainer">
-        
-                <!-- skill card -->
-                <!-- <div class="skillCard">
-                    <div class="content">
-                        <img src="https://i.pinimg.com/originals/95/91/ed/9591ed82caa8d20c30db96cb7298d3a9.png" alt="">
-                        <p class="percentage">70%</p>
-                        <i class="fa-brands fa-square-js"></i>
-                        <p>Python </p>
+                
+                <div class="skillCardsContainer">
+                    <!-- skill card -->
+                    <!-- <div class="skillCard">
+                        <div class="content">
+                            <img src="https://i.pinimg.com/originals/95/91/ed/9591ed82caa8d20c30db96cb7298d3a9.png" alt="">
+                            <p class="percentage">70%</p>
+                            <i class="fa-brands fa-square-js"></i>
+                            <p>Python </p>
+                        </div>
+                        <div id="water" class="water" style="transform: translate(0, 30%);">
+                            <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
+                                <use xlink:href="#wave"></use>
+                            </svg>
+                            <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
+                                <use xlink:href="#wave"></use>
+                            </svg>
+                        </div>
+                    </div> -->
+
+                </div>
+
+                <div class="skillContainerButtons">
+                    <div class="skillsLeftButton button">
+                        <i class="fa-solid fa-angle-left"></i>
                     </div>
-                    <div id="water" class="water" style="transform: translate(0, 30%);">
-                        <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
-                            <use xlink:href="#wave"></use>
-                        </svg>
-                        <svg viewBox="0 0 560 20" class="water_wave water_wave_front">
-                            <use xlink:href="#wave"></use>
-                        </svg>
+                    <div class="skillsRightButton button">
+                        <i class="fa-solid fa-angle-right"></i>
                     </div>
-                </div> -->
-        
+                </div>
+
             </div>
         </div>
 
@@ -1046,8 +1058,8 @@ def function():
         </section>
         
         <!-- Here section end's for to give a message to user. -->
-
-        <section class="footer fireEffect bubbleEffect">
+        <!-- fireEffect bubbleEffect -->
+        <section class="footer">
             <div class="bubbles">
                 <div class="bubble"
                     style="--size:4.9001025049609215rem; --distance:6.930051145530464rem; --position:100.11334669861205%; --time:2.7754298861992357s; --delay:-3.298638628651449s;">
