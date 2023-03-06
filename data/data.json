@@ -208,7 +208,7 @@
                 "name": "All Work",
                 "projects": [
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -223,7 +223,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -238,7 +238,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -253,7 +253,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -268,7 +268,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -283,7 +283,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -298,7 +298,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -313,7 +313,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -333,7 +333,7 @@
                 "name": "Personal Project",
                 "projects": [
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -348,7 +348,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -363,7 +363,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -378,7 +378,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -393,7 +393,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -408,7 +408,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -423,7 +423,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -438,7 +438,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -458,7 +458,7 @@
                 "name": "Professional Projects",
                 "projects": [
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -473,7 +473,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -488,7 +488,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -503,7 +503,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -518,7 +518,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -533,7 +533,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -548,7 +548,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
@@ -563,7 +563,7 @@
                         "readMore": {}
                     },
                     {
-                        "icon": "./data/projects/python.png",
+                        "icon": "./data/skills/python.png",
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
