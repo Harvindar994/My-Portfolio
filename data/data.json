@@ -71,7 +71,7 @@
             }
         ],
 
-        "authorIcon": "data/author.png"
+        "authorIcon": "data/msg-to-user/author.png"
     },
 
     "mainMenu": {
@@ -102,8 +102,8 @@
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore perferendis autem ea nihil quae. Assumenda, sint obcaecati. Eum provident ex quasi quod itaque magnam quam sequi consequatur, at laborum. Eum.",
         "profile_images": {
             
-            "default": "data/author/profile.png",
-            "lightRed": "data/author/profile_red_bg.png"
+            "default": "data/introduction/profile.png",
+            "lightRed": "data/introduction/profile_red_bg.png"
         },
         
         "social_media": [
@@ -586,54 +586,94 @@
         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque perferendis maxime, voluptates magnam temporibus earum, ullam eveniet quod sequi, quo molestias harum atque accusamus eius.",
         "cards": [
             {
-                "icon": "./data/projects/python.png",
-                "name": "Python",
+                "icon": "./data/skills/c language.png",
+                "name": "C Language ",
+                "percentage": 98
+            },
+            {
+                "icon": "./data/skills/java.png",
+                "name": "Java",
+                "percentage": 50
+            },
+            {
+                "icon": "./data/skills/net.png",
+                "name": ".NET Core",
                 "percentage": 70
             },
             {
-                "icon": "./data/projects/python.png",
+                "icon": "./data/skills/net asp-mvc.png",
+                "name": ".NET MVC",
+                "percentage": 50
+            },
+            {
+                "icon": "./data/skills/python.png",
                 "name": "Python",
+                "percentage": 90
+            },
+            {
+                "icon": "./data/skills/djnago.svg",
+                "name": "DJango",
+                "percentage": 65
+            },
+            {
+                "icon": "./data/skills/reactJs.png",
+                "name": "ReactJS",
+                "percentage": 5
+            },
+            {
+                "icon": "./data/skills/javascript.png",
+                "name": "JavaScript",
+                "percentage": 65
+            },
+            {
+                "icon": "./data/skills/css.png",
+                "name": "CSS",
+                "percentage": 75
+            },
+            {
+                "icon": "./data/skills/Tailwind.png",
+                "name": "Tailwind",
+                "percentage": 2
+            },
+            {
+                "icon": "./data/skills/html.png",
+                "name": "HTML 5",
+                "percentage": 80
+            },
+            {
+                "icon": "./data/skills/mongodb.png",
+                "name": "MongoDB",
+                "percentage": 55
+            },
+            {
+                "icon": "./data/skills/mysql.png",
+                "name": "SQL",
+                "percentage": 50
+            },
+            {
+                "icon": "./data/skills/github.png",
+                "name": "GitHub",
                 "percentage": 70
             },
             {
-                "icon": "./data/projects/python.png",
-                "name": "Python",
-                "percentage": 70
+                "icon": "./data/skills/blender.png",
+                "name": "Blender",
+                "percentage": 35
             },
             {
-                "icon": "./data/projects/python.png",
-                "name": "Python",
-                "percentage": 70
+                "icon": "./data/skills/photoshop.webp",
+                "name": "PhotoShop",
+                "percentage": 45
             },
             {
-                "icon": "./data/projects/python.png",
-                "name": "Python",
-                "percentage": 70
+                "icon": "./data/skills/figma.png",
+                "name": "Figma",
+                "percentage": 60
             },
             {
-                "icon": "./data/projects/python.png",
-                "name": "Python",
-                "percentage": 70
-            },
-            {
-                "icon": "./data/projects/python.png",
-                "name": "Python",
-                "percentage": 70
-            },
-            {
-                "icon": "./data/projects/python.png",
-                "name": "Python",
-                "percentage": 70
-            },
-            {
-                "icon": "./data/projects/python.png",
-                "name": "Python",
-                "percentage": 70
-            },
-            {
-                "icon": "./data/projects/python.png",
-                "name": "Python",
-                "percentage": 70
+                "icon": "./data/skills/qt.png",
+                "name": "PyQT",
+                "percentage": 90
             }
         ]
     }

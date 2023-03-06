@@ -29,6 +29,7 @@
     --primary-bg-2: #171c23;
     --read-more-viewer-bg: 33, 39, 47;
     --active-theme: "none";
+    --author-profile: "./data/introduction/profile.png";
 }
 
 html{
@@ -724,6 +725,8 @@ main{
     height: 32px;
     object-fit: contain;
     object-position: center;
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(var(--primary-bg-2), 100%));
+    filter: drop-shadow(5px 5px 5px rgba(var(--primary-bg-2), 100%));
 }
 
 .skillCard .content i {
@@ -1777,6 +1780,7 @@ h4 span {
 
 .timeline .timelineCards{
     height: 100%;
+    overflow: hidden;
 }
 
 /* time card style start here */
