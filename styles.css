@@ -1799,8 +1799,8 @@ h4 span {
     justify-content: center;
     align-items: center;
     color: rgba(var(--common-color), 100%);
-    /* clip-path: polygon(0% 0%, 67% 0%, 79% 47%, 100% 47%, 100% 53%, 79% 53%, 67% 100%, 0% 100%); */
-    clip-path: polygon(25% 54%, 40% 0%, 100% 0%, 100% 100%, 40% 100%, 25% 46%, 0% 46%, 0% 54%);
+    clip-path: polygon(0% 46%, 25% 45%, 40% 0%, 100% 0%, 100% 100%, 40% 100%, 25% 54%, 0% 54%)s;
+    /* clip-path: polygon(25% 54%, 40% 0%, 100% 0%, 100% 100%, 40% 100%, 25% 46%, 0% 46%, 0% 54%); */
 }
 
 .timelineNow p{
