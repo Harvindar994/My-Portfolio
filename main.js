@@ -142,14 +142,6 @@ var PercentageCarosuleSimulator = function (container, containerHeight) {
     }
 
     this.__init__ = function () {
-        // here adding elevent listner on buttons.
-        // if (this.nextButton !== null) {
-        //     this.nextButton.addEventListener("click", this.onNextPressed);
-        // }
-
-        // if (this.previousButton !== null) {
-        //     this.previousButton.addEventListener("click", this.onPreviousPressed);
-        // }
 
         // here setting up relative postion on container.
         this.container.style.position = "relative";
@@ -1259,6 +1251,20 @@ var Skills = function () {
 
     }
 
+    this.onNextPressed = (event) => {
+        if (this.carosuleSimulator !== null) {
+            this.carosuleSimulator.onNextPressed();
+        }
+        event.stopPropagation();
+    }
+
+    this.onPreviousPressed = (event) => {
+        if (this.carosuleSimulator !== null) {
+            this.carosuleSimulator.onPreviousPressed();
+        }
+        event.stopPropagation();
+    }
+
     this.__init__ = function () {
         this.description = document.querySelector("#skillsDescription");
         this.cards = document.querySelector(".skillCardsContainer");
@@ -1266,6 +1272,11 @@ var Skills = function () {
         this.rightButton = document.querySelector(".skillsRightButton");
 
         this.carosuleSimulator = new CarosuleSimulator(this.cards, 20, true, 100, this.rightButton, this.leftButton);
+
+        // here connecting buttons.
+        // this.leftButton.addEventListener("click", this.onPreviousPressed);
+        // this.rightButton.addEventListener("click", this.onNextPressed);
+
     }
 
     this.__init__();
