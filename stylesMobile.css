@@ -263,6 +263,12 @@
 
     /* a message to user styles end's here */
 
+    /* Here style goes for bubble animation */
+    .bubbleEffect .bubbles .bubble {
+        transform: translate(-50%, 100%) scale(0.5) !important;
+    }
+    /* Here style goes for bubble animation end here */
+
 }
 
 @media screen and (min-width: 990px) {
