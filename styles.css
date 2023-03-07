@@ -479,12 +479,13 @@ main{
     justify-content: center;
     align-items: center;
     color: rgba(var(--common-color), 100%);
+    z-index: 1;
+    position: relative;
 }
 
 .mobile-menu-optins{
     position: fixed;
     display: flex;
-    /* display: none; */
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -492,11 +493,17 @@ main{
     top: 100%;
     width: 100%;
     height: 100%;
+    opacity: 0;
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(5px);
     z-index: 2;
     overflow: hidden;
     transition: all 0.5s cubic-bezier(0.54, 0.27, 0.74, 1.08) 0s;
+}
+
+.mobile-menu-optins-active{
+    top: 0%;
+    opacity: 1;
 }
 
 .mobile-menu-optins-close-btn{
@@ -648,7 +655,7 @@ main{
 
 .skillsContainer{
     position: relative;
-    margin: 44px 0px 63px 0px;
+    margin: 0px 0px 63px 0px;
     /* display: flex;
     justify-content: center;
     gap: 45px; */
@@ -660,6 +667,7 @@ main{
     justify-content: center;
     align-items: center;
     gap: 20px;
+    margin-top: 10px;
 }
 
 .skillsRightButton, .skillsLeftButton{
@@ -1249,19 +1257,98 @@ main{
 }
 
 .readMoreViewer{
-    display: none;
-    top: 0%;
+    /* display: none; */
+    opacity: 0;
+    /* top: 100%; */
     left: 0%;
     position: fixed;
     width: 100%;
     height: 100%;
     z-index: 2;
-    background-color: rgba(0, 0, 0, .7);
+    background-color: rgba(0, 0, 0, 70%);
     color: rgba(var(--common-color), 100%);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(5px);
     overflow: hidden;
     transition: all 1s;
+
+    /* Animation */
+    --readMoreAnimationDuration: 0.5s;
+    animation-name: read-more-inactive;
+    animation-duration: var(--readMoreAnimationDuration);
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-direction: alternate;
+}
+
+.readMoreViewerActive{
+    animation-name: read-more-active;
+    animation-duration: var(--readMoreAnimationDuration);
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-direction: alternate;
+}
+
+.readMoreViewerActive .readMoreViewerPage{
+    animation-name: read-more-page-active;
+    animation-duration: var(--readMoreAnimationDuration);
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-direction: alternate;
+}
+
+.readMoreViewerActive .readMoreViewerCloseButton{
+    animation-name: read-more-closeButton-active;
+    animation-duration: var(--readMoreAnimationDuration);
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-direction: alternate;
+}
+
+@keyframes read-more-inactive {
+    0%{
+        top: 0%;
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 70%);
+        backdrop-filter: blur(30px);
+    }
+    75%{
+        top: 0%;
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0%);
+        backdrop-filter: blur(0px);
+    }
+    100%{
+        top: 100%;
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0%);
+        backdrop-filter: blur(0px);
+    }
+}
+
+@keyframes read-more-active {
+    0%{
+        top: 100%;
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0%);
+        backdrop-filter: blur(0px);
+    }
+    25%{
+        top: 0%;
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 0%);
+        backdrop-filter: blur(0px);
+    }
+    100%{
+        top: 0%;
+        opacity: 1;
+        background-color: rgba(0, 0, 0, 70%);
+        backdrop-filter: blur(30px);
+    }
 }
 
 /*header style start's from here */
@@ -1376,7 +1463,52 @@ main{
     font-size: 1.1rem;
     border-radius: 100%;
     background-color: rgba(var(--primary-font-color), 70%);
+
+    /* Here animation */
+    animation-name: read-more-closeButton-inactive;
+    animation-duration: var(--readMoreAnimationDuration);
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-direction: alternate;
 }
+
+/* animation keyframe for close button start's here */
+
+@keyframes read-more-closeButton-inactive {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    75% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+@keyframes read-more-closeButton-active {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* animation keyframe for close button end's here */
 
 .readMoreScrollContainer{
     overflow-y: scroll;
@@ -1398,7 +1530,52 @@ main{
     overflow: hidden;
     background-color: rgb(44, 48, 58);
     box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+
+    /* Here animation */
+    animation-name: read-more-page-inactive;
+    animation-duration: var(--readMoreAnimationDuration);
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-direction: alternate;
 }
+
+/* Here defining the animation for read more viewer page */
+
+@keyframes read-more-page-inactive {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    75% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+@keyframes read-more-page-active {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Here defining the animation for read more viewer page end here*/
 
 .readMoreViewerCloseButton:hover::before{
     transition: all 0.5s;
@@ -1775,7 +1952,7 @@ h4 span {
 }
 
 .timeline{
-    padding: 107px 0px 120px 0px;
+    padding: 80px 0px 120px 0px;
 }
 
 .timeline .timelineCards{

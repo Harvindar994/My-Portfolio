@@ -886,8 +886,8 @@ var ReadMoreViewer = function () {
 
     this.show = (jasonData = null) => {
         // here making this window visible.
-        this.window.style.display = "initial";
-        // this.window.style.opacity = "1";
+        // this.window.style.display = "initial";
+        this.window.classList.add("readMoreViewerActive");
 
         this.jasonData = jasonData;
 
@@ -895,8 +895,8 @@ var ReadMoreViewer = function () {
 
     this.hide = () => {
         // here hiding the window.
-        // this.window.style.opacity = "0";
-        this.window.style.display = "none";
+        // this.window.style.display = "none";
+        this.window.classList.remove("readMoreViewerActive");
     }
 
     this.__init__ = function () {
@@ -1102,11 +1102,13 @@ var MainMenu = function () {
     this.jasonData = null;
 
     this.showMobileMenu = () => {
-        this.mobileMenuOptions.style.top = "0%";
+        // this.mobileMenuOptions.style.top = "0%";
+        this.mobileMenuOptions.classList.add("mobile-menu-optins-active");
     }
 
     this.hideMobileMenu = () => {
-        this.mobileMenuOptions.style.top = null;
+        // this.mobileMenuOptions.style.top = null;
+        this.mobileMenuOptions.classList.remove("mobile-menu-optins-active");
     }
 
     this.load = (jasonData) => {
