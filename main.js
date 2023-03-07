@@ -1454,6 +1454,26 @@ var FloatingMenu = function (themeManager) {
     this.__init__();
 }
 
+// here creating loader that will indicate loading process.
+let ProgressBar = function(){
+    this.start = ()=>{
+
+    }
+
+    this.stop = ()=>{
+
+    }
+
+    this.__init__ = function(){
+        this.progressBar = document.querySelector(".loader");
+        this.progress = document.querySelector(".progressBar");
+        this.dot = document.querySelector(".progressBarDot");
+    }
+
+    this.__init__();
+}
+
+
 // Here's a Data Parser is being created that will help to parse all the data from jason file.
 
 var DataLoader = function (file) {
