@@ -618,7 +618,7 @@
             {
                 "icon": "./data/skills/reactJs.png",
                 "name": "ReactJS",
-                "percentage": 5
+                "percentage": 95
             },
             {
                 "icon": "./data/skills/javascript.png",
