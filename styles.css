@@ -175,13 +175,67 @@ main{
 }
 
 .loader .progressBar{
-    width: 30%;
+    opacity: 0;
+    width: 0%;
     height: 100%;
     background-color: rgba(var(--primary-font-color), 100%);
     /* background-color: linear-gradient(90deg, #08c391 94%, #08c39100 100%); */
     position: relative;
     transition: all 1s;
 }
+
+.loader .progressBarActive{
+    opacity: 1;
+    /* animation */
+    --loader-animation-duration: 5s;
+    animation-name: progressBarActive;
+    animation-duration: var(--loader-animation-duration);
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-direction: alternate;
+}
+
+/* Here key Frame For animation */
+
+@keyframes progressBarActive {
+
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 90%;
+    }
+
+}
+
+/* Here key Frame For animation */
+
+.loader .animationCompleted{
+    animation-name: progressCompleted;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-direction: alternate;
+}
+
+/* Here key frame progressCompleted start's */
+@keyframes progressCompleted {
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+        width: 100%;
+    }
+    100%{
+        opacity: 0;
+        width: 100%;
+    }
+}
+
+/* Here key frame animationComplete end's */
 
 .loader .progressBar .progressBarDot{
     position: absolute;
@@ -190,6 +244,67 @@ main{
     right: 0;
     top: 0;
     box-shadow: 0px 0px 26px 18px rgba(var(--primary-font-color), 100%);
+}
+
+.loader .progressBarActive .progressBarDot{
+    /* animation */
+    animation-name: progressBarDotBlink;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: var(--loader-animation-duration);
+    animation-direction: alternate;
+}
+
+/* Here key frame for progressBarDotBlink start's */
+
+@keyframes progressBarDotBlink {
+    0%{
+        box-shadow: 0px 0px 26px 0px rgba(var(--primary-font-color), 100%);
+    }
+    100%{
+        box-shadow: 0px 0px 26px 18px rgba(var(--primary-font-color), 100%);
+    }
+}
+
+/* Here key frame for progressBarDotBlink end's */
+
+.loader .progressBarActive .shaderContainer{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.loader .progressBarActive .shader{
+    /* left: -20%; */
+    top: 0%;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(var(--common-color), 100%), transparent);
+    position: absolute;
+
+    /* animation */
+    animation-name: progressBarActiveShader;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    /* animation-direction: alternate; */
+}
+
+@keyframes progressBarActiveShader {
+
+    0% {
+        left: -20%;
+    }
+
+    100% {
+        left: 120%;
+    }
+
 }
 
 /* here style for loader end's */
@@ -1265,7 +1380,8 @@ main{
     width: 100%;
     height: 100%;
     z-index: 2;
-    background-color: rgba(0, 0, 0, 70%);
+    --readMoreBackground: 40 42 55;
+    background-color: rgb(40 42 55 / 49%);
     color: rgba(var(--common-color), 100%);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(5px);
@@ -1313,7 +1429,7 @@ main{
     0%{
         top: 0%;
         opacity: 1;
-        background-color: rgba(0, 0, 0, 70%);
+        background-color: rgba(var(--readMoreBackground), 49%);
         backdrop-filter: blur(30px);
     }
     75%{
@@ -1346,7 +1462,7 @@ main{
     100%{
         top: 0%;
         opacity: 1;
-        background-color: rgba(0, 0, 0, 70%);
+        background-color: rgba(var(--readMoreBackground), 49%);
         backdrop-filter: blur(30px);
     }
 }
@@ -1529,7 +1645,7 @@ main{
     border-radius: 10px;
     overflow: hidden;
     background-color: rgb(44, 48, 58);
-    box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+    box-shadow: 0 0px 37px rgb(0 0 0);
 
     /* Here animation */
     animation-name: read-more-page-inactive;

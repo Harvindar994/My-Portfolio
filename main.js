@@ -913,7 +913,8 @@ var ReadMoreViewer = function () {
 }
 
 // Here creating an component for playing video that will be overlayed on top of the page.
-var OverlayVideoPlayer = function (maxPlayerWidth = 1280, maxPlayerHeight = 720, margin = 10) {
+var OverlayVideoPlayer = function (progressBar, maxPlayerWidth = 1280, maxPlayerHeight = 720, margin = 10) {
+    this.progressBar = progressBar;
     this.maxPlayerWidth = maxPlayerWidth;
     this.maxPlayerHeight = maxPlayerHeight;
     this.aspectRationHeight = this.maxPlayerHeight / this.maxPlayerWidth;
@@ -950,13 +951,30 @@ var OverlayVideoPlayer = function (maxPlayerWidth = 1280, maxPlayerHeight = 720,
         }
     }
 
+    this.videoLoaded = () => {
+        console.log("Video Loaded..............");
+
+        // on video loaded stoping the progress bar.
+        this.progressBar.stop();
+
+        // here making the video play visible.
+        this.videoViewerOverlay.style.display = "flex";
+
+    }
+
     this.playVideo = (url) => {
         this.onWindowResize({ currentTarget: window });
+        this.videoPlayer.onload = this.videoLoaded;
+
+        // Here starting the progress bar.
+        this.progressBar.start();
+
+        // Here setting up the video url.
         this.videoPlayer.setAttribute("src", url);
-        this.videoViewerOverlay.style.display = "flex";
     }
 
     this.close = () => {
+        this.videoPlayer.onload = null;
         this.videoPlayer.setAttribute("src", "");
         this.videoViewerOverlay.style.display = "none";
     }
@@ -976,9 +994,12 @@ var OverlayVideoPlayer = function (maxPlayerWidth = 1280, maxPlayerHeight = 720,
 
 
 // here Creating and Component of Overlay Image Viewer.
-var OverlayImageViewer = function () {
+var OverlayImageViewer = function (progressBar) {
+    this.progressBar = progressBar;
     this.slides = [];
     this.carosuleSimulator = null;
+    this.loadedImages = 0;
+    this.totalImages = 0;
 
     this.createSlide = (image, text = null) => {
 
@@ -1038,7 +1059,21 @@ var OverlayImageViewer = function () {
         this.imageViewerOverlay.style.display = "none";
     }
 
+    this.onImageLoaded = () => {
+        this.loadedImages += 1;
+        console.log(`${this.loadedImages}, Image Loaded.....`);
+
+        if (this.loadedImages == this.totalImages) {
+            console.log("all Images Loaded");
+            this.show();
+            this.progressBar.stop();
+        }
+    }
+
     this.viewImages = (images) => {
+        // here starting progress Bar.
+        this.progressBar.start();
+
         // Here removing all the content added before.
         this.removeAllSlides();
 
@@ -1053,9 +1088,15 @@ var OverlayImageViewer = function () {
 
         }
         else {
+            this.loadedImages = 0;
+            this.totalImages = images.length;
 
             for (var jasonSlide of images) {
                 var slide = this.createSlide(jasonSlide.image, jasonSlide.text);
+
+                var img = slide.querySelector("img");
+                img.addEventListener('load', this.onImageLoaded);
+
                 this.slides.push(slide);
                 this.imageViewerConatiner.append(slide);
             }
@@ -1071,7 +1112,8 @@ var OverlayImageViewer = function () {
             }
         }
 
-        this.show();
+        // this.show();
+        // this.progressBar.stop();
     }
 
     this.__init__ = function () {
@@ -1133,14 +1175,15 @@ var MainMenu = function () {
 
 
 // Here creating A Component for Portfolio that will help to show all the projects.
-var Protfolio = function () {
+var Protfolio = function (progressBar) {
+    this.progressBar = progressBar;
     this.jasonData = null;
     this.projectPageButtons = [];
     this.activePageButton = null;
     this.projectCards = [];
     this.readMoreViewer = new ReadMoreViewer();
-    this.overlayVideoPlayer = new OverlayVideoPlayer();
-    this.overlayImageViewer = new OverlayImageViewer();
+    this.overlayVideoPlayer = new OverlayVideoPlayer(this.progressBar);
+    this.overlayImageViewer = new OverlayImageViewer(this.progressBar);
 
     // in this __init__ function will initlize the object.
     this.__init__ = function () {
@@ -1455,19 +1498,37 @@ var FloatingMenu = function (themeManager) {
 }
 
 // here creating loader that will indicate loading process.
-let ProgressBar = function(){
-    this.start = ()=>{
+let ProgressBar = function () {
+    this.isLoaderRunning = false;
 
+    this.start = () => {
+        this.progress.classList.remove("progressBarActive");
+        this.progress.classList.remove("animationCompleted");
+        this.progress.style.width = "0%";
+
+        this.progress.classList.add("progressBarActive");
+        this.isLoaderRunning = true;
     }
 
-    this.stop = ()=>{
+    this.stop = () => {
+        this.progress.style.animationName = null;
+        this.progress.style.width = window.getComputedStyle(this.progress).width;
+        this.progress.classList.add("animationCompleted");
 
+        this.isLoaderRunning = false;
     }
 
-    this.__init__ = function(){
+    this.__init__ = function () {
         this.progressBar = document.querySelector(".loader");
         this.progress = document.querySelector(".progressBar");
         this.dot = document.querySelector(".progressBarDot");
+
+        this.startLoader = document.querySelector("#startLoader");
+        this.stopLoader = document.querySelector("#stopLoader");
+
+        // Here connect buttons.
+        this.startLoader.addEventListener("click", this.start);
+        this.stopLoader.addEventListener("click", this.stop);
     }
 
     this.__init__();
@@ -1477,10 +1538,11 @@ let ProgressBar = function(){
 // Here's a Data Parser is being created that will help to parse all the data from jason file.
 
 var DataLoader = function (file) {
-    this.data_file = file
+    this.data_file = file;
+    this.progressBar = new ProgressBar();
     this.profile = new Profile();
     this.services = new Services();
-    this.protfolio = new Protfolio();
+    this.protfolio = new Protfolio(this.progressBar);
     this.mainMenu = new MainMenu();
     this.themeManager = new ThemeManager();
     this.floatingMenu = new FloatingMenu(this.themeManager);
