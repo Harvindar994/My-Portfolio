@@ -1021,6 +1021,10 @@ var OverlayImageViewer = function (progressBar) {
             `;
         }
 
+        // Here Adding call back on image loaded.
+        var img = slide.querySelector("img");
+        img.addEventListener('load', this.onImageLoaded);
+
         return slide;
     }
 
@@ -1071,6 +1075,9 @@ var OverlayImageViewer = function (progressBar) {
     }
 
     this.viewImages = (images) => {
+        // Here setting up value state management.
+        this.loadedImages = 0;
+
         // here starting progress Bar.
         this.progressBar.start();
 
@@ -1078,6 +1085,7 @@ var OverlayImageViewer = function (progressBar) {
         this.removeAllSlides();
 
         if (typeof (images) === 'string') {
+            this.totalImages = 1;
 
             this.hideNavigationButtons();
             this.carosuleSimulator = null;
@@ -1088,15 +1096,10 @@ var OverlayImageViewer = function (progressBar) {
 
         }
         else {
-            this.loadedImages = 0;
             this.totalImages = images.length;
 
             for (var jasonSlide of images) {
                 var slide = this.createSlide(jasonSlide.image, jasonSlide.text);
-
-                var img = slide.querySelector("img");
-                img.addEventListener('load', this.onImageLoaded);
-
                 this.slides.push(slide);
                 this.imageViewerConatiner.append(slide);
             }
