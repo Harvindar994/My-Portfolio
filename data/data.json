@@ -8,9 +8,11 @@
     "themes": {
         "default": {
             "common-color": "255, 255, 255",
+            "common-color-2": "255, 255, 255",
             "logo-font-color": "8, 195, 145",
             "primary-font-color": "8, 195, 145",
             "primary-bg-1": "33, 40, 48",
+            "primary-bg-1-2": "33, 40, 48",
             "primary-bg-2": "23, 28, 35",
             "read-more-viewer-bg": "33, 39, 47"
         },
@@ -19,8 +21,10 @@
             "logo-font-color": "41, 45, 62",
             "primary-font-color": "235, 69, 95",
             "primary-bg-1": "255, 255, 255",
+            "primary-bg-1-2": "41, 45, 62",
             "primary-bg-2": "228, 231, 231",
             "common-color": "41, 45, 62",
+            "common-color-2": "255, 255, 255",
             "read-more-viewer-bg": "255, 255, 255"
         },
 

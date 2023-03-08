@@ -23,13 +23,13 @@
 
 :root {
     --common-color: #ffffff;
+    --common-color-2: #ffffff;
     --logo-font-color: #08c391;
     --primary-font-color: #08c391;
     --primary-bg-1: #212830;
     --primary-bg-2: #171c23;
     --read-more-viewer-bg: 33, 39, 47;
     --active-theme: "none";
-    --author-profile: "./data/introduction/profile.png";
 }
 
 html{
@@ -715,6 +715,7 @@ main{
     height: 58px;
     border-radius: 12px;
     margin-bottom: 70px;
+    color: rgba(var(--common-color-2), 100%);
 }
 
 .social-media{
@@ -790,6 +791,7 @@ main{
     height: 30px;
     font-size: 1rem;
     border-radius: 100%;
+    color: rgba(var(--common-color-2), 100%);
 }
 
 .skillCardsContainer{
@@ -950,11 +952,12 @@ main{
 
 .about-me-tags p{
     /* background-color: rgba(var(--primary-font-color), 100%); */
-    background: linear-gradient(33deg, rgba(var(--primary-bg-1), 100%), rgba(var(--primary-font-color), 70%));
+    background: linear-gradient(33deg, rgba(var(--primary-bg-1-2), 100%), rgba(var(--primary-font-color), 70%));
     padding: 4px 22px;
     border-radius: 4px;
     display: flex;
     flex-wrap: wrap;
+    color: rgba(var(--common-color-2), 100%);
 }
 
 .about-me-tags p i{
@@ -982,7 +985,8 @@ main{
 
 .about-me-cards .card{
     transform: scale(1);
-    background: linear-gradient(33deg, rgba(var(--primary-bg-1), 100%), rgba(var(--primary-font-color), 70%));
+    background: linear-gradient(33deg, rgba(var(--primary-bg-1-2), 100%), rgba(var(--primary-font-color), 70%));
+    color: rgba(var(--common-color-2), 100%);
 }
 
 .about-me-cards .card:hover{
@@ -1126,6 +1130,7 @@ main{
 
 .project-active-btn{
     background-color: rgba(var(--primary-font-color), 255);
+    color: rgba(var(--common-color-2), 100%);
 }
 
 .project-active-btn::after{
@@ -1179,6 +1184,7 @@ main{
     padding: 0px 23px;
     height: 50px;
     border-radius: 8px;
+    color: rgba(var(--common-color-2), 100%);
 }
 
 .stack-widget-navigator-active{
@@ -1327,6 +1333,7 @@ main{
     height: 50px;
     background-color: rgba(var(--primary-font-color), 70%);
     border-radius: 100%;
+    color: rgba(var(--common-color-2), 100%);
 }
 
 .proejctCardBody .projectThumbnail .videoPlayButton i{
@@ -1360,6 +1367,7 @@ main{
     padding: 3px 13px;
     border-radius: 5px;
     cursor: pointer;
+    color: rgba(var(--common-color-2), 100%);
 }
 
 
@@ -2117,6 +2125,7 @@ h4 span {
     align-items: center;
     background-color: rgba(var(--primary-font-color), 100%);
     padding-left: 86px;
+    color: rgba(var(--common-color-2), 100%);
 }
 
 .timelineCard .timelineContent{
@@ -2196,6 +2205,7 @@ h4 span {
     height: 30px;
     font-size: 1rem;
     border-radius: 100%;
+    color: rgba(var(--common-color-2), 100%);
 }
 
 /* Here experiences style End's */
@@ -2255,6 +2265,7 @@ h4 span {
     font-weight: 400;
     font-size: 1.2rem;
     margin-top: 25px;
+    color: rgba(var(--common-color-2), 100%);
 }
 
 /* A message to user style end's from here */
@@ -2275,13 +2286,13 @@ h4 span {
 }
 
 .footer-content{
-    color: rgba(var(--common-color), 100%);
+    color: rgba(var(--common-color-2), 100%);
 }
 
 .footer-content hr{
     border: none;
     height: 1px;
-    background-color: rgba(var(--common-color), 100%);
+    background-color: rgba(var(--common-color-2), 100%);
 }
 
 .footer-content .portfoliolinks{
@@ -2289,7 +2300,6 @@ h4 span {
     font-size: 0.9rem;
     text-align: left;
     font-weight: 400;
-    color: rgba(var(--common-color), 100%);
     padding: 74px 0px 48px 0px;
     gap: 43px;
     justify-content: space-between;
@@ -2306,6 +2316,9 @@ h4 span {
 
 .footer-content .portfoliolinks .quick-links{
     gap: 15px;
+}
+.footer-content .portfoliolinks .quick-links a{
+    color: rgba(var(--common-color-2), 100%);
 }
 
 .footer-content .portfoliolinks .other-links{
@@ -2344,6 +2357,7 @@ h4 span {
     align-items: center;
     gap: 10px;
     filter: drop-shadow(0px 0px 9px rgba(var(--primary-font-color), 255));
+    color: rgba(var(--common-color-2), 100%);
 }
 
 .footer-content .portfoliolinks .logo img{
@@ -2353,7 +2367,7 @@ h4 span {
 .footer-content .portfoliolinks .logo p{
     font-weight: 400;
     font-size: 0.9rem;
-    color: rgba(var(--common-color), 100%);
+    color: rgba(var(--common-color-2), 100%);
 }
 
 .footer-content .social-links{
@@ -2369,6 +2383,10 @@ h4 span {
     display: flex;
     gap: 19px;
     font-size: 1.3rem;  
+}
+
+.footer-content .social-links .links a{
+    color: rgba(var(--common-color-2), 100%);
 }
 
 
