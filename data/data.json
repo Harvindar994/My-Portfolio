@@ -263,11 +263,11 @@
                         "name": "Air Drop",
                         "dateTime": "15 Months Ago",
                         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
-                        "thumbnailImage": "./data/projects/4.jpg",
+                        "thumbnailImage": "./data/projects/img.png",
                         
                         "showUpType": "video",
                         "//showUpType can be": "images, video, youtube-url",
-                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
+                        "showUp": "./data/projects/video.mp4",
 
                         "github": "#",
                         "isReadMoreLink": false,
