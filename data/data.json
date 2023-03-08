@@ -75,20 +75,22 @@
     },
 
     "mainMenu": {
+        "authorName": "Harvindar Singh",
         "logoText" : "Harry",
-        "logo": "data/author/profile.png",
+        "logo": "./data/introduction/profile.png",
+        "footerMesaage": "Made with ❤️ by Harvindar Singh",
         "menuOptions": [
             {
                 "name": "Home",
                 "link": "#"
             },
             {
-                "name": "Resume",
+                "name": "About",
                 "link": "#"
             },
             {
-                "name": "About",
-                "link": "#"
+                "name": "Resume",
+                "link": "./data/files/resume.pdf"
             }
         ]
     },
@@ -584,7 +586,7 @@
 
     "skills": {
         "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque perferendis maxime, voluptates magnam temporibus earum, ullam eveniet quod sequi, quo molestias harum atque accusamus eius.",
-        "cards": [
+        "skills": [
             {
                 "icon": "./data/skills/c language.png",
                 "name": "C Language ",
@@ -594,6 +596,11 @@
                 "icon": "./data/skills/java.png",
                 "name": "Java",
                 "percentage": 50
+            },
+            {
+                "icon": "./data/skills/c-sharp.png",
+                "name": "C Sharp",
+                "percentage": 55
             },
             {
                 "icon": "./data/skills/net.png",
@@ -618,7 +625,7 @@
             {
                 "icon": "./data/skills/reactJs.png",
                 "name": "ReactJS",
-                "percentage": 95
+                "percentage": 5
             },
             {
                 "icon": "./data/skills/javascript.png",
@@ -676,5 +683,128 @@
                 "percentage": 90
             }
         ]
+    },
+
+    "experiences": {
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque perferendis maxime, voluptates magnam temporibus earum, ullam eveniet quod sequi, quo molestias harum atque accusamus eius.",
+        "experience": [
+            {
+                "logo": "./data/projects/wipro.png",
+                "name": "Wipro",
+                "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facilis nisi aperiam sit voluptatem at.",
+                "date": "1995"
+            },
+            {
+                "logo": "./data/projects/wipro.png",
+                "name": "Wipro",
+                "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facilis nisi aperiam sit voluptatem at.",
+                "date": "1995"
+            },
+            {
+                "logo": "./data/projects/wipro.png",
+                "name": "Wipro",
+                "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facilis nisi aperiam sit voluptatem at.",
+                "date": "1995"
+            },
+            {
+                "logo": "./data/projects/wipro.png",
+                "name": "Wipro",
+                "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facilis nisi aperiam sit voluptatem at.",
+                "date": "1995"
+            },
+            {
+                "logo": "./data/projects/wipro.png",
+                "name": "Wipro",
+                "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facilis nisi aperiam sit voluptatem at.",
+                "date": "1995"
+            },
+            {
+                "logo": "./data/projects/wipro.png",
+                "name": "Wipro",
+                "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facilis nisi aperiam sit voluptatem at.",
+                "date": "1995"
+            }
+        ]
+    },
+
+    "messageToUser": {
+        "name": "ɧãrvindar",
+        "sayName": "Harvindar Singh",
+        "image": "./data/msg-to-user/author.png"
+    },
+
+    "footer": {
+        "brand":{
+            "logo": "./data/introduction/profile.png",
+            "name": "Harry",
+            "description":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque perferendis maxime, voluptates magnam temporibus earum, ullam eveniet quod sequi, quo molestias harum atque accusamus eius."
+        },
+
+        "contactDetails":{
+            "address": "123 Market St. #22B Charlottesville, california 44635",
+            "contacts": [
+                {
+                    "icon": "fa-solid fa-envelope",
+                    "text": "harvindar994@gmail.com"
+                },
+                {
+                    "icon": "fa-solid fa-globe",
+                    "text": "www.brightgoal.in"
+                },
+                {
+                    "icon": "fa-solid fa-phone",
+                    "text": "+91 9695806109"
+                }
+            ]
+        },
+
+        "quickLinks": [
+            {
+                "name": "Youtube",
+                "link": "#"
+            },
+            {
+                "name": "Instagram",
+                "link": "#"
+            },
+            {
+                "name": "WhatsApp",
+                "link": "#"
+            },
+            {
+                "name": "linkedin",
+                "link": "#"
+            },
+            {
+                "name": "Brightgoal",
+                "link": "#"
+            }
+        ],
+
+        "socialLinks": {
+            "copyright": "©️ Brightgoal UI. All rights reserved.",
+            "links": [
+                {
+                    "icon": "fa-brands fa-twitter",
+                    "link": "#"
+                },
+                {
+                    "icon": "fa-brands fa-linkedin",
+                    "link": "#"
+                },
+                {
+                    "icon": "fa-brands fa-facebook",
+                    "link": "#"
+                },
+                {
+                    "icon": "fa-brands fa-github",
+                    "link": "#"
+                },
+                {
+                    "icon": "fa-brands fa-dribbble",
+                    "link": "#"
+                }
+            ]
+        }
     }
 }

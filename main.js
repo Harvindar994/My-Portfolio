@@ -113,7 +113,6 @@ var PercentageCarosuleSimulator = function (container, containerHeight) {
             }
 
         }
-        console.log("Next Press Working");
     }
 
     this.onPreviousPressed = () => {
@@ -138,7 +137,6 @@ var PercentageCarosuleSimulator = function (container, containerHeight) {
             }
 
         }
-        console.log("Previous Press Working");
     }
 
     this.__init__ = function () {
@@ -952,8 +950,6 @@ var OverlayVideoPlayer = function (progressBar, maxPlayerWidth = 1280, maxPlayer
     }
 
     this.videoLoaded = () => {
-        console.log("Video Loaded..............");
-
         // on video loaded stoping the progress bar.
         this.progressBar.stop();
 
@@ -1065,10 +1061,8 @@ var OverlayImageViewer = function (progressBar) {
 
     this.onImageLoaded = () => {
         this.loadedImages += 1;
-        console.log(`${this.loadedImages}, Image Loaded.....`);
 
         if (this.loadedImages == this.totalImages) {
-            console.log("all Images Loaded");
             this.show();
             this.progressBar.stop();
         }
@@ -1148,24 +1142,57 @@ var MainMenu = function () {
     this.jasonData = null;
 
     this.showMobileMenu = () => {
-        // this.mobileMenuOptions.style.top = "0%";
-        this.mobileMenuOptions.classList.add("mobile-menu-optins-active");
+        this.mobileMenu.classList.add("mobile-menu-optins-active");
     }
 
     this.hideMobileMenu = () => {
-        // this.mobileMenuOptions.style.top = null;
-        this.mobileMenuOptions.classList.remove("mobile-menu-optins-active");
+        this.mobileMenu.classList.remove("mobile-menu-optins-active");
     }
 
     this.load = (jasonData) => {
         this.jasonData = jasonData;
 
+        // Here setting up menu logo and text.
+        this.logo.setAttribute("src", this.jasonData.logo);
+        this.logoText.innerText = this.jasonData.logoText;
+
+        // here setting up author name and footer message for mobile menu.
+        this.authorName.innerText = this.jasonData.authorName;
+        this.mobileMenuFooterMessage.innerText = this.jasonData.footerMesaage;
+
+        // here adding all the options in both mobileMenu and normal menu.
+        for (var jasonOption of this.jasonData.menuOptions) {
+            var link = document.createElement("a");
+
+            // here adding link in mobile menu.
+            link.setAttribute("href", jasonOption.link);
+            link.setAttribute("target", "_blank");
+            link.innerText = jasonOption.name;
+            this.mobileMenuOptions.append(link);
+
+            // here adding link normal menu.
+            var link = document.createElement("a");
+            link.setAttribute("target", "_blank");
+            link.setAttribute("href", jasonOption.link);
+            link.innerText = jasonOption.name;
+            this.menuOptions.append(link);
+        }
     }
 
     this.__init__ = function () {
         this.mobileMenuShowButton = document.querySelector(".mobile-menu-button");
         this.mobileMenuHideButton = document.querySelector(".mobile-menu-optins-close-btn");
-        this.mobileMenuOptions = document.querySelector(".mobile-menu-optins");
+
+        this.mobileMenu = document.querySelector("#mobileMenu");
+
+        this.logo = document.querySelector("#mainMenuLogo");
+        this.logoText = document.querySelector("#mainMenuLogoText");
+
+        this.mobileMenuOptions = document.querySelector("#mobileMenuOptions");
+        this.authorName = document.querySelector("#mainMenuAuthorName");
+        this.mobileMenuFooterMessage = document.querySelector("#mobileMenuBottomMesage");
+
+        this.menuOptions = document.querySelector("#mainMenuOptions");
 
         // Here connecting button with function.
         this.mobileMenuShowButton.addEventListener("click", this.showMobileMenu);
@@ -1271,7 +1298,7 @@ var Skills = function () {
         this.description.innerText = this.jasonData.description;
 
         // Here adding card to decription.
-        for (var jasoncard of this.jasonData.cards) {
+        for (var jasoncard of this.jasonData.skills) {
             card = document.createElement("div");
             card.classList.add("skillCard");
 
@@ -1336,7 +1363,51 @@ var Experiences = function () {
 
     this.load = function (jasonData) {
         this.jasonData = jasonData;
-        // this.description.innerText = jasonData.description;
+        this.description.innerText = this.jasonData.description;
+
+        // Here loading all the cards.
+        var fillUpClass = "timelineContentTop";
+        for (var jasonCard of this.jasonData.experience) {
+            card = document.createElement("div");
+            card.classList.add("timelineCard");
+
+            card.innerHTML = `
+            <div class="timelineContent ${fillUpClass}">
+
+                <div class="timelineLeftLine">
+                    <span></span>
+                    <div></div>
+                    <span></span>
+                </div>
+
+                <div class="company">
+                    <div class="companyLogo"><img src="${jasonCard.logo}" alt=""></div>
+                    <div class="companyName">${jasonCard.name}</div>
+                </div>
+                <p class="workDescription">${jasonCard.description}</p>
+
+            </div>
+
+            <p class="workYear">${jasonCard.date}</p>
+            `;
+
+            if (fillUpClass === "timelineContentTop") {
+                fillUpClass = "timelineContentbottom";
+            }
+            else {
+                fillUpClass = "timelineContentTop";
+            }
+
+            this.cards.append(card);
+
+        }
+
+        // Here adding now time.
+        let nowTimeline = document.createElement("div");
+        nowTimeline.classList.add("timelineNow")
+        nowTimeline.innerHTML = "<p>Now</p>";
+
+        this.cards.append(nowTimeline);
 
         this.carosuleSimulator.__init__();
     }
@@ -1348,6 +1419,93 @@ var Experiences = function () {
         this.rightButton = document.querySelector(".timelineRightButton");
 
         this.carosuleSimulator = new CarosuleSimulator(this.cards, 0, true, 369, this.rightButton, this.leftButton);
+    }
+
+    this.__init__();
+}
+
+// Here creating component for MessageForTheUser.
+var MessageToUser = function () {
+
+    this.load = function (jasonData) {
+        this.jasonData = jasonData;
+
+        this.name.innerText = this.jasonData.name;
+        this.authorImage.setAttribute("src", this.jasonData.image);
+    }
+
+    this.pronounceName = () => {
+        console.log("Name Said: " + this.jasonData.name);
+    }
+
+    this.__init__ = function () {
+
+        this.authorImage = document.querySelector("#messageToUserAuthorImage");
+        this.sayName = document.querySelector("#messageToUserSayName");
+        this.name = document.querySelector("#messageToUserAuthorName");
+        this.sayHi = document.querySelector("#messageToUserSayHiButton");
+
+        // Here connecting the button with function.
+        this.sayName.addEventListener("click", this.pronounceName);
+        this.sayHi.addEventListener("click", this.pronounceName);
+    }
+
+    this.__init__();
+}
+
+
+// Here creating compoenent for footer.
+var Footer = function () {
+    this.load = function (jasonData) {
+        this.jasonData = jasonData;
+
+        // here setting up data for brand.
+        this.brandLogo.setAttribute("src", this.jasonData.brand.logo);
+        this.brandName.innerText = this.jasonData.brand.name;
+        this.brandDescription.innerText = this.jasonData.brand.description;
+
+        // here loading contact detains.
+        var address = document.createElement("p");
+        address.innerText = this.jasonData.contactDetails.address;
+        this.contacts.append(address);
+
+        for (var jasonContact of this.jasonData.contactDetails.contacts) {
+            var contact = document.createElement("p");
+            contact.innerHTML = `<i class="${jasonContact.icon}"></i>${jasonContact.text}`;
+            this.contacts.append(contact);
+        }
+
+        // Here loading all the quick links.
+        for (var jasonLink of this.jasonData.quickLinks) {
+            var link = document.createElement("a");
+            link.setAttribute("href", jasonLink.link);
+            link.innerText = jasonLink.name;
+            this.quickLinks.append(link);
+        }
+
+        // here loading text for copyright.
+        this.copyright.innerText = this.jasonData.socialLinks.copyright;
+
+        // here loading all the social links.
+        for (var jasonLink of this.jasonData.socialLinks.links) {
+            var link = document.createElement("a");
+            link.setAttribute("href", jasonLink.link);
+
+            link.innerHTML = `<i class="${jasonLink.icon}"></i>`;
+
+            this.socialLinks.append(link);
+        }
+
+    }
+
+    this.__init__ = function () {
+        this.brandLogo = document.querySelector("#footerBrandLogo");
+        this.brandName = document.querySelector("#footerBrandName");
+        this.brandDescription = document.querySelector("#footerBrandDescription");
+        this.contacts = document.querySelector("#footerContacts");
+        this.quickLinks = document.querySelector("#footerQuickLinks");
+        this.copyright = document.querySelector("#footerCopyright");
+        this.socialLinks = document.querySelector("#footerSocialLinks");
     }
 
     this.__init__();
@@ -1526,13 +1684,6 @@ let ProgressBar = function () {
         this.progressBar = document.querySelector(".loader");
         this.progress = document.querySelector(".progressBar");
         this.dot = document.querySelector(".progressBarDot");
-
-        this.startLoader = document.querySelector("#startLoader");
-        this.stopLoader = document.querySelector("#stopLoader");
-
-        // Here connect buttons.
-        this.startLoader.addEventListener("click", this.start);
-        this.stopLoader.addEventListener("click", this.stop);
     }
 
     this.__init__();
@@ -1553,6 +1704,8 @@ var DataLoader = function (file) {
     this.aboutMe = new AboutMe();
     this.skills = new Skills();
     this.experiences = new Experiences();
+    this.messageToUser = new MessageToUser();
+    this.footer = new Footer();
 
     this.loadData = function () {
         fetch(this.data_file)
@@ -1585,7 +1738,13 @@ var DataLoader = function (file) {
                 this.skills.load(data["skills"]);
 
                 //here loading skill slides.
-                this.experiences.load(null);
+                this.experiences.load(data["experiences"]);
+
+                //here loading the data for message to user.
+                this.messageToUser.load(data["messageToUser"]);
+
+                // Here loading footer.
+                this.footer.load(data["footer"]);
 
             });
 

@@ -228,6 +228,15 @@
 
     /* a message to user styles end's here */
 
+    /* Here Style Start's for image viewer */
+
+    .imageViewer .imageContainer .slide .text{
+        font-size: 0.8rem;
+        font-weight: 300;
+    }
+
+    /* Here Style end's for image viewer */
+
     /* footer style start's from here */
 
     /* footer style end's here */

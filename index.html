@@ -77,12 +77,13 @@
 
             <div class="menu">
 
-                <div class="logo"><img src="./data/introduction/profile.png" alt="">Harry</div>
+                <div class="logo"><img id="mainMenuLogo" src="" alt=""><span id="mainMenuLogoText"></span></div>
 
-                <div class="options">
-                    <a id="startLoader" href="#">Home</a>
-                    <a id="stopLoader" href="#">Project</a>
-                    <a href="#">Resume</a>
+                <div class="options" id="mainMenuOptions">
+
+                    <!-- structure of menu option -->
+                    <!-- <a href="#">Home</a> -->
+
                 </div>
 
                 <!-- this button will get activated on mobile phones -->
@@ -90,17 +91,18 @@
                     <div class="mobile-menu-button">
                         <i class="fa-solid fa-bars"></i>
                     </div>
-                    <div class="mobile-menu-optins">
+                    <div id="mobileMenu" class="mobile-menu-optins">
                         <div class="mobile-menu-optins-close-btn button">
                             <i class="fa-solid fa-xmark"></i>
                         </div>
                         <div class="mobile-menu-optins-head">
-                            <h1>Harvindar Singh</h1>
+                            <h1 id="mainMenuAuthorName">Harvindar Singh</h1>
                         </div>
-                        <div class="mobile-menu-optins-body">
-                            <a href="#">Home</a>
-                            <a href="#">Project</a>
-                            <a href="#">Resume</a>
+                        <div class="mobile-menu-optins-body" id="mobileMenuOptions">
+                            
+                            <!-- structure of menu option -->
+                            <!-- <a href="#">Home</a> -->
+                            
                         </div>
                         <div class="mobile-menu-optins-footer bubbleEffect">
                             <div class="bubbles">
@@ -491,7 +493,7 @@
                             </div>
 
                             <div class="content">
-                                <p>Made with ❤️ by Harvindar Singh</p>
+                                <p id="mobileMenuBottomMesage">Made with ❤️ by Harvindar Singh</p>
                             </div>
 
                             <svg style="position:fixed; top:100vh">
@@ -904,9 +906,7 @@ def function():
             <div class="skills-heading">
         
                 <h1 id="skillsHeading">My <span class="primary">Skills</span></h1>
-                <p id="skillsDescription">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque perferendis
-                    maxime, voluptates magnam temporibus
-                    earum, ullam eveniet quod sequi, quo molestias harum atque accusamus eius.</p>
+                <p id="skillsDescription">Description Here</p>
         
             </div>
         
@@ -951,7 +951,7 @@ def function():
             <div class="experiences-heading">
             
                 <h1 id="experiencesHeading">My <span class="primary">Experiences</span></h1>
-                <p id="experiencesDescription">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet eligendi omnis soluta voluptate voluptatibus ad modi quo rerum ullam aliquid.</p>
+                <p id="experiencesDescription">Description Here</p>
             
             </div>
 
@@ -959,8 +959,8 @@ def function():
 
                 <div class="timelineCards">
 
-                    <!-- Card -->
-                    <div class="timelineCard">
+                    <!-- Card Structure-->
+                    <!-- <div class="timelineCard">
     
                         <div class="timelineContent timelineContentTop">
     
@@ -981,131 +981,12 @@ def function():
     
                         <p class="workYear">1995</p>
     
-                    </div>
+                    </div> -->
 
-                    <!-- Card -->
-                    <div class="timelineCard">
-    
-                        <div class="timelineContent timelineContentbottom">
-    
-                            <div class="timelineLeftLine">
-                                <span></span>
-                                <div></div>
-                                <span></span>
-                            </div>
-    
-                            <div class="company">
-                                <div class="companyLogo"><img src="/data/projects/wipro.png" alt=""></div>
-                                <div class="companyName">Wipro</div>
-                            </div>
-                            <p class="workDescription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facilis nisi
-                                aperiam sit voluptatem at.</p>
-    
-                        </div>
-    
-                        <p class="workYear">1995</p>
-    
-                    </div>
-
-                    <!-- Card -->
-                    <div class="timelineCard">
-    
-                        <div class="timelineContent timelineContentTop">
-    
-                            <div class="timelineLeftLine">
-                                <span></span>
-                                <div></div>
-                                <span></span>
-                            </div>
-    
-                            <div class="company">
-                                <div class="companyLogo"><img src="/data/projects/wipro.png" alt=""></div>
-                                <div class="companyName">Wipro</div>
-                            </div>
-                            <p class="workDescription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facilis nisi
-                                aperiam sit voluptatem at.</p>
-                        </div>
-    
-                        <p class="workYear">1995</p>
-    
-                    </div>
-                    
-                    <!-- Card -->
-                    <div class="timelineCard">
-    
-                        <div class="timelineContent timelineContentbottom">
-    
-                            <div class="timelineLeftLine">
-                                <span></span>
-                                <div></div>
-                                <span></span>
-                            </div>
-    
-                            <div class="company">
-                                <div class="companyLogo"><img src="/data/projects/wipro.png" alt=""></div>
-                                <div class="companyName">Wipro</div>
-                            </div>
-                            <p class="workDescription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facilis nisi
-                                aperiam sit voluptatem at.</p>
-    
-                        </div>
-    
-                        <p class="workYear">1995</p>
-    
-                    </div>
-
-                    <!-- Card -->
-                    <div class="timelineCard">
-    
-                        <div class="timelineContent timelineContentTop">
-    
-                            <div class="timelineLeftLine">
-                                <span></span>
-                                <div></div>
-                                <span></span>
-                            </div>
-    
-                            <div class="company">
-                                <div class="companyLogo"><img src="/data/projects/wipro.png" alt=""></div>
-                                <div class="companyName">Wipro</div>
-                            </div>
-                            <p class="workDescription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facilis nisi
-                                aperiam sit voluptatem at.</p>
-    
-                        </div>
-    
-                        <p class="workYear">1995</p>
-    
-                    </div>
-
-                    <!-- Card -->
-                    <div class="timelineCard">
-    
-                        <div class="timelineContent timelineContentbottom">
-    
-                            <div class="timelineLeftLine">
-                                <span></span>
-                                <div></div>
-                                <span></span>
-                            </div>
-    
-                            <div class="company">
-                                <div class="companyLogo"><img src="/data/projects/wipro.png" alt=""></div>
-                                <div class="companyName">Wipro</div>
-                            </div>
-                            <p class="workDescription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facilis nisi
-                                aperiam sit voluptatem at.</p>
-    
-                        </div>
-    
-                        <p class="workYear">1995</p>
-    
-                    </div>
-
-                    <!-- timeline now -->
-                    <div class="timelineNow">
+                    <!-- timeline now structure -->
+                    <!-- <div class="timelineNow">
                         <p>Now</p>
-                    </div>
+                    </div> -->
                     
                 </div>
 
@@ -1128,13 +1009,13 @@ def function():
 
             <div class="message-container">
                 <div class="message-content">
-                    <h1>That's it! <img src="data/msg-to-user/author.png" alt=""> Now it's your turn to say hi.</h1>
+                    <h1>That's it! <img id="messageToUserAuthorImage" src="" alt=""> Now it's your turn to say hi.</h1>
                 </div>
                 <div class="message-discription">
-                    <p>I'll make it easy for you... this is how you pronounce my name - <div class="playaudio">ɧãrvindar <i class="fa-solid fa-circle-play"></i></div> I hope to hear
+                    <p>I'll make it easy for you... this is how you pronounce my name - <div class="playaudio" id="messageToUserSayName"><span id="messageToUserAuthorName"></span> <i class="fa-solid fa-circle-play"></i></div> I hope to hear
                     from you!</p>
                 </div>
-                <div class="message-button button">
+                <div id="messageToUserSayHiButton" class="message-button button">
                     Say Hi!
                 </div>
             </div>
@@ -1536,21 +1417,21 @@ def function():
                 <div class="portfoliolinks">
 
                     <div class="logo">
-                        <div class="img"><img src="./data/introduction/profile.png" alt="">Harry</div> 
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde distinctio, accusamus aliquid beatae voluptatibus quod aliquam ipsam quo possimus sapiente.</p>
+                        <div class="img"><img id="footerBrandLogo" src="" alt=""><span  id="footerBrandName"></span></div> 
+                        <p id="footerBrandDescription"></p>
                     </div>
-                    <div class="contact">
-                        <p>123 Market St. #22B Charlottesville, california 44635</p>
-                        <p><i class="fa-solid fa-envelope"></i>harvindar994@gmail.com</p>
-                        <p><i class="fa-solid fa-globe"></i>www.brightgoal.in</p>
-                        <p><i class="fa-solid fa-phone"></i>+91 9695806109</p>
+                    <div class="contact" id="footerContacts">
+
+                        <!-- contact structure -->
+                        <!-- <p>123 Market St. #22B Charlottesville, california 44635</p> -->
+                        <!-- <p><i class="fa-solid fa-envelope"></i>harvindar994@gmail.com</p> -->
+                        
                     </div>
-                    <div class="quick-links">
-                        <a href="#">Youtube</a>
-                        <a href="#">Instagram</a>
-                        <a href="#">WhatsApp</a>
-                        <a href="#">linkedin</a>
-                        <a href="#">Brightgoal</a>
+                    <div class="quick-links" id="footerQuickLinks">
+
+                        <!-- Quick links structure -->
+                        <!-- <a href="#">Youtube</a> -->
+
                     </div>
 
                     <div class="other-links">
@@ -1568,13 +1449,12 @@ def function():
                 <hr>
 
                 <div class="social-links">
-                    <p>©️ Brightgoal UI. All rights reserved.</p>
-                    <div class="links">
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-github"></i></a>
-                        <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+                    <p id="footerCopyright">©️ Brightgoal UI. All rights reserved.</p>
+                    <div class="links" id="footerSocialLinks">
+
+                        <!-- social link structure -->
+                        <!-- <a href="#"><i class="fa-brands fa-twitter"></i></a> -->
+
                     </div>
                 </div>
             </div>
