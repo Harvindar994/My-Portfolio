@@ -1109,6 +1109,7 @@ var OverlayImageViewer = function (progressBar) {
                 this.hideNavigationButtons();
             }
             else if (images.length > 1) {
+                this.showNavigationButtons();
                 this.carosuleSimulator = new PercentageCarosuleSimulator(this.imageViewerConatiner, 265, this.navigationLeft, this.navigationRight);
 
                 this.carosuleSimulator.__init__();
