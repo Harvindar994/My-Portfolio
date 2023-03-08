@@ -1,25 +1,10 @@
 /* 
 
-:root {
-    --common-color: #ffffff;
-    --logo-font-color: #08c391;
-    --primary-font-color: #08c391;
-    --primary-bg-1: #212830;
-    --primary-bg-2: #171c23;
-    --read-more-viewer-bg: 33, 39, 47;
-    --active-theme: "none";
-}
+rgb(12, 171, 168)
+rgb(191, 36, 78)
+rgb(45, 75, 115)
 
 */
-/* 
-:root{
-    logo-font-color: #292d3e;
-    primary-font-color: rgb(235, 69, 95);
-    primary-bg-1:  #ffffff;
-    primary-bg-2:  #e4e7e7;
-    common-color: #292d3e;
-    read-more-viewer-bg : rgb(255, 255, 255);
-} */
 
 :root {
     --common-color: #ffffff;
@@ -282,7 +267,7 @@ main{
     top: 0%;
     width: 20%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(var(--common-color), 100%), transparent);
+    background: linear-gradient(90deg, transparent, rgba(var(--common-color-2), 100%), transparent);
     position: absolute;
 
     /* animation */
@@ -318,10 +303,12 @@ main{
     height: 39px;
     border-radius: 8px;
     backdrop-filter: blur(11px);
-    border: 1px solid #ffffff3b;
+    border: 1px solid rgba(var(--common-color), 23%);
     position: fixed;
-    background-color: rgb(40 42 55 / 49%);
-    box-shadow: 14px 9px 53px 3px rgb(0 0 0 / 29%);
+    /* background-color: rgb(40 42 55 / 49%); */
+    background-color: rgba(var(--primary-bg-1), 49%);
+    /* box-shadow: 14px 9px 53px 3px rgb(0 0 0 / 29%); */
+    box-shadow: 14px 9px 53px 3px rgba(var(--primary-bg-2), 49%);
     z-index: 3;
     overflow: hidden;
     display: flex;
@@ -450,8 +437,8 @@ main{
 
 .floating-menu-header{
     font-size: 1.2rem;
-    color: #727272;
-    background-color: #0000004d;
+    color: rgba(var(--common-color), 44%);
+    background-color: rgba(var(--primary-bg-2), 100%);
     cursor: pointer;
     width: 100%;
     
@@ -478,15 +465,15 @@ main{
 
 .floating-menu .gap{
     height: 1px;
-    background-color: #ffffff63;
+    background-color: rgba(var(--common-color), 39%);
     margin: 19px 9px;
     width: -webkit-fill-available;
 }
 
 .floating-menu-button{
-    color: white;
+    color: rgba(var(--common-color), 100%);
     width: 100%;
-    height: 48px;
+    height: 48px;   
     display: flex;
     justify-content: center;
     align-items: center;
@@ -496,7 +483,7 @@ main{
 }
 
 .fmb-active{
-    color: #08c391;
+    color: rgba(var(--primary-font-color), 100%);
 }
 
 .fmb-active::before{
@@ -507,13 +494,13 @@ main{
     transform: translateY(-50%);
     height: 63%;
     width: 3px;
-    background-color: #08c391;
+    background-color: rgba(var(--primary-font-color), 100%);
     border-radius: 4px;
-    box-shadow: 1px 0px 15px 2px #08c391;
+    box-shadow: 1px 0px 15px 2px rgba(var(--primary-font-color), 100%);
 }
 
 .floating-menu-link{
-    color: white;
+    color: rgba(var(--common-color), 100%);
     width: 100%;
     height: 48px;
     display: flex;
@@ -537,7 +524,7 @@ main{
     object-fit: contain;
     height: 30px;
     border-radius: 100%;
-    border: 1px solid #ffffff66;
+    border: 1px solid rgba(var(--common-color), 39%);
 }
 /* here style of floating menu end's */
 
@@ -648,7 +635,7 @@ main{
 }
 
 .mobile-menu-optins-footer{
-    color: rgba(var(--common-color), 100%);
+    color: rgba(var(--common-color-2), 100%);
     position: fixed;
     bottom: 0px;
     width: 100%;
