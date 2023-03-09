@@ -26,16 +26,21 @@ html{
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    -moz-user-select: none;
+    /* -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    -o-user-select: none;
+    -o-user-select: none; */
 }
 
 a{
     text-decoration: none;
     color: rgba(var(--common-color), 100%);
+}
+
+/* Here style for navigator */
+.navigator{
+    position: absolute;
 }
 
 /* Here some somman elements */
