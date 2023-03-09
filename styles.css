@@ -789,19 +789,18 @@ main{
     height: 140px;
     width: 140px;
     position: relative;
-    background: #020438;
+    background: rgba(var(--primary-bg-2), 100%);
     border-radius: 10px;
     overflow: hidden;
     display: flex;
     justify-content: center;
-    border: 1px solid #ffffff5e;
-    background-color: rgb(23, 28, 35);
+    border: 1px solid rgba(var(--common-color), 37%);
     transition: all 1s;
     z-index: 0;
 }
 
 .skillCard .content {
-    color: white;
+    color: rgba(var(--common-color-2), 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -822,10 +821,10 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    color: rgb(23, 28, 35);
+    background-color: rgba(var(--common-color), 75%);
+    color: rgba(var(--primary-bg-1), 100%);
     border-radius: 0% 0% 0% 18%;
-    box-shadow: 1px 1px 6px white;
+    box-shadow: rgba(var(--common-color-2), 100%);  
 }
 
 .skillCard .content p {
@@ -853,7 +852,7 @@ main{
     width: 100%;
     height: 100%;
     transform: translate(0, 100%);
-    background: rgb(8, 195, 145);
+    background: rgba(var(--primary-font-color), 100%);
     transition: all 0.3s;
 }
 
@@ -865,14 +864,14 @@ main{
 
 .skillCard .water_wave_back {
     right: 0;
-    fill: rgb(8 195 145 / 63%);
+    fill: rgba(var(--primary-font-color), 63%);
     -webkit-animation: wave-back 2s infinite linear;
     animation: wave-back 2s infinite linear;
 }
 
 .skillCard .water_wave_front {
     left: 0;
-    fill: rgb(8, 195, 145);
+    fill: rgba(var(--primary-font-color), 100%);
     margin-bottom: -1px;
     -webkit-animation: wave-front 1.5s infinite linear;
     animation: wave-front 1.5s infinite linear;
@@ -1321,6 +1320,10 @@ main{
     background-color: rgba(var(--primary-font-color), 70%);
     border-radius: 100%;
     color: rgba(var(--common-color-2), 100%);
+}
+
+.proejctCardBody .projectThumbnail .videoPlayButton:hover{
+    color: rgba(var(--primary-bg-1), 100%);
 }
 
 .proejctCardBody .projectThumbnail .videoPlayButton i{

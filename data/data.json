@@ -693,22 +693,22 @@
         "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque perferendis maxime, voluptates magnam temporibus earum, ullam eveniet quod sequi, quo molestias harum atque accusamus eius.",
         "experience": [
             {
-                "logo": "./data/projects/wipro.png",
-                "name": "Wipro",
+                "logo": "./data/experience/royalEnfield1.png",
+                "name": "Royal Enfield",
                 "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facilis nisi aperiam sit voluptatem at.",
-                "date": "1995"
+                "date": "2020"
             },
             {
-                "logo": "./data/projects/wipro.png",
-                "name": "Wipro",
+                "logo": "./data/experience/robogenius.png",
+                "name": "Robogenius",
                 "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facilis nisi aperiam sit voluptatem at.",
-                "date": "1995"
+                "date": "2021"
             },
             {
-                "logo": "./data/projects/wipro.png",
+                "logo": "./data/experience/wipro.png",
                 "name": "Wipro",
                 "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus facilis nisi aperiam sit voluptatem at.",
-                "date": "1995"
+                "date": "2022"
             },
             {
                 "logo": "./data/projects/wipro.png",
