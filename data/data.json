@@ -14,7 +14,8 @@
             "primary-bg-1": "33, 40, 48",
             "primary-bg-1-2": "33, 40, 48",
             "primary-bg-2": "23, 28, 35",
-            "read-more-viewer-bg": "33, 39, 47"
+            "read-more-viewer-bg": "33, 39, 47",
+            "highlight-color": "255, 215, 0"
         },
 
         "lightRed": {
@@ -25,7 +26,8 @@
             "primary-bg-2": "228, 231, 231",
             "common-color": "41, 45, 62",
             "common-color-2": "255, 255, 255",
-            "read-more-viewer-bg": "255, 255, 255"
+            "read-more-viewer-bg": "255, 255, 255",
+            "highlight-color": "255, 215, 0"
         },
 
         "lightBlue": {
@@ -104,8 +106,8 @@
         "mobile": "+919695806109",
         "country": "india",
         "email": "harvindar994@gmail.com",
-        "designation": "UI/UX Designer And Graphic Designer",
-        "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Inventore perferendis autem ea nihil quae. Assumenda, sint obcaecati. Eum provident ex quasi quod itaque magnam quam sequi consequatur, at laborum. Eum.",
+        "designation": "Software Developer | UI/UX Designer | Frontend Developer",
+        "description": "I am a professional with a diverse skill set in the technology industry. I have experience as a Software Developer, UI/UX Designer, and Frontend Developer, and I am passionate about using my knowledge to create innovative digital products.",
         "profile_images": {
             
             "default": "data/introduction/profile.png",
@@ -147,14 +149,16 @@
     },
 
     "aboutMe":{
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque perferendis maxime, voluptates magnam temporibus earum, ullam eveniet quod sequi, quo molestias harum atque accusamus eius.",
+        "description": "My approach to work involves a deep understanding of key concepts, which fuels my relentless pursuit of knowledge and innovation. With this mindset, I am always ready to take on new challenges and learn new technologies to solve problems efficiently and without hesitation.",
         
         "//Warning": "while you are defining tag you can use <i> tag but inorder to give value to the tag use single-quots not double-quotes ",
         "tags" : [
             "3 <i class='fa-solid fa-star'></i> CodeChef",
-            "Built Large Desktop <i class='fa-solid fa-desktop'></i> App For Clients for real world use",
-            "Lorem ipsum dolor sit amet.",
-            "Lorem, ipsum dolor."
+            "Built Large Desktop <i class='fa-solid fa-desktop'></i> App's For Clients for real world use",
+            "Built this portfolio using html, vanilla css and javascript <span class='highlight'>#NoLibrary.</span>",
+            "Built low-level app's in C language <span class='highlight'>#NoLibrary.</span>",
+            "Can start working with any language in just a Week.",
+            "Not Just Word's 😊 you can see work down below."
         ],
         "cards": [
             {
@@ -165,7 +169,7 @@
             {
                 "icon": "fa-solid fa-wand-magic-sparkles",
                 "name": "UI/UX Designer",
-                "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla."
+                "description": "specialize in creating intuitive digital interfaces for websites and mobile apps. Skilled in design principles and user behavior for creating visually appealing, navigable designs."
             },
             {
                 "icon": "fa-brands fa-uikit",

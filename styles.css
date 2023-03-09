@@ -14,6 +14,7 @@ rgb(45, 75, 115)
     --primary-bg-1: #212830;
     --primary-bg-2: #171c23;
     --read-more-viewer-bg: 33, 39, 47;
+    --highlight-color: 255, 215, 0;
     --active-theme: "none";
 }
 
@@ -36,6 +37,11 @@ html{
 a{
     text-decoration: none;
     color: rgba(var(--common-color), 100%);
+}
+
+.highlight{
+    color: rgba(var(--highlight-color), 100%);
+    padding: 0px 7px 0px 8px;
 }
 
 /* Here style for navigator */
@@ -952,7 +958,7 @@ main{
 }
 
 .about-me-tags p i{
-    color: gold;
+    color: rgba(var(--highlight-color), 100%);
     margin: 0px 8px;
 }
 
@@ -1065,6 +1071,7 @@ main{
     transition: 0.2s ease-in;
     transform: scale(1.1, 1.1);
     box-shadow: 0px 0px 32px rgba(var(--primary-font-color), 255);
+    color: rgba(var(--primary-bg-1), 100%);
 }
 
 .card-icon{
