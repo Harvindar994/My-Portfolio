@@ -278,6 +278,18 @@
     }
     /* Here style goes for bubble animation end here */
 
+    /* read more style start's from here */
+
+    .readMorePadding{
+        padding: 0px 1rem 0px 1rem;
+    }
+
+    .readMoreContent {
+        padding-top: 1.5rem;
+    }
+
+    /* read more style end's from here */
+
 }
 
 @media screen and (min-width: 990px) {
