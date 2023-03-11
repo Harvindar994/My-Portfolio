@@ -15,7 +15,14 @@
             "primary-bg-1-2": "33, 40, 48",
             "primary-bg-2": "23, 28, 35",
             "read-more-viewer-bg": "33, 39, 47",
-            "highlight-color": "255, 215, 0"
+            "highlight-color": "255, 215, 0",
+
+            "readMoreViewer-bg-1": "44, 48, 58",
+            "readMoreViewer-bg-2": "30, 31, 38",
+            "readMoreViewer-bg-3": "68, 72, 87",
+            "readMoreViewer-bg-shadow": "0, 0, 0",
+            "readMoreViewer-link": "0, 255, 184",
+            "readMoreViewer-tag": "118, 218, 255"
         },
 
         "lightRed": {
@@ -27,7 +34,15 @@
             "common-color": "41, 45, 62",
             "common-color-2": "255, 255, 255",
             "read-more-viewer-bg": "255, 255, 255",
-            "highlight-color": "255, 215, 0"
+            "highlight-color": "255, 215, 0",
+
+            "readMoreViewer-bg-1": "255, 255, 255",
+            "readMoreViewer-bg-2": "247, 247, 247",
+            "readMoreViewer-bg-3": "228, 231, 231",
+            "readMoreViewer-bg-shadow": "189, 189, 189",
+            "readMoreViewer-link": "41, 45, 62",
+            "readMoreViewer-tag": "249, 0, 39"
+
         },
 
         "lightBlue": {
