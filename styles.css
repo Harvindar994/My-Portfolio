@@ -1943,6 +1943,22 @@ h4 span {
     aspect-ratio: 16 / 9;
     border-radius: 12px;
     overflow: hidden;
+    position: relative;
+}
+
+.readMoreVideoShareButton{
+    position: absolute;
+    right: 17px;
+    top: 17px;
+    color: rgba(var(--primary-font-color), 100%);
+    background-color: rgba(var(--common-color), 100%);
+    border-radius: 100%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
 }
 
 .readMoreFooter{

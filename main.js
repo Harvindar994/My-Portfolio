@@ -1022,6 +1022,7 @@ var ReadMoreViewer = function () {
                 var element = document.createElement("div");
                 element.classList.add("readMoreVideo");
                 element.innerHTML = `
+                <div class="readMoreVideoShareButton"><i class="fa-sharp fa-solid fa-share-nodes"></i></div>
                 <iframe width="100%" height="100%" src="${jasonElement.url}"
                     title="Why Most People FAIL to Learn Programming" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -1048,7 +1049,12 @@ var ReadMoreViewer = function () {
     }
 
     this.sharePage = () => {
-        console.log("Page Shared..");
+        const shareData = {
+            title: this.jasonData.sharingLink.title,
+            text: this.jasonData.sharingLink.text,
+            url: this.jasonData.sharingLink.url,
+        };
+        navigator.share(shareData)
     }
 
     this.hide = () => {
