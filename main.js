@@ -92,9 +92,10 @@ var PercentageCarosuleSimulator = function (container, containerHeight) {
     }
 
     this.onNextPressed = () => {
-        let firstSlidePosition = parseInt(this.removePerFromNumbers(this.container.children[0].style.transform.split(",")[0].slice(10, 15)));
+        // let firstSlidePosition = parseInt(this.removePerFromNumbers(this.container.children[0].style.transform.split(",")[0].slice(10, 15)));
+        let lastSlidePosition = parseInt(this.container.children[this.container.children.length - 1].style.transform.split("(")[1].split("%")[0]);
 
-        if (firstSlidePosition > -(100 * (this.container.children.length - 1))) {
+        if (lastSlidePosition > 0) {
 
             this.sliderPosition -= 1;
             tempIndex = this.sliderPosition;
@@ -924,9 +925,12 @@ var ReadMoreViewer = function (progressBar) {
         this.readMoreFeatureImageContainer.innerHTML = "";
 
         for (var url of this.jasonData.images) {
-            var image = document.createElement("img");
-            image.setAttribute("id", "readMoreFeatureImage");
-            image.setAttribute("src", url);
+            var image = document.createElement("div");
+            image.setAttribute("id", "readMoreFeatureImageSlide");
+            image.innerHTML = `
+            <img src="${url}" id="readMoreFeatureImageBackground"/>
+            <img id="readMoreFeatureImage" src="${url}"/>
+            `;
             this.readMoreFeatureImageContainer.append(image);
         }
 
@@ -1068,12 +1072,16 @@ var ReadMoreViewer = function (progressBar) {
     }
 
     this.sharePage = () => {
-        const shareData = {
-            title: this.jasonData.sharingLink.title,
-            text: this.jasonData.sharingLink.text,
-            url: this.jasonData.sharingLink.url,
-        };
-        navigator.share(shareData)
+        if (this.jasonData.sharingLink !== null) {
+
+            const shareData = {
+                title: this.jasonData.sharingLink.title,
+                text: this.jasonData.sharingLink.text,
+                url: this.jasonData.sharingLink.url,
+            };
+            navigator.share(shareData)
+
+        }
     }
 
     this.hide = () => {

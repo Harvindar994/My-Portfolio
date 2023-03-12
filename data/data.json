@@ -237,87 +237,105 @@
                 "projects": [
                     {
                         "icon": "./data/skills/python.png",
-                        "name": "Air Drop",
-                        "dateTime": "15 Months Ago",
-                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
-                        "thumbnailImage": "./data/projects/4.jpg",
+                        "name": "Library ERP System",
+                        "dateTime": "Aug 19, 2022",
+                        "description": "To manage the college library using Python and PyQt5 provides comprehensive solutions including an intuitive interface, book tracking, and inventory management.",
+                        "thumbnailImage": "./data/projects/project-1/Login Screen.jpg",
                         
                         "showUpType": "video",
                         "//showUpType can be": "images, video, youtube-url",
-                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
+                        "showUp": "./data/projects/project-1/Preview.mp4",
 
                         "github": "#",
                         "isReadMoreLink": false,
                         "readMore": {
 
-                            "icon": "./data/skills/javascript.png",
-                            "title": "Air Drop",
-                            "titleLine": "build using python",
+                            "icon": "./data/skills/python.png",
+                            "title": "Library ERP System",
+                            "titleLine": "Build using python and PyQt5",
                             "sharingLink": {
                                 "title": "harvindar.in",
-                                "text": "Air Drop",
-                                "url": "./data/projects/3.jpg"
+                                "text": "Library ERP System",
+                                "url": "./data/projects/project-1/Preview.mp4"
                             },
-                            "usedTech": ["tech-1", "tech-2", "tech-3", "here pass all the tech as a list that are being used in your project"],
-                            "images": ["./data/projects/3.jpg", "./data/projects/1.jpg","./data/projects/2.jpg"],
-                            "imageTitle": "image title will appear on the top of image",
-                            "imageSortDescription": "description of image title that will appear on top of the image",
+                            "usedTech": ["Python", "PyQt5", "Poppler", "MySQL", "SQL Lite", "Jason"],
+                            "images": [
+                                "./data/projects/project-1/Dashboard.jpg",
+                                "./data/projects/project-1/Login Screen.jpg",
+                                "./data/projects/project-1/Singup Screen.jpg",
+                                "./data/projects/project-1/Database Setup Screen.jpg",
+                                "./data/projects/project-1/Privacy Policy.png",
+                                "./data/projects/project-1/Forget Password Screen.jpg",
+                                "./data/projects/project-1/Library Settings.jpg",
+                                "./data/projects/project-1/Issue and Submit Book.jpg",
+                                "./data/projects/project-1/Print ID Cards For Students.jpg",
+                                "./data/projects/project-1/Print Qr Code For Book.jpg",
+                                "./data/projects/project-1/Search Books.jpg",
+                                "./data/projects/project-1/Search Student.jpg",
+                                "./data/projects/project-1/Update Book.jpg",
+                                "./data/projects/project-1/Update Student.jpg",
+                                "./data/projects/project-1/About Page 2.png",
+                                "./data/projects/project-1/About Page.png",
+                                "./data/projects/project-1/Add Books.jpg",
+                                "./data/projects/project-1/Add Student.jpg",
+                                "./data/projects/project-1/Book Issue .jpg"
+                            ],
+                            "imageTitle": "Built in",
+                            "imageSortDescription": "Aug 19, 2022",
                             "content": [
                                 {
-                                    "type": "h1",
-                                    "html": "Project <span>Name</span>"
-                                },
-                                {
-                                    "type": "h2",
-                                    "html": "here pass the text for h2 heading"
-                                },
-                                {
-                                    "type": "h3",
-                                    "html": "here pass the text for h3 heading"
-                                },
-                                {
                                     "type": "h4",
-                                    "html": "here pass the text for h4 heading"
-                                },
-                                {
-                                    "type": "p",
-                                    "html": "here pass the text for paragraph"
+                                    "html": "<span class='primary'>Description</span>"
                                 },
                                 {
                                     "type": "gap",
-                                    "size": "30px"
+                                    "size": "12px"
                                 },
                                 {
-                                    "type": "tags",
-                                    "tags": ["tag-1", "tag-2", "tag-3"]
+                                    "type": "p",
+                                    "html": "This software designed to manage a complete library of a college using Python and PyQt5 is an efficient and effective solution to streamline the library management process. The software enables users to manage all aspects of the library, including cataloging, searching, borrowing, and returning books."
+                                },
+                                {
+                                    "type": "gap",
+                                    "size": "10px"
+                                },
+                                {
+                                    "type": "p",
+                                    "html": "One of the key features of this software is its user-friendly interface. The GUI developed using PyQt5 provides a simple and intuitive interface that is easy to navigate for users of all skill levels. The interface displays various options, such as search books by title, author, ISBN number, and category, among others."
+                                },
+                                {
+                                    "type": "gap",
+                                    "size": "10px"
+                                },
+                                {
+                                    "type": "p",
+                                    "html": "Another essential feature of the software is its ability to track book borrowing and returning. The software allows library staff to check out books to users and record their details, including the borrower's name, contact details, and due date. Similarly, when the books are returned, the software marks them as returned and removes them from the borrower's account."
+                                },
+                                {
+                                    "type": "gap",
+                                    "size": "10px"
+                                },
+                                {
+                                    "type": "p",
+                                    "html": "Furthermore, the software enables library staff to manage book inventory efficiently. Users can add new books to the library catalog, edit existing books, and delete books that are no longer in circulation."
+                                },
+                                {
+                                    "type": "gap",
+                                    "size": "10px"
+                                },
+                                {
+                                    "type": "p",
+                                    "html": "Overall, This software provides a comprehensive solution to manage a complete college library. Its intuitive interface, book tracking, and inventory management capabilities make it a valuable tool for librarians and users alike."
+                                },
+                                {
+                                    "type": "gap",
+                                    "size": "10px"
                                 },
                                 {
                                     "type": "link",
                                     "url": "url here",
-                                    "text": "url text here",
+                                    "text": "Click here to Download",
                                     "class": "important"
-                                },
-                                {
-                                    "type": "copyLink",
-                                    "url": "url here",
-                                    "text": "url text here",
-                                    "class": "important"
-                                },
-                                {
-                                    "type": "image",
-                                    "description": "image description here",
-                                    "url": "./data/projects/3.jpg"
-                                },
-                                {
-                                    "type": "video",
-                                    "url": "./data/projects/video.mp4",
-                                    "shareTitle": "harvindar.in",
-                                    "shareText": "Air Drop"
-                                },
-                                {
-                                    "type": "code",
-                                    "title": "title Here",
-                                    "code": "Code Here\nThat How you Can"
                                 }
                             ]
                         }
