@@ -265,7 +265,7 @@
                             "content": [
                                 {
                                     "type": "h1",
-                                    "html": "here <span>pass</span> the text for h1 heading"
+                                    "html": "Project <span>Name</span>"
                                 },
                                 {
                                     "type": "h2",
@@ -310,7 +310,9 @@
                                 },
                                 {
                                     "type": "video",
-                                    "url": "./data/projects/video.mp4"
+                                    "url": "./data/projects/video.mp4",
+                                    "shareTitle": "harvindar.in",
+                                    "shareText": "Air Drop"
                                 },
                                 {
                                     "type": "code",

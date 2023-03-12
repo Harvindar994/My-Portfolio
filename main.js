@@ -889,11 +889,21 @@ var ProjectCard = function (jasonData, readMoreCallBack = null, options = null, 
 
 // Here defining the object of ReadMoreViewer window.
 
-var ReadMoreViewer = function () {
+var ReadMoreViewer = function (progressBar) {
     this.jasonData = null;
+    this.progressBar = progressBar;
+
+    this.shareVideo = (event) => {
+        const shareData = {
+            title: event.currentTarget.getAttribute("title"),
+            text: event.currentTarget.getAttribute("text"),
+            url: event.currentTarget.getAttribute("index"),
+        };
+        navigator.share(shareData)
+    }
 
     this.show = (jasonData = null) => {
-        this.window.classList.add("readMoreViewerActive");
+        this.progressBar.start();
         this.jasonData = jasonData;
 
         // here loading data for some default elements.
@@ -937,6 +947,10 @@ var ReadMoreViewer = function () {
 
         // now let's render the main content of the page.
         this.renderContent();
+
+        // here making read more window visiable.
+        this.window.classList.add("readMoreViewerActive");
+        this.progressBar.stop();
     }
 
     this.onNextPressed = (event) => {
@@ -1022,13 +1036,18 @@ var ReadMoreViewer = function () {
                 var element = document.createElement("div");
                 element.classList.add("readMoreVideo");
                 element.innerHTML = `
-                <div class="readMoreVideoShareButton"><i class="fa-sharp fa-solid fa-share-nodes"></i></div>
+                <div class="readMoreVideoShareButton button" index="${jasonElement.url}" title="${jasonElement.shareTitle}" text="${jasonElement.shareText}"><i class="fa-solid fa-share"></i></div>
                 <iframe width="100%" height="100%" src="${jasonElement.url}"
                     title="Why Most People FAIL to Learn Programming" frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen=""
                 "></iframe>
                 `;
+
+                // here atteaching call back with video share button.
+                var videoShareButton = element.querySelector(".readMoreVideoShareButton");
+                videoShareButton.addEventListener("click", this.shareVideo);
+
                 this.readMoreContent.append(element);
 
             }
@@ -1415,7 +1434,7 @@ var Protfolio = function (progressBar) {
     this.projectPageButtons = [];
     this.activePageButton = null;
     this.projectCards = [];
-    this.readMoreViewer = new ReadMoreViewer();
+    this.readMoreViewer = new ReadMoreViewer(this.progressBar);
     this.overlayVideoPlayer = new OverlayVideoPlayer(this.progressBar);
     this.overlayImageViewer = new OverlayImageViewer(this.progressBar);
 
