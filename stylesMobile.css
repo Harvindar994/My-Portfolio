@@ -237,9 +237,33 @@
 
     /* Here Style end's for image viewer */
 
-    /* footer style start's from here */
+    /* readMore style start's from here */
 
-    /* footer style end's here */
+    .readMoreViewerPage .readMoreContent h1{
+        font-size: 1.6rem;
+    }
+
+    .readMoreViewerPage .readMoreContent h2{
+        font-size: 1.4rem;
+    }
+
+    .readMoreViewerPage .readMoreContent h3{
+        font-size: 1.1rem;
+    }
+
+    .readMoreViewerPage .readMoreContent h4{
+        font-size: 1rem;
+    }
+
+    .codeSnippet pre {
+        font-size: 0.8rem;
+    }
+
+    .codeSnippetcontent::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    /* readMore style end's here */
 }
 
 @media screen and (max-width: 550px) {
@@ -286,6 +310,14 @@
 
     .readMoreContent {
         padding-top: 1.5rem;
+    }
+
+    .readMoreHeaderText .projectHeading h2{
+        font-size: 0.9rem;
+    }
+
+    .readMoreHeaderText .projectHeading p {
+        font-size: 0.9rem;
     }
 
     /* read more style end's from here */

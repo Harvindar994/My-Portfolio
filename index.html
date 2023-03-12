@@ -719,46 +719,46 @@
                     <div class="readMoreHeader">
                         <div class="readMoreHeaderText">
                             <div class="projectIcon">
-                                <img src="./data/skills/python.png" alt="">
+                                <img id="readMoreIcon" src="./data/skills/python.png" alt="">
                             </div>
                             <div class="projectHeading">
-                                <h2>Blender ultimate 2.0</h2>
-                                <p>Built on python</p>
+                                <h2 id="readMoreTitle">Blender ultimate 2.0</h2>
+                                <p id="readMoreTitleLine">Built on python</p>
                             </div>
                         </div>
                         <div class="readMoreHeaderButtons">
-                            <div class="button readMoreHeard-btn">
+                            <div id="readMoreShareButton" class="button readMoreHeard-btn">
                                 <i class="fa-solid fa-share"></i>
                             </div>
-                            <div class="button readMoreHeard-btn">
+                            <div id="readMoreCloseButton" class="button readMoreHeard-btn">
                                 close
                             </div>
                         </div>
                     </div>
 
                     <div class="usedTechnology">
-                        <div class="usedTechnologyContainer">
-                            <div class="div">HTML</div>
-                            <div class="div">CSS</div>
-                            <div class="div">JavaScript</div>
+                        <div id="readMoreUsedTechnology" class="usedTechnologyContainer">
+                            <div>HTML</div>
+                            <div>CSS</div>
+                            <div>JavaScript</div>
                         </div>
                     </div>
     
                     <div class="featureImage">
-                        <div class="imageCarouselLeftRightButtons">
+                        <div id="readMoreFeatureImageCarouselButton" class="imageCarouselLeftRightButtons">
                             <div class="imageCarouselLeftButtonContainer">
-                                <div id="kk" class="button imageCarouselLeftButton">
+                                <div id="readMoreFeatureImageCarouselLeft" class="button imageCarouselLeftButton">
                                     <i class="fa-solid fa-angle-left"></i>
                                 </div>
                             </div>
                             <div class="imageCarouselRightButtonConatiner">
-                                <div id="kkl" class="button imageCarouselRightButton">
+                                <div id="readMoreFeatureImageCarouselRight" class="button imageCarouselRightButton">
                                     <i class="fa-solid fa-angle-right"></i>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="featureImageContainer">
+                        <div id="readMoreFeatureImageContainer" class="featureImageContainer">
 
                             <img id="readMoreFeatureImage" src="./data/projects/3.jpg" alt="">
 
@@ -769,9 +769,9 @@
 
                             <div id="readMoreDate" class="dateTime">
     
-                                <div class="tech">Python</div>
+                                <div class="tech" id="readMoreImageTitle">Python</div>
     
-                                <p>Built on Python</p>
+                                <p  id="readMoreImageDescription">Built on Python</p>
     
                             </div>
 
@@ -779,13 +779,13 @@
 
                     </div>
 
-                    <div class="readMoreContent readMorePadding">
+                    <div id="readMoreContentArea" class="readMoreContent readMorePadding">
                         
                         <h1 id="readMoreTopic">Library Management <span>System</span></h1>
                     
                         <p class="margin-top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat illum provident iusto sapiente aliquam eum in
                             assumenda sint repellat dolore. Itaque dignissimos modi sed perspiciatis, nostrum sint, reprehenderit odio enim
-                            <span>laudantium</span> suscipit illo tempora atque. Impedit praesentium, optio, nesciunt doloremque, facilis similique sequi
+                            <span class="important">laudantium</span> suscipit illo tempora atque. Impedit praesentium, optio, nesciunt doloremque, facilis similique sequi
                             voluptas eveniet ea sint minus inventore asperiores?</p>
                             
                         <h2>Explanation</h2>
@@ -799,17 +799,20 @@
                             <p class="tag">.net core</p>
                             <p class="tag">.net mva</p>
                             <p class="important copy-link"><i class="fa-solid fa-link"></i> Copy link</p>
+                            <a href="https://www.google.com" class="">Google</a>
                         </div>
 
                         <div class="image">
                             <img src="./data/projects/4.jpg" alt="">
 
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, neque!</p>
+                            <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, neque!</p> -->
                         </div>
 
                         <div class="codeSnippet">
                             
                             <div class="text">Python</div>
+
+                            <div class="codeSnippetcontent">
 
                             <pre>
 def function():
@@ -818,11 +821,31 @@ def function():
         unit = small_building - buildings[index]
         if unit > 0:
             units_water += unit
-
+def function():
+    for index in range(1, len(buildings)-1):
+        small_building = min(pf_max[index-1], sf_max[index+1])
+        unit = small_building - buildings[index]
+        if unit > 0:
+            units_water += unit
+def function():
+    for index in range(1, len(buildings)-1):
+        small_building = min(pf_max[index-1], sf_max[index+1])
+        unit = small_building - buildings[index]
+        if unit > 0:
+            units_water += unit
                             </pre>
+
+                            </div>
 
                         </div>
                         
+                        <div class="readMoreVideo">
+                            <iframe width="100%" height="100%" src="./data/projects/video.mp4"
+                                title="Why Most People FAIL to Learn Programming" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen=""
+                            "></iframe>
+                        </div>
 
                     </div>
 
@@ -1017,7 +1040,7 @@ def function():
                     <p>I'll make it easy for you... this is how you pronounce my name - <div class="playaudio" id="messageToUserSayName"><span id="messageToUserAuthorName"></span> <i class="fa-solid fa-circle-play"></i></div> I hope to hear
                     from you!</p>
                 </div>
-                <div id="messageToUserSayHiButton" class="message-button button">
+                <div id="messageToUserSayHiButton" class="messageToUser-message-button button">
                     Say Hi!
                 </div>
             </div>

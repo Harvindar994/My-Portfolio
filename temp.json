@@ -1,0 +1,70 @@
+{
+    "icon": "Here pass link of icon that will be used along with title",
+    "title": "title of read more window",
+    "titleLine": "one line description of read more window",
+    "sharingLink": "pass the link that you want to share when user will click on share button",
+    "usedTech": ["tech-1", "tech-2", "tech-3", "here pass all the tech as a list that are being used in your project"],
+    "images": ["./data/projects/3.jpg"],
+    "imageTitle": "image title will appear on the top of image",
+    "imageSortDescription": "description of image title that will appear on top of the image",
+    "content": [
+        {
+            "type": "h1",
+            "html": "here <span>pass</span> the text for h1 heading"
+        },
+        {
+            "type": "h2",
+            "html": "here pass the text for h2 heading"
+        },
+        {
+            "type": "h3",
+            "html": "here pass the text for h3 heading"
+        },
+        {
+            "type": "h4",
+            "html": "here pass the text for h4 heading"
+        },
+        {
+            "type": "p",
+            "html": "here pass the text for paragraph"
+        },
+        {
+            "type": "gap",
+            "size": "30px"
+        },
+        {
+            "type": "tags",
+            "tags": ["tag-1", "tag-2", "tag-3"]
+        },
+        {
+            "type": "link",
+            "url": "url here",
+            "text": "url text here",
+            "class": "important"
+        },
+        {
+            "type": "copyLink",
+            "url": "url here",
+            "text": "url text here",
+            "class": "important"
+        },
+        {
+            "type": "image",
+            "description": "image description here",
+            "url": "./data/projects/3.jpg"
+        },
+        {
+            "type": "video",
+            "url": "./data/projects/video.mp4"
+        },
+        {
+            "type": "code",
+            "title": "title Here",
+            "code": "Code Here\nThat How you Can"
+        }
+    ]
+}
+
+
+
+// tag, important, copy-link

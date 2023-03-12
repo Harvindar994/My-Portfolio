@@ -1732,6 +1732,7 @@ main{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: 0.3s all;
     /* -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); */
     /* -webkit-mask-image: linear-gradient(black 70%, transparent);
@@ -1781,6 +1782,10 @@ main{
 
 /* ReadMore More Viewer Content Elements styles */
 
+.readMoreViewerPage .readMoreContent .gap{
+
+}
+
 .readMoreTags{
     display: flex;
     gap: 7px;
@@ -1790,16 +1795,25 @@ main{
 .readMoreViewerPage .important{
     /* background-color: rgb(65, 69, 83); */
     background-color: rgba(var(--readMoreViewer-bg-3), 90%);
+    color: rgba(var(--readMoreViewer-link), 100%);
     font-weight: 500;
     padding: 2px 10px;
     border-radius: 3px;
-    color: white;
     min-height: 26px;
     font-size: 0.8rem;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     transition: 0.5s all;
+}
+
+.readMoreViewerPage .important a{
+    color: rgba(var(--readMoreViewer-link), 100%);
+}
+
+.readMoreViewerPage .important:hover{
+    background-color: rgba(var(--primary-font-color), 100%);
+    color: rgba(var(--common-color-2), 100%);
 }
 
 .readMoreViewerPage .important i{
@@ -1807,20 +1821,8 @@ main{
     margin-right: 4px;
 }
 
-.readMoreViewerPage .link{
-    color: rgb(0 255 184);
-    cursor: pointer;
-}
-
 .readMoreViewerPage .copy-link{
-    color: rgba(var(--readMoreViewer-link), 100%);
-    /* color: rgb(0 255 184); */
     cursor: pointer;
-}
-
-.readMoreViewerPage .copy-link:hover, .link:hover{
-    background-color: rgba(var(--primary-font-color), 100%);
-    color: rgba(var(--common-color-2), 100%);
 }
 
 .readMoreViewerPage .tag{
@@ -1840,22 +1842,18 @@ main{
     font-size: 0.938rem;
 }
 
-.readMoreTopic{
-    margin-top: 30px;
-}
-
 .readMoreViewerPage .readMoreContent h2{
-    margin-top: 30px;
+    /* margin-top: 30px; */
     font-weight: 600;
 }
 
 .readMoreViewerPage .readMoreContent h3{
-    margin-top: 30px;
+    /* margin-top: 30px; */
     font-weight: 600;
 }
 
 .readMoreViewerPage .readMoreContent h4{
-    margin-top: 30px;
+    /* margin-top: 30px; */
     font-weight: 600;
 }
 
@@ -1875,7 +1873,7 @@ h4 span {
 
 .readMorePadding .image{
     background-color: rgba(var(--primary-font-color), 100%);
-    margin-top: 30px;
+    /* margin-top: 30px; */
     border-radius: 14px;
     color: rgba(var(--common-color-2), 100%);
 }
@@ -1896,7 +1894,9 @@ h4 span {
 .codeSnippet{
     border-radius: 13px;
     overflow: hidden;
-    margin-top: 30px;
+    padding-bottom: 12px;
+    background-color: rgba(var(--primary-bg-2), 100%);
+    /* margin-top: 30px; */
 }
 
 .codeSnippet .text{
@@ -1906,9 +1906,43 @@ h4 span {
     color: rgba(var(--common-color-2), 100%);
 }
 
-.codeSnippet pre{
+.codeSnippetcontent{
+    overflow-x: auto;
     background-color: rgba(var(--primary-bg-2), 100%);
-    padding: 30px 30px;
+    padding: 30px 25px 3px 25px;
+}
+
+.codeSnippetcontent::-webkit-scrollbar{
+    height: 9px;
+}
+
+.codeSnippetcontent::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--primary-font-color), 100%);
+    border-radius: 17px;
+    outline: none;
+}
+
+.codeSnippetcontent::-webkit-scrollbar-button {
+    display: none;
+    background-color: darkgrey;
+    outline: none;
+}
+
+.codeSnippetcontent::-webkit-scrollbar-track {
+    background-color:rgba(var(--readMoreViewer-bg-1), 100%);
+    border-radius: 17px;
+    outline: none;
+    margin: 14px 14px;
+}
+
+.codeSnippet pre{
+    
+}
+
+.readMoreVideo{
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .readMoreFooter{
@@ -2278,7 +2312,7 @@ h4 span {
     display: inline-block;
 }
 
-.message .message-button{
+.messageToUser-message-button{
     height: 50px;
     width: 200px;
     border-radius: 60px;

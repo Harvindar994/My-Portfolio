@@ -768,7 +768,7 @@ var ProjectCard = function (jasonData, readMoreCallBack = null, options = null, 
     this.callBackFunctionData = null;
 
     this.readMore = () => {
-        if (this.readMoreCallBack !== null) {
+        if (this.readMoreCallBack !== null && this.jasonData.readMore !== null) {
             this.readMoreCallBack(this.jasonData.readMore);
         }
     }
@@ -843,12 +843,22 @@ var ProjectCard = function (jasonData, readMoreCallBack = null, options = null, 
         // Here Connecting Read More Button.
         this.readMoreButton = this.card.querySelector(".projectCardReadMoreButton");
 
-        if (this.jasonData.isReadMoreLink) {
-            this.readMoreButton.setAttribute("href", `${this.jasonData.readMore}`);
-            this.readMoreButton.setAttribute("target", "_blank");
+        if (this.jasonData.readMore !== null) {
+
+            if (this.jasonData.isReadMoreLink) {
+                this.readMoreButton.setAttribute("href", `${this.jasonData.readMore}`);
+                this.readMoreButton.setAttribute("target", "_blank");
+            }
+            else {
+                this.readMoreButton.addEventListener("click", this.readMore);
+            }
+
         }
         else {
-            this.readMoreButton.addEventListener("click", this.readMore);
+
+            // Here if there is no value inside the read more we will disable the readmore button.
+            this.readMoreButton.style.visibility = "hidden";
+
         }
 
         // Here fecting the video button from web element.
@@ -883,17 +893,165 @@ var ReadMoreViewer = function () {
     this.jasonData = null;
 
     this.show = (jasonData = null) => {
-        // here making this window visible.
-        // this.window.style.display = "initial";
         this.window.classList.add("readMoreViewerActive");
-
         this.jasonData = jasonData;
 
+        // here loading data for some default elements.
+        this.pageIcon.setAttribute("src", this.jasonData.icon);
+        this.title.innerText = this.jasonData.title;
+        this.titleDescription.innerText = this.jasonData.titleLine;
+
+        // Here loading all the data related to tech being used in the project.
+        this.usedTechnology.innerHTML = "";
+
+        for (var tech of this.jasonData.usedTech) {
+            var element = document.createElement("div");
+            element.innerText = tech;
+            this.usedTechnology.append(element);
+        }
+
+        // here loading all the feature images.
+        this.readMoreFeatureImageContainer.innerHTML = "";
+
+        for (var url of this.jasonData.images) {
+            var image = document.createElement("img");
+            image.setAttribute("id", "readMoreFeatureImage");
+            image.setAttribute("src", url);
+            this.readMoreFeatureImageContainer.append(image);
+        }
+
+        if (this.jasonData.images.length > 1) {
+            this.readMoreFeatureImageCarouselButton.style.display = null;
+            this.carosuleSimulator = new PercentageCarosuleSimulator(this.readMoreFeatureImageContainer, 450);
+        }
+
+        else {
+            // if there si one fetaure image the we will hide carsoule buttons.
+            this.readMoreFeatureImageCarouselButton.style.display = "none";
+            this.carosuleSimulator = null;
+        }
+
+        // Here setting up feature image title and decription.
+        this.readMoreImageTitle.innerText = this.jasonData.imageTitle;
+        this.readMoreImageDescription.innerText = this.jasonData.imageSortDescription;
+
+        // now let's render the main content of the page.
+        this.renderContent();
+    }
+
+    this.onNextPressed = (event) => {
+        if (this.carosuleSimulator !== null) {
+            this.carosuleSimulator.onNextPressed();
+        }
+        event.stopPropagation();
+    }
+
+    this.onPreviousPressed = (event) => {
+        if (this.carosuleSimulator !== null) {
+            this.carosuleSimulator.onPreviousPressed();
+        }
+        event.stopPropagation();
+    }
+
+    this.renderContent = () => {
+        // Before we render the new content in the page let's remove the old one.
+        this.readMoreContent.innerHTML = "";
+
+        for (var jasonElement of this.jasonData.content) {
+
+            if (jasonElement.type === "h1" || jasonElement.type === "h2" || jasonElement.type === "h3" || jasonElement.type === "h4" || jasonElement.type === "p") {
+
+                var element = document.createElement(jasonElement.type);
+                this.readMoreContent.append(element);
+                element.innerHTML = jasonElement.html;
+
+            }
+            else if (jasonElement.type === "gap") {
+
+                var element = document.createElement("div");
+                element.classList.add("gap");
+                element.style.height = jasonElement.size;
+                this.readMoreContent.append(element);
+
+            }
+            else if (jasonElement.type === "tags") {
+                var tags = document.createElement("div");
+                tags.classList.add("readMoreTags");
+
+                for (var jasonTag of jasonElement.tags) {
+                    var tag = document.createElement("p");
+                    tag.classList.add("tag");
+                    tag.innerText = jasonTag;
+                    tags.append(tag);
+                }
+
+                this.readMoreContent.append(tags);
+            }
+            else if (jasonElement.type === "link") {
+
+                var link = document.createElement("a");
+                link.setAttribute("href", jasonElement.url);
+                link.setAttribute("target", "_blank");
+                link.innerText = jasonElement.text;
+                link.setAttribute("class", jasonElement.class);
+                this.readMoreContent.append(link);
+
+            }
+            else if (jasonElement.type === "copyLink") {
+
+                var link = document.createElement("p");
+                link.setAttribute("index", jasonElement.url);
+                link.innerText = jasonElement.text;
+                link.setAttribute("class", jasonElement.class);
+                this.readMoreContent.append(link);
+
+            }
+            else if (jasonElement.type === "image") {
+
+                var element = document.createElement("div");
+                element.classList.add("image");
+                element.innerHTML = `
+                <img src="${jasonElement.url}" alt="">
+                <p>${jasonElement.description}</p>
+                `;
+                this.readMoreContent.append(element);
+
+            }
+            else if (jasonElement.type === "video") {
+
+                var element = document.createElement("div");
+                element.classList.add("readMoreVideo");
+                element.innerHTML = `
+                <iframe width="100%" height="100%" src="${jasonElement.url}"
+                    title="Why Most People FAIL to Learn Programming" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen=""
+                "></iframe>
+                `;
+                this.readMoreContent.append(element);
+
+            }
+            else if (jasonElement.type === "code") {
+
+                var element = document.createElement("div");
+                element.classList.add("codeSnippet");
+                element.innerHTML = `
+                <div class="text">${jasonElement.title}</div>
+                <div class="codeSnippetcontent">
+                    <pre>${jasonElement.code}</pre>
+                </div>
+                `;
+                this.readMoreContent.append(element);
+            }
+
+        }
+    }
+
+    this.sharePage = () => {
+        console.log("Page Shared..");
     }
 
     this.hide = () => {
-        // here hiding the window.
-        // this.window.style.display = "none";
         this.window.classList.remove("readMoreViewerActive");
     }
 
@@ -902,9 +1060,36 @@ var ReadMoreViewer = function () {
         this.window = document.querySelector(".readMoreViewer");
         this.closeButton = document.querySelector(".readMoreViewerCloseButton");
 
+        // here fetching page elements.
+        this.pageCloseButton = document.querySelector("#readMoreCloseButton");
+        this.shareButton = document.querySelector("#readMoreShareButton");
+
+        this.pageIcon = document.querySelector("#readMoreIcon");
+        this.title = document.querySelector("#readMoreTitle");
+        this.titleDescription = document.querySelector("#readMoreTitleLine");
+
+        this.usedTechnology = document.querySelector("#readMoreUsedTechnology");
+
+        this.readMoreFeatureImageCarouselButton = document.querySelector("#readMoreFeatureImageCarouselButton");
+        this.readMoreFeatureImageCarouselLeft = document.querySelector("#readMoreFeatureImageCarouselLeft");
+        this.readMoreFeatureImageCarouselRight = document.querySelector("#readMoreFeatureImageCarouselRight");
+        this.readMoreFeatureImageContainer = document.querySelector("#readMoreFeatureImageContainer");
+        this.readMoreImageTitle = document.querySelector("#readMoreImageTitle");
+        this.readMoreImageDescription = document.querySelector("#readMoreImageDescription");
+
+        this.readMoreContent = document.querySelector("#readMoreContentArea");
+
+        // Here creating variable for carosule semiulator.
+        this.carosuleSimulator = null;
 
         // Here attaching event listeners
         this.closeButton.addEventListener("click", this.hide);
+        this.pageCloseButton.addEventListener("click", this.hide);
+        this.shareButton.addEventListener("click", this.sharePage);
+        this.readMoreFeatureImageCarouselLeft.addEventListener("click", this.onPreviousPressed);
+        this.readMoreFeatureImageCarouselButton.children[0].addEventListener("click", this.onPreviousPressed);
+        this.readMoreFeatureImageCarouselRight.addEventListener("click", this.onNextPressed);
+        this.readMoreFeatureImageCarouselButton.children[1].addEventListener("click", this.onNextPressed);
     }
 
     this.__init__();
@@ -1141,6 +1326,11 @@ var OverlayImageViewer = function (progressBar) {
 var MainMenu = function () {
     this.jasonData = null;
 
+    this.getActiveTheme = () => {
+        var root = document.querySelector(':root');
+        return root.style.getPropertyValue("--active-theme");
+    }
+
     this.showMobileMenu = () => {
         this.mobileMenu.classList.add("mobile-menu-optins-active");
     }
@@ -1149,11 +1339,18 @@ var MainMenu = function () {
         this.mobileMenu.classList.remove("mobile-menu-optins-active");
     }
 
+    this.reload = () => {
+
+        // Here reloadng the logo according to the theme.
+        this.logo.setAttribute("src", this.jasonData.logo[this.getActiveTheme()]);
+
+    }
+
     this.load = (jasonData) => {
         this.jasonData = jasonData;
 
         // Here setting up menu logo and text.
-        this.logo.setAttribute("src", this.jasonData.logo);
+        this.logo.setAttribute("src", this.jasonData.logo[this.getActiveTheme()]);
         this.logoText.innerText = this.jasonData.logoText;
 
         // here setting up author name and footer message for mobile menu.
@@ -1434,8 +1631,37 @@ var MessageToUser = function () {
         this.authorImage.setAttribute("src", this.jasonData.image);
     }
 
+    this.getVoices = () => {
+        let voices = speechSynthesis.getVoices();
+        if (!voices.length) {
+            let utterance = new SpeechSynthesisUtterance("");
+            speechSynthesis.speak(utterance);
+            voices = speechSynthesis.getVoices();
+        }
+        return voices;
+    }
+
     this.pronounceName = () => {
-        console.log("Name Said: " + this.jasonData.name);
+        if ('speechSynthesis' in window) {
+            console.log("Name Said: " + this.jasonData.name);
+
+            let speakData = new SpeechSynthesisUtterance();
+            speakData.volume = this.jasonData.speakVolume; // From 0 to 1
+            speakData.rate = this.jasonData.speakRate; // From 0.1 to 10
+            speakData.pitch = this.jasonData.speakPitch; // From 0 to 2
+            speakData.text = this.jasonData.sayName;
+            speakData.lang = 'en';
+            speakData.voice = this.getVoices()[this.jasonData.voiceType];
+
+            speechSynthesis.speak(speakData);
+
+        } else {
+            console.log("Can'y Say Nname: " + this.jasonData.name);
+        }
+    }
+
+    this.sendEmail = () => {
+        window.location.href = `mailto:${this.jasonData.sayHiEmail}?subject=${this.jasonData.subject}&body=${this.jasonData.message}`;
     }
 
     this.__init__ = function () {
@@ -1447,7 +1673,7 @@ var MessageToUser = function () {
 
         // Here connecting the button with function.
         this.sayName.addEventListener("click", this.pronounceName);
-        this.sayHi.addEventListener("click", this.pronounceName);
+        this.sayHi.addEventListener("click", this.sendEmail);
     }
 
     this.__init__();
@@ -1456,11 +1682,24 @@ var MessageToUser = function () {
 
 // Here creating compoenent for footer.
 var Footer = function () {
+
+    this.getActiveTheme = () => {
+        var root = document.querySelector(':root');
+        return root.style.getPropertyValue("--active-theme");
+    }
+
+    this.reload = () => {
+
+        // Here realoading the brand logo according to the active theme.
+        this.brandLogo.setAttribute("src", this.jasonData.brand.logo[this.getActiveTheme()]);
+
+    }
+
     this.load = function (jasonData) {
         this.jasonData = jasonData;
 
         // here setting up data for brand.
-        this.brandLogo.setAttribute("src", this.jasonData.brand.logo);
+        this.brandLogo.setAttribute("src", this.jasonData.brand.logo[this.getActiveTheme()]);
         this.brandName.innerText = this.jasonData.brand.name;
         this.brandDescription.innerText = this.jasonData.brand.description;
 
@@ -1730,10 +1969,6 @@ var DataLoader = function (file) {
                 // Here loading the portfolio.
                 this.protfolio.load(data["protfolio"]);
 
-                // Here loading the floating menu.
-                this.floatingMenu.load(data["themeMenu"]);
-                this.floatingMenu.reloadOnThemeChnage(this.profile);
-
                 // Here loading all the skills.
                 this.skills.load(data["skills"]);
 
@@ -1745,6 +1980,12 @@ var DataLoader = function (file) {
 
                 // Here loading footer.
                 this.footer.load(data["footer"]);
+
+                // Here loading the floating menu.
+                this.floatingMenu.load(data["themeMenu"]);
+                this.floatingMenu.reloadOnThemeChnage(this.profile);
+                this.floatingMenu.reloadOnThemeChnage(this.footer);
+                this.floatingMenu.reloadOnThemeChnage(this.mainMenu);
 
             });
 
