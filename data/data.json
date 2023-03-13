@@ -247,6 +247,7 @@
                         
                         "showUpType": "video",
                         "//showUpType can be": "images, video, youtube-url",
+                        "//showUpFormate can be": [{"image": "image-url", "text": "text"}],
                         "showUp": "./data/projects/project-1/Preview.mp4",
 
                         "github": "#",
@@ -345,14 +346,119 @@
                     },
                     {
                         "icon": "./data/skills/python.png",
-                        "name": "Air Drop",
+                        "name": "Flappy Bird",
                         "dateTime": "15 Months Ago",
-                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
-                        "thumbnailImage": "./data/projects/4.jpg",
+                        "description": "developed using the Pygame module in Python, but I coded everything from scratch. I only used Pygame for its basic functionality.",
+                        "thumbnailImage": "./data/projects/project-3/1 (2).png",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "./data/projects/project-3/video.mp4",
+
+                        "github": "https://github.com/Harvindar994/FlappyBird",
+                        "isReadMoreLink": false,
+                        "readMore": null
+                    },
+                    {
+                        "icon": "./data/skills/python.png",
+                        "name": "Ludo",
+                        "dateTime": "15 Months Ago",
+                        "description": "developed using the Pygame module in Python, but I coded everything from scratch. I only used Pygame for its basic functionality.",
+                        "thumbnailImage": "./data/projects/project-2/1 (3).png",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "./data/projects/project-2/video.mp4",
+
+                        "github": "https://github.com/Harvindar994/Ludo-in-Python",
+                        "isReadMoreLink": false,
+                        "readMore": null
+                    },
+                    {
+                        "icon": "./data/skills/html.png",
+                        "name": "MR Studio Clone",
+                        "dateTime": "2 Months Ago",
+                        "description": "cloned the mr-studio page using css and html only.",
+                        "thumbnailImage": "./data/projects/project-5/1.png",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "./data/projects/project-5/video.mp4",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": null
+                    },
+                    {
+                        "icon": "./data/skills/html.png",
+                        "name": "MR Studio Clone",
+                        "dateTime": "2 Months Ago",
+                        "description": "created this music player using Html, CSS and vanilla JavaScript <span class='primary'>#NoLibrary</span>",
+                        "thumbnailImage": "./data/projects/project-9/1.png",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "./data/projects/project-9/video.mp4",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": null
+                    },
+                    {
+                        "icon": "./data/skills/html.png",
+                        "name": "TinDog Clone",
+                        "dateTime": "2 Months Ago",
+                        "description": "Create this clone inspired by TinDog using Html, CSS and vanilla javascript. <span class='primary'>#NoLibrary</span>",
+                        "thumbnailImage": "./data/projects/project-6/1.png",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "./data/projects/project-6/video.mp4",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": null
+                    },
+                    {
+                        "icon": "./data/skills/html.png",
+                        "name": "Leica M6",
+                        "dateTime": "1 Months Ago",
+                        "description": "Create this clone inspired by Leica M6 using Html, CSS and vanilla javascript. <span class='primary'>#NoLibrary</span>",
+                        "thumbnailImage": "./data/projects/project-7/1.png",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "./data/projects/project-7/video.mp4",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": null
+                    },
+                    {
+                        "icon": "./data/skills/html.png",
+                        "name": "Glassy Dashboard",
+                        "dateTime": "1 Months Ago",
+                        "description": "Create this Glassy Dashboard inspired by Glassy Designs using Html, CSS and vanilla javascript. <span class='primary'>#NoLibrary</span>",
+                        "thumbnailImage": "./data/projects/project-8/1.png",
                         
                         "showUpType": "images",
                         "//showUpType can be": "images, video, youtube-url",
-                        "showUp": "https://images-eu.ssl-images-amazon.com/images/S/pv-target-images/8b460f86c6dd8a2b280909badfa9ad8457aff4b410cd1777af7a3444d90af778._V_SX1080_.jpg",
+                        "showUp": "./data/projects/project-8/1.png",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": null
+                    },
+                    {
+                        "icon": "./data/skills/blender.png",
+                        "name": "Brightgoal Logo Animation",
+                        "dateTime": "1 Months Ago",
+                        "description": "Created this 3D Animation using blender, for my own youtube channel to as intro.",
+                        "thumbnailImage": "./data/projects/project-10/1.png",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "./data/projects/project-10/video.mp4",
 
                         "github": "#",
                         "isReadMoreLink": false,
@@ -360,93 +466,18 @@
                     },
                     {
                         "icon": "./data/skills/python.png",
-                        "name": "Air Drop",
-                        "dateTime": "15 Months Ago",
-                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
-                        "thumbnailImage": "./data/projects/4.jpg",
-                        
-                        "showUpType": "images",
-                        "//showUpType can be": "images, video, youtube-url",
-                        "showUp": [{"image": "./data/projects/images/1 (1).jpg", "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, fuga amet? Voluptatum inventore sint cumque sed vitae beatae, quis numquam!"}, {"image": "./data/projects/images/1 (2).jpg"}, {"image": "./data/projects/images/1 (3).jpg"}, {"image": "./data/projects/images/1 (4).jpg"}, {"image": "./data/projects/images/1 (4).jpg"}],
-
-                        "github": "#",
-                        "isReadMoreLink": false,
-                        "readMore": {}
-                    },
-                    {
-                        "icon": "./data/skills/python.png",
-                        "name": "Air Drop",
-                        "dateTime": "15 Months Ago",
-                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
-                        "thumbnailImage": "./data/projects/img.png",
+                        "name": "Video Converter",
+                        "dateTime": "5 Months Ago",
+                        "description": "Created this converter using python and PyQt5 to convert video file to mp3.",
+                        "thumbnailImage": "./data/projects/project-4/1.png",
                         
                         "showUpType": "video",
                         "//showUpType can be": "images, video, youtube-url",
-                        "showUp": "./data/projects/video.mp4",
+                        "showUp": "./data/projects/project-4/video.mp4",
 
                         "github": "#",
                         "isReadMoreLink": false,
-                        "readMore": {}
-                    },
-                    {
-                        "icon": "./data/skills/python.png",
-                        "name": "Air Drop",
-                        "dateTime": "15 Months Ago",
-                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
-                        "thumbnailImage": "./data/projects/4.jpg",
-                        
-                        "showUpType": "video",
-                        "//showUpType can be": "images, video, youtube-url",
-                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
-
-                        "github": "#",
-                        "isReadMoreLink": false,
-                        "readMore": {}
-                    },
-                    {
-                        "icon": "./data/skills/python.png",
-                        "name": "Air Drop",
-                        "dateTime": "15 Months Ago",
-                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
-                        "thumbnailImage": "./data/projects/4.jpg",
-                        
-                        "showUpType": "video",
-                        "//showUpType can be": "images, video, youtube-url",
-                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
-
-                        "github": "#",
-                        "isReadMoreLink": false,
-                        "readMore": {}
-                    },
-                    {
-                        "icon": "./data/skills/python.png",
-                        "name": "Air Drop",
-                        "dateTime": "15 Months Ago",
-                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
-                        "thumbnailImage": "./data/projects/4.jpg",
-                        
-                        "showUpType": "video",
-                        "//showUpType can be": "images, video, youtube-url",
-                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
-
-                        "github": "#",
-                        "isReadMoreLink": false,
-                        "readMore": {}
-                    },
-                    {
-                        "icon": "./data/skills/python.png",
-                        "name": "Air Drop",
-                        "dateTime": "15 Months Ago",
-                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
-                        "thumbnailImage": "./data/projects/4.jpg",
-                        
-                        "showUpType": "video",
-                        "//showUpType can be": "images, video, youtube-url",
-                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
-
-                        "github": "#",
-                        "isReadMoreLink": false,
-                        "readMore": {}
+                        "readMore": null
                     }
                 ]
             },
@@ -455,18 +486,18 @@
                 "projects": [
                     {
                         "icon": "./data/skills/python.png",
-                        "name": "Air Drop",
+                        "name": "Flappy Bird",
                         "dateTime": "15 Months Ago",
-                        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla minima aliquid perspiciatis.",
-                        "thumbnailImage": "./data/projects/4.jpg",
+                        "description": "I developed this game using the Pygame module in Python, but I coded everything from scratch instead of relying on Pygame's built-in functions. I only used Pygame for its basic functionality.",
+                        "thumbnailImage": "./data/projects/project-3/1 (2).png",
                         
                         "showUpType": "video",
                         "//showUpType can be": "images, video, youtube-url",
-                        "showUp": "https://www.youtube.com/embed/43e8dPUt7RY",
+                        "showUp": "./data/projects/project-3/video.mp4",
 
-                        "github": "#",
+                        "github": "https://github.com/Harvindar994/FlappyBird",
                         "isReadMoreLink": false,
-                        "readMore": {}
+                        "readMore": null
                     },
                     {
                         "icon": "./data/skills/python.png",
