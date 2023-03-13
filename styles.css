@@ -2042,7 +2042,7 @@ h4 span {
     justify-content: center;
     align-items: center;
     position: relative;
-    transition: all 1s;
+    transition: all 0.3s;
 }
 
 .imageViewer .imageContainer .slide .text{
