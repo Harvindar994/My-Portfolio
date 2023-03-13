@@ -2052,7 +2052,7 @@ h4 span {
     max-width: 80%;
     padding: 10px 37px;
     border-radius: 5px;
-    backdrop-filter: blur(25px);
+    /* backdrop-filter: blur(25px); */
     border: 1px solid rgba(var(--common-color), 100%);
     text-align: center;
 }
