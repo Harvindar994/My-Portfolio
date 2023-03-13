@@ -493,6 +493,65 @@
                         "github": "#",
                         "isReadMoreLink": false,
                         "readMore": null
+                    },
+                    {
+                        "icon": "./data/skills/blender.png",
+                        "name": "Sword Animation",
+                        "dateTime": "6 month Ago",
+                        "description": "Created this 3D Animation using blender, to learn ray tracing, colour, lighting and particles.",
+                        "thumbnailImage": "./data/projects/project-12/5.png",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "./data/projects/project-12/video.mp4",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": {
+                            "icon": "./data/skills/blender.png",
+                            "title": "Sword Animation",
+                            "titleLine": "Built using Blender",
+                            "sharingLink": {
+                                "title": "harvindar.in",
+                                "text": "Sword Animation",
+                                "url": "./data/projects/project-12/video.mp4"
+                            },
+                            "usedTech": ["Blender"],
+                            "images": [
+                                "./data/projects/project-12/sword4.png",
+                                "./data/projects/project-12/sword5.png",
+                                "./data/projects/project-12/sword6.png",
+                                "./data/projects/project-12/sword7.png",
+                                "./data/projects/project-12/sword8.png",
+                                "./data/projects/project-12/sword9.png",
+                                "./data/projects/project-12/sword10.png",
+                                "./data/projects/project-12/1.PNG",
+                                "./data/projects/project-12/2.png",
+                                "./data/projects/project-12/4.PNG",
+                                "./data/projects/project-12/5.PNG",
+                                "./data/projects/project-12/6.png",
+                                "./data/projects/project-12/sword.png",
+                                "./data/projects/project-12/sword1.png",
+                                "./data/projects/project-12/sword2.png",
+                                "./data/projects/project-12/sword3.png"
+                            ],
+                            "imageTitle": "Built Time",
+                            "imageSortDescription": "6 Month ago",
+                            "content": [
+                                {
+                                    "type": "h4",
+                                    "html": "<span class='primary'>Description</span>"
+                                },
+                                {
+                                    "type": "gap",
+                                    "size": "10px"
+                                },
+                                {
+                                    "type": "p",
+                                    "html": "The sword animation that I have created using Blender and incorporating lightning, ray-tracing, and particle system sounds impressive. With the use of ray tracing, I was able to create realistic lighting and shadows that added a polished and professional look to my animation. The addition of lightning effects added to the drama and intensity of the action. The particle system was used to simulate debris or sparks as the sword moved or struck an object, making the animation more dynamic and realistic. Overall, the combination of techniques used in this animation created a visually stunning and impressive piece of work. Well done!"
+                                }
+                            ]
+                        }
                     }
                 ]
             },
