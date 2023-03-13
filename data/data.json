@@ -364,7 +364,7 @@
                         "name": "Ludo",
                         "dateTime": "15 Months Ago",
                         "description": "developed using the Pygame module in Python, but I coded everything from scratch. I only used Pygame for its basic functionality.",
-                        "thumbnailImage": "./data/projects/project-2/1 (3).png",
+                        "thumbnailImage": "./data/projects/project-2/1 (4).png",
                         
                         "showUpType": "video",
                         "//showUpType can be": "images, video, youtube-url",
@@ -391,7 +391,7 @@
                     },
                     {
                         "icon": "./data/skills/html.png",
-                        "name": "MR Studio Clone",
+                        "name": "Music Player",
                         "dateTime": "2 Months Ago",
                         "description": "created this music player using Html, CSS and vanilla JavaScript <span class='primary'>#NoLibrary</span>",
                         "thumbnailImage": "./data/projects/project-9/1.png",
