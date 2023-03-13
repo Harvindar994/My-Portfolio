@@ -398,7 +398,7 @@
                         
                         "showUpType": "video",
                         "//showUpType can be": "images, video, youtube-url",
-                        "showUp": "./data/projects/project-9/video.mp4",
+                        "showUp": "./data/projects/project-9/Video.mp4",
 
                         "github": "#",
                         "isReadMoreLink": false,
