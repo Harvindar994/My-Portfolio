@@ -478,6 +478,21 @@
                         "github": "#",
                         "isReadMoreLink": false,
                         "readMore": null
+                    },
+                    {
+                        "icon": "./data/skills/python.png",
+                        "name": "Snake Game",
+                        "dateTime": "1 Year Ago",
+                        "description": "developed using Python's Pygame module, but I wrote all the code from the ground up. I solely relied on Pygame for its fundamental capabilities.",
+                        "thumbnailImage": "./data/projects/project-11/1 (3).png",
+                        
+                        "showUpType": "video",
+                        "//showUpType can be": "images, video, youtube-url",
+                        "showUp": "./data/projects/project-11/video.mp4",
+
+                        "github": "#",
+                        "isReadMoreLink": false,
+                        "readMore": null
                     }
                 ]
             },

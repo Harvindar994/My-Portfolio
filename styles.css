@@ -1272,6 +1272,7 @@ main{
     /* background-color: rgba(var(--common-color), 100%); */
     /* padding: 7px; */
     border-radius: 100%;
+    overflow: inherit;
 }
 
 .projectCardHead .heading{
