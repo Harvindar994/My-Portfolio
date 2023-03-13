@@ -27,6 +27,10 @@ var Profile = function () {
         return active_theme;
     }
 
+    this.sendEmail = () => {
+        window.location.href = `mailto:${this.profile.sayHiEmail}?subject=${this.profile.subject}&body=${this.profile.message}`;
+    }
+
     this.reload = () => {
         // here reloading the author image based on theme actived.
         author_image = document.querySelector("#author-image");
@@ -74,6 +78,15 @@ var Profile = function () {
             social_links.append(herf);
         });
     }
+
+    this.__init__ = function () {
+        this.letsTalkButton = document.querySelector(".lets-talk-button");
+
+        // Here connecting buttons.
+        this.letsTalkButton.addEventListener("click", this.sendEmail);
+    }
+
+    this.__init__();
 
 }
 

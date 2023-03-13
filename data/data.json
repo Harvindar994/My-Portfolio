@@ -126,6 +126,9 @@
         "email": "harvindar994@gmail.com",
         "designation": "Software Developer | UI/UX Designer | Frontend Developer",
         "description": "I am a professional with a diverse skill set in the technology industry. I have experience as a Software Developer, UI/UX Designer, and Frontend Developer, and I am passionate about using my knowledge to create innovative digital products.",
+        "sayHiEmail": "harvindar.personal@gmail.com",
+        "subject": "Let's Connect",
+        "message": "Dear Harvindar Singh,%0AI hope this email finds you well. My name is [Your Name], and I came across your profile on 'harvindar.in' and was impressed by your expertise and achievements. I am interested in connecting with you to learn more about your experiences and insights.%0AIf you have a moment to spare, I would be honored to connect with you on LinkedIn or schedule a brief call to chat about our shared interests. I am available [suggest a few dates and times that work for you] and can accommodate your schedule as well.%0A[Here Provide your Contact Details if you wish to 😊]%0AThank you for your time, and I look forward to connecting with you soon.%0ABest regards,%0A[Your Name]",
         "profile_images": {
             
             "default": "data/introduction/profile.png",
@@ -135,30 +138,30 @@
         "social_media": [
             {
                 "name": "GitHub",
-                "link": "https://wa.me/+919695806109",
+                "link": "https://github.com/Harvindar994",
                 "icon": "fa-brands fa-github",
                 "target": "blank"
             },
             {
-                "name": "GitHub",
-                "link": "https://wa.me/+919695806109",
+                "name": "Discord",
+                "link": " https://discordapp.com/channels/@me/harvindar994#9596/",
                 "icon": "fa-brands fa-discord",
                 "target": "blank"
             },
             {
-                "name": "GitHub",
-                "link": "https://wa.me/+919695806109",
+                "name": "Linkedin",
+                "link": "https://www.linkedin.com/in/harvindar-singh-653326212/",
                 "icon": "fa-brands fa-linkedin",
                 "target": "blank"
             },
             {
-                "name": "GitHub",
-                "link": "https://wa.me/+919695806109",
+                "name": "Youtube",
+                "link": "https://www.youtube.com/@Brightgoal",
                 "icon": "fa-brands fa-youtube",
                 "target": "blank"
             },
             {
-                "name": "GitHub",
+                "name": "WhatsApp",
                 "link": "https://wa.me/+919695806109",
                 "icon": "fa-brands fa-whatsapp",
                 "target": "blank"
