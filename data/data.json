@@ -184,7 +184,7 @@
         "cards": [
             {
                 "icon": "fa-brands fa-uikit",
-                "name": "UI/UX Designer",
+                "name": "Software Developer",
                 "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla."
             },
             {
@@ -194,7 +194,7 @@
             },
             {
                 "icon": "fa-brands fa-uikit",
-                "name": "UI/UX Designer",
+                "name": "Frontend Developer",
                 "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla."
             }
         ]
