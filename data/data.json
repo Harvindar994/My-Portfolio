@@ -252,7 +252,7 @@
 
                             "icon": "./data/skills/python.png",
                             "title": "Library ERP System",
-                            "titleLine": "Build using python and PyQt5",
+                            "titleLine": "Built on python",
                             "sharingLink": {
                                 "title": "harvindar.in",
                                 "text": "Library ERP System",

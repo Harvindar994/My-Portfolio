@@ -233,7 +233,7 @@ var CarosuleSimulator = function (container, gap, vertically_center = true, top_
 
         // here adding a overlay layer to stop hover effact.
         var overlay = document.createElement("div");
-        overlay.setAttribute("style", "width: 100%; height: 100%; background-color: ##ffffff00; position: absolute;");
+        overlay.setAttribute("style", "width: 100%; height: 100%; background-color: #ffffff00; position: absolute;");
         this.container.append(overlay);
 
 
@@ -920,6 +920,9 @@ var ReadMoreViewer = function (progressBar) {
             element.innerText = tech;
             this.usedTechnology.append(element);
         }
+
+        this.pxcarosuleSimulator = new CarosuleSimulator(this.usedTechnology, 10, true);
+        this.pxcarosuleSimulator.__init__();
 
         // here loading all the feature images.
         this.readMoreFeatureImageContainer.innerHTML = "";

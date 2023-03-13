@@ -1574,6 +1574,7 @@ main{
     padding: 7px 16px;
     font-size: 0.813rem;
     border-radius: 3px;
+    transition: 0.5s all;
 }
 
 .usedTechnology .usedTechnologyContainer div:hover{
