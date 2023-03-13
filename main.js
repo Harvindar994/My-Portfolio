@@ -941,12 +941,9 @@ var ReadMoreViewer = function (progressBar) {
         this.readMoreFeatureImageContainer.innerHTML = "";
 
         for (var url of this.jasonData.images) {
-            var image = document.createElement("div");
-            image.setAttribute("id", "readMoreFeatureImageSlide");
-            image.innerHTML = `
-            <img src="${url}" id="readMoreFeatureImageBackground"/>
-            <img id="readMoreFeatureImage" src="${url}"/>
-            `;
+            var image = document.createElement("img");
+            image.setAttribute("src", url);
+            image.setAttribute("id", "readMoreFeatureImage");
             this.readMoreFeatureImageContainer.append(image);
         }
 
