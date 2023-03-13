@@ -183,7 +183,7 @@
         ],
         "cards": [
             {
-                "icon": "fa-brands fa-uikit",
+                "icon": "fa-brands fa-app-store-ios",
                 "name": "Software Developer",
                 "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla."
             },
@@ -193,7 +193,7 @@
                 "description": "specialize in creating intuitive digital interfaces for websites and mobile apps. Skilled in design principles and user behavior for creating visually appealing, navigable designs."
             },
             {
-                "icon": "fa-brands fa-uikit",
+                "icon": "fa-solid fa-desktop",
                 "name": "Frontend Developer",
                 "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam vero architecto illum ipsam veniam placeat distinctio odit in omnis nulla."
             }
