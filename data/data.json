@@ -398,7 +398,7 @@
                         
                         "showUpType": "video",
                         "//showUpType can be": "images, video, youtube-url",
-                        "showUp": "./data/projects/project-9/Video.mp4",
+                        "showUp": "./data/projects/project-9/video.mp4",
 
                         "github": "#",
                         "isReadMoreLink": false,
@@ -499,7 +499,7 @@
                         "name": "Sword Animation",
                         "dateTime": "6 month Ago",
                         "description": "Created this 3D Animation using blender, to learn ray tracing, colour, lighting and particles.",
-                        "thumbnailImage": "./data/projects/project-12/5.png",
+                        "thumbnailImage": "./data/projects/project-12/5.PNG",
                         
                         "showUpType": "video",
                         "//showUpType can be": "images, video, youtube-url",
